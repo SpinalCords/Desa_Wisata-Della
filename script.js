@@ -9,9 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', function(e) {
         e.stopPropagation();
         mobileMenu.classList.toggle('active');
-        this.style.transform = this.style.transform === 'rotate(90deg)' 
-            ? 'rotate(0deg)' 
-            : 'rotate(90deg)';
     });
 
     // Add hover effect for nav items
@@ -71,36 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Typing Animation ---
-    function typeText(element, text, speed = 40, callback) {
-        element.textContent = '';
-        const cursor = document.createElement('span');
-        cursor.className = 'typing-cursor';
-        element.appendChild(cursor);
-        let i = 0;
-        function type() {
-            if (i < text.length) {
-                element.insertBefore(document.createTextNode(text[i]), cursor);
-                i++;
-                setTimeout(type, speed);
-            } else {
-                cursor.remove();
-                if (callback) callback();
-            }
-        }
-        type();
-    }
-    const explore = document.querySelector('.explore-text');
-    const title = document.querySelector('.hero-title h1');
-    const desc = document.querySelector('.hero-desc');
-    if (explore && title && desc) {
-        typeText(explore, '“ Explore ”', 50, function() {
-            typeText(title, 'DELA 1001 OMBAK', 60, function() {
-                typeText(desc, 'Kampung Della, Distrik Selemkai, Kabupaten Tambrauw, Papua Barat Daya.', 30);
-            });
-        });
-    }
-
     // --- Carousel ---
     const track = document.querySelector('.carousel-track');
     const slides = document.querySelectorAll('.carousel-img');
@@ -112,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     let position = 0;
-    let speed = 0.8; // Increased speed from 0.3 to 0.8
+    let speed = 0.8;
 
     function animate() {
         position -= speed;
@@ -132,13 +99,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start animation
     animate();
-
-    // Optional: Pause on hover
-    track.addEventListener('mouseenter', () => {
-        speed = 0;
-    });
-
-    track.addEventListener('mouseleave', () => {
-        speed = 0.8; // Make sure to match the new speed here too
-    });
 });
