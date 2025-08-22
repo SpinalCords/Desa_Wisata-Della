@@ -283,3 +283,114 @@ button {
     position: relative;
     overflow: hidden;
 }
+
+.home-hero {
+    position: relative;
+    width: 95%;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    min-height: 420px;
+    background: #222;
+}
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 420px;
+    filter: brightness(0.85);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,rgba(0,0,0,0.15) 60%,rgba(0,0,0,0.45) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.hero-title .explore-text {
+    font-family: 'Raleway', cursive;
+    font-size: 2.5rem;
+    color: #88AFE6;
+    font-style: italic;
+    display: block;
+    margin-bottom: 0.2em;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.hero-title h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    color: #e6e6e6;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0.2em 0 0.2em 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.hero-desc {
+    font-family: 'Poppins', serif;
+    font-size: 1.15rem;
+    color: #fffbe7;
+    margin-bottom: 2.2rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.hero-btn {
+    margin-top: 0.2rem;
+    background: #88AFE6;
+    color: #222;
+    border: none;
+    border-radius: 12px;
+    padding: 0.7em 2.5em;
+    font-size: 1.25rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(136,175,230,0.18);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.hero-btn:hover {
+    background: #5c8fd6;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 700px) {
+    .home-hero {
+        min-height: 340px;
+        border-radius: 18px;
+    }
+    .hero-title .explore-text {
+        font-size: 1.5rem;
+    }
+    .hero-title h1 {
+        font-size: 2rem;
+    }
+    .hero-desc {
+        font-size: 1rem;
+    }
+    .hero-btn {
+        font-size: 1rem;
+        padding: 0.6em 1.5em;
+    }
+}
