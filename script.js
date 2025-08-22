@@ -76,3 +76,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ...existing code...
+
+function typeText(element, text, speed = 40, callback) {
+    element.textContent = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    element.appendChild(cursor);
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            element.insertBefore(document.createTextNode(text[i]), cursor);
+            i++;
+            setTimeout(type, speed);
+        } else {
+            cursor.remove();
+            if (callback) callback();
+        }
+    }
+    type();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing code...
+
+    // Typing animation for hero texts
+    const explore = document.querySelector('.explore-text');
+    const title = document.querySelector('.hero-title h1');
+    const desc = document.querySelector('.hero-desc');
+
+    if (explore && title && desc) {
+        typeText(explore, '“ Explore ”', 50, function() {
+            typeText(title, 'DELA 1001 OMBAK', 60, function() {
+                typeText(desc, 'Kampung Della, Distrik Selemkai, Kabupaten Tambrauw, Papua Barat Daya.', 30);
+            });
+        });
+    }
+});
