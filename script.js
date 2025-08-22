@@ -99,4 +99,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start animation
     animate();
+
+    // Animasi ketik untuk About Us
+    const aboutText = `Pantai Della, Papua Barat 🌴🏖️ adalah surga kecil dengan laut biru jernih, pasir putih yang lembut, dan suasana alami yang bikin hati tenang. Di sini, kamu bisa menikmati indahnya panorama pantai sambil merasakan keramahan masyarakat sekitar. Nggak hanya liburan, setiap kunjunganmu juga ikut mendukung UMKM lokal lewat kuliner khas, hasil olahan laut segar, hingga kerajinan tangan yang unik. Cocok banget buat tempat healing sekaligus pengalaman wisata yang berkesan.`;
+    const typingTarget = document.getElementById('typing-text');
+    const cursor = document.querySelector('.typing-cursor');
+    let idx = 0;
+
+    function typeAbout() {
+        if (idx <= aboutText.length) {
+            typingTarget.innerHTML = aboutText.slice(0, idx);
+            idx++;
+            setTimeout(typeAbout, 18 + Math.random()*40);
+        }
+    }
+    typeAbout();
+
+    // Parallax effect on image hover
+    document.querySelectorAll('.parallax-img').forEach(wrapper => {
+        wrapper.addEventListener('mousemove', function(e) {
+            const img = this.querySelector('img');
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width/2;
+            const y = e.clientY - rect.top - rect.height/2;
+            img.style.transform = `scale(1.08) translate(${x/18}px,${y/18}px)`;
+        });
+        wrapper.addEventListener('mouseleave', function() {
+            const img = this.querySelector('img');
+            img.style.transform = '';
+        });
+    });
 });

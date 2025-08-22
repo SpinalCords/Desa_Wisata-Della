@@ -498,3 +498,109 @@ button {
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
 .delay-4 { animation-delay: 0.8s; }
+
+.about-section {
+    background: #A9C8F0;
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    margin: 2rem auto;
+    max-width: 1300px;
+    padding: 2.5rem 2rem 2rem 2rem;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.about-content {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.about-img-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.22), 0 1.5px 8px rgba(0,0,0,0.10);
+    transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+    background: #fff;
+    position: relative;
+}
+
+.about-img {
+    width: 580px;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(.25,.8,.25,1);
+}
+
+.about-img-wrapper:hover {
+    transform: scale(1.06) rotate(-1deg);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.28), 0 2px 12px rgba(0,0,0,0.13);
+}
+
+.about-img-wrapper:hover .about-img {
+    transform: scale(1.08);
+    filter: brightness(1.08) saturate(1.2);
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.40rem;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    min-width: 320px;
+    max-width: 540px;
+    margin-top: 0.50rem;
+    line-height: 1.7;
+    font-weight: 400;
+    position: relative;
+}
+
+.typing-cursor {
+    display: inline-block;
+    color: #222;
+    font-weight: 600;
+    font-size: 1.2em;
+    animation: blink 0.8s steps(1) infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-images {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .about-img {
+        width: 180px;
+        height: 110px;
+    }
+    .about-text {
+        max-width: 100%;
+        min-width: 0;
+        margin-top: 1.5rem;
+    }
+}
