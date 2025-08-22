@@ -16,7 +16,7 @@ body {
     align-items: center;
     padding: 1rem 0;
     background-color: #88AFE6;
-    box-shadow: 0 2px 10px rgba(136, 175, 230, 0.3);
+    box-shadow: 0 2px 10px rgba(136,175,230,0.3);
     width: 100%;
     font-family: 'Raleway', sans-serif;
     position: relative;
@@ -419,78 +419,38 @@ button {
 
 .carousel-container {
     width: 90%;
-    margin: 2rem auto 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 2rem auto;
     position: relative;
-    max-width: 700px;
-    min-height: 220px;
-    user-select: none;
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 10px 0;
 }
 
 .carousel-track {
     display: flex;
-    overflow: hidden;
-    width: 100%;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(136,175,230,0.15);
-    background: #fff;
-    min-height: 200px;
+    gap: 20px; /* Space between images */
+    height: 250px;
+    padding: 0 10px;
 }
 
 .carousel-img {
-    min-width: 100%;
-    transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+    min-width: calc(33.333% - 14px); /* Show 3 images, accounting for gap */
+    height: 100%;
     object-fit: cover;
-    height: 220px;
-    background: #f5f7fa;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.carousel-btn {
-    background: #88AFE6;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.85;
-}
-
-.carousel-btn:hover {
-    background: #5c8fd6;
-}
-
-.carousel-btn.prev {
-    left: -20px;
-}
-
-.carousel-btn.next {
-    right: -20px;
-}
-
-@media (max-width: 700px) {
-    .carousel-container {
-        max-width: 98vw;
-    }
+@media (max-width: 992px) {
     .carousel-img {
-        height: 140px;
+        min-width: calc(50% - 10px); /* Show 2 images on medium screens */
     }
-    .carousel-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 1.1rem;
+}
+
+@media (max-width: 576px) {
+    .carousel-img {
+        min-width: 100%; /* Show 1 image on mobile */
     }
-    .carousel-btn.prev { left: -10px; }
-    .carousel-btn.next { right: -10px; }
 }

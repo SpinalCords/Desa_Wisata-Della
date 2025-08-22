@@ -103,40 +103,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Carousel ---
     const track = document.querySelector('.carousel-track');
-    const images = document.querySelectorAll('.carousel-img');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel-img');
 
-    // Set track width and image width for sliding effect
-    track.style.width = `${images.length * 100}%`;
-    images.forEach(img => img.style.width = `${100 / images.length}%`);
+    // Clone slides for infinite loop effect
+    slides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        track.appendChild(clone);
+    });
 
-    function updateCarousel() {
-        track.style.transform = `translateX(-${currentIndex * (100 / images.length)}%)`;
+    let position = 0;
+    let speed = 0.8; // Increased speed from 0.3 to 0.8
+
+    function animate() {
+        position -= speed;
+        
+        // Reset position when first set of images is completely scrolled
+        const slideWidth = slides[0].offsetWidth;
+        const gap = 20;
+        const totalWidth = slides.length * (slideWidth + gap);
+        
+        if (position <= -totalWidth) {
+            position = 0;
+        }
+        
+        track.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(animate);
     }
 
-    prevBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateCarousel();
+    // Start animation
+    animate();
+
+    // Optional: Pause on hover
+    track.addEventListener('mouseenter', () => {
+        speed = 0;
     });
 
-    nextBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
+    track.addEventListener('mouseleave', () => {
+        speed = 0.8; // Make sure to match the new speed here too
     });
-
-    // Optional: swipe support for mobile
-    let startX = null;
-    track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-    track.addEventListener('touchend', e => {
-        if (startX === null) return;
-        let endX = e.changedTouches[0].clientX;
-        if (endX - startX > 40) prevBtn.click();
-        else if (startX - endX > 40) nextBtn.click();
-        startX = null;
-    });
-
-    // Initialize carousel position
-    updateCarousel();
 });
