@@ -426,6 +426,36 @@ button {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    z-index: 1;
+}
+
+.hero-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%) rotate(25deg);
+  animation: shine 5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  60% {
+    transform: translateX(100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
 }
 
 .hero-btn:hover {
@@ -607,13 +637,13 @@ button {
 }
 
 .about-title {
-    font-size: 2.4rem;
-    font-family: 'Dosis', sans-serif;
-    color: #222;
-    margin-bottom: 1.5rem;
-    text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8rem;
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
-
+DISINI
 /* Update root variables */
 :root {
     --bg-primary: #ffffff;
@@ -697,37 +727,281 @@ button {
     color: var(--about-title);
     text-shadow: 0 0 10px rgba(136, 175, 230, 0.3);
 }
+[data-theme="dark"] .new-section-container h2 {
+    color: var(--about-title);
+    text-shadow: 0 0 10px rgba(136, 175, 230, 0.3);
+}
+[data-theme="dark"] .new-section-container p {
+    color: var(--about-text);
+}
+[data-theme="dark"] .travel-card .title{
+    color: var(--title-color);
+    text-shadow: 0 0 10px rgba(136, 175, 230, 0.3);
+}
+[data-theme="dark"] .grid-item .caption {
+    color: var(--desc-color);
+    text-shadow: 0 0 8px rgba(136, 175, 230, 0.2);
+}
 
 .new-section {
     min-height: 600px;
     width: 90%;
     max-width: 1100px;
     margin: 4rem auto;
-    background: linear-gradient(135deg, #88AFE6, #A9C8F0);
     border-radius: 32px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
     padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.new-section-container {
+.new-section-container {    
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
 }
 
 /* Dark mode styles */
-[data-theme="dark"] .new-section {
-    background: linear-gradient(135deg, #001830, #001220);
-    border: 1px solid rgba(136, 175, 230, 0.1);
-}
-
 /* Responsive styles */
 @media (max-width: 768px) {
     .new-section {
         padding: 2rem 1rem;
         margin: 2rem auto;
     }
+}
+
+.new-section-container h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8rem;
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.new-section-container p {
+  font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    color: var(--desc-color);
+    text-align: center;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  height: 180px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.gallery img.active {
+  width: 360px;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+  z-index: 10;
+  transform: scale(1.02);
+}
+
+/* Description Card */
+.description {
+  max-width: 950px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.06);
+  padding: 25px;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* teks di kiri, gambar di kanan */
+  gap: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--desc-color);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.description.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.desc-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.desc-text p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.desc-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desc-img img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  transition: transform 0.4s ease;
+}
+
+.desc-img img:hover {
+  transform: scale(1.05);
+}
+
+.source {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.75;
+  text-align: center; 
+  font-style: italic;
+}
+.desc-text p{
+    text-align: left;
+}
+
+/* Responsif: kalau layar kecil, teks di atas gambar */
+@media (max-width: 768px) {
+  .description {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .desc-text {
+    text-align: center;
+  }
+}
+/* ===== Travel Potential Section ===== */
+#travel-potential {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh; /* isi full tinggi layar */
+}
+
+.travel-card {
+  width: 90vw;
+  max-width: 1200px;
+  height: auto;               /* ✅ biar menyesuaikan isi */
+  background: var(--about-bg);
+  box-shadow: 0 0 20px var(--card-shadow);
+  border: 3px dashed #2E86C1;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.travel-card::before,
+.travel-card::after {
+  content: "✈";
+  position: absolute;
+  font-size: 1.5rem;
+  color: #2E86C1;
+}
+
+.travel-card::before { top: 10px; right: 15px; }
+.travel-card::after { bottom: 10px; left: 15px; }
+
+.travel-card .title h2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8rem;
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(120px, 1fr); /* tinggi fleksibel */
+  gap: 15px;
+  height: calc(100% - 60px);
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.moving-turtle {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 1;
+  transition: all 2s linear;
+  opacity: 0.6;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.grid-item { display: flex; align-items: center; height: 100%; }
+.grid-item.img-text { flex-direction: row; text-align: left; }
+.grid-item.text-img { flex-direction: row-reverse; text-align: right; }
+.grid-item.full-width { grid-column: span 2; justify-content: center; text-align: center; }
+
+.image-container {
+  width: 30vw; /* fleksibel */
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: clamp(0.6rem, 1vw, 1rem);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.image-placeholder img {
+  width: 100%;    /* lebar penuh */
+  height: auto;   /* tinggi proporsional */
+  display: block; /* hilangkan spasi bawah */
+  object-fit: cover; /* isi container tanpa distorsi */
+}
+
+
+.caption {
+  font-size: clamp(0.7rem, 1vw, 1rem);
+    color: var(--desc-color);
+  font-weight: 500;
+  line-height: 1.4;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.grid-item.img-text .caption { text-align: left; padding-left: 15px; padding-right: 5px; }
+.grid-item.text-img .caption { text-align: right; padding-right: 15px; padding-left: 5px; }
+.grid-item.full-width .caption { text-align: center; padding: 10px 0 0 0; }
+
+
+/* ===== Responsif untuk HP ===== */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .grid-item.full-width { grid-column: span 1; }
 }

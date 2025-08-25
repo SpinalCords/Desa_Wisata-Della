@@ -192,3 +192,61 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', theme);
     });
 });
+
+// ====== Script Asli (Desa Wisata) ======
+// (semua kode navbar, theme toggle, dll tetap ada)
+
+// ====== Script Tambahan untuk Gallery ======
+const images = document.querySelectorAll('.gallery img');
+const descBox = document.getElementById('descBox');
+const descText = document.getElementById('descText');
+const descImg = document.getElementById('descImg');
+const descSource = document.getElementById('descSource');
+
+if (images.length > 0) {
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      images.forEach(i => i.classList.remove('active'));
+      img.classList.add('active');
+
+      descBox.classList.remove('show');
+      descImg.classList.remove('active');
+
+      setTimeout(() => {
+        descText.innerHTML = img.getAttribute('data-desc') + 
+          '<p><strong>Lokasi:</strong> Pantai ...</p>';
+        descImg.src = img.getAttribute('data-img');
+        descSource.textContent = "Source: IG";
+
+        descBox.classList.add('show');
+        setTimeout(() => descImg.classList.add('active'), 100);
+      }, 250);
+    });
+  });
+}
+
+// ===== Travel Potential Turtle Animation =====
+function moveTurtle() {
+  const turtle = document.querySelector('.moving-turtle');
+  const card = document.querySelector('.travel-card');
+  if (!turtle || !card) return;
+
+  const maxX = card.offsetWidth - 60;
+  const maxY = card.offsetHeight - 60;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  turtle.style.left = randomX + 'px';
+  turtle.style.top = randomY + 'px';
+
+  const rotation = Math.random() * 360;
+  turtle.style.transform = `rotate(${rotation}deg)`;
+
+  const nextMove = 2000 + Math.random() * 3000;
+  setTimeout(moveTurtle, nextMove);
+}
+
+window.addEventListener('load', () => {
+  setTimeout(moveTurtle, 1000);
+});

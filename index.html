@@ -1,113 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desa Wisata</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desa Wisata</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-logo">
-            <img src="logo.png" alt="Logo">
-        </div>
-        
-        <div class="nav-links">
-            <div class="dropdown">
-                <button class="dropbtn">Profile</button>
-                <div class="dropdown-content">
-                    <a href="#">About</a>
-                    <a href="#">Home</a>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropbtn">Wisata</button>
-                <div class="dropdown-content">
-                    <a href="#">Tourist Attractive</a>
-                    <a href="#">Travel Potential</a>
-                    <a href="#">Facilities</a>
-                    <a href="#">Rules</a>
-                    <a href="#">Activities</a>
-                </div>
-            </div>
-
-            <a href="#" class="nav-item">Meet Us</a>
-        </div>
-
-        <div class="nav-buttons">
-            <button class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="mobile-menu">
-                <button class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                    <span>Theme</span>
-                </button>
-                <button class="language-toggle">
-                    <i class="fas fa-language"></i>
-                    <span>Language</span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <div class="home-hero">
-        <img src="gambar/destinasi.jpg" alt="Pantai Della" class="hero-bg">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-title">
-                <span class="explore-text fade-in delay-1">" Explore "</span>
-                <h1 class="fade-in delay-2">DELA 1001 OMBAK</h1>
-            </div>
-            <p class="hero-desc fade-in delay-3">
-                <em>Kampung Della, Distrik Selemkai, Kabupaten Tambrauw, Papua Barat Daya.</em>
-            </p>
-            <button class="hero-btn">Get Started</button>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="logo.png" alt="Logo">
     </div>
 
-    <div class="carousel-container">
-        <div class="carousel-track">
-            <img src="gambar/destinasi.jpg" class="carousel-img" alt="Pantai View 1">
-            <img src="gambar/destinasi1.jpg" class="carousel-img" alt="Pantai View 2">
-            <img src="gambar/destiniasi2.jpg" class="carousel-img" alt="Pantai View 3">
-            <img src="gambar/destiniasi3.jpg" class="carousel-img" alt="Pantai View 4">
-            </div>
+    <div class="nav-links">
+      <div class="dropdown">
+        <button class="dropbtn">Profile</button>
+        <div class="dropdown-content">
+          <a href="#">About</a>
+          <a href="#">Home</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Wisata</button>
+        <div class="dropdown-content">
+          <a href="#">Tourist Attractive</a>
+          <a href="#travel-potential">Travel Potential</a>
+          <a href="#">Facilities</a>
+          <a href="#">Rules</a>
+          <a href="#">Activities</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav-item">Meet Us</a>
     </div>
 
-    <!-- About Us Section -->
-    <section class="about-section">
-        <h2 class="about-title">About Us</h2>
-        <div class="about-content">
-            <div class="about-images">
-                <div class="about-img-wrapper parallax-img">
-                    <img src="gambar/destinasi.jpg" alt="Pantai Della 1" class="about-img">
-                </div>
-                <div class="about-img-wrapper parallax-img">
-                    <img src="gambar/destinasi1.jpg" alt="Pantai Della 2" class="about-img">
-                </div>
-            </div>
-            <div class="about-text">
-                <span id="typing-text"></span>
-                <span class="typing-cursor">|</span>
-            </div>
-        </div>
-    </section>
+    <div class="nav-buttons">
+      <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-menu">
+        <button class="theme-toggle">
+          <i class="fas fa-moon"></i>
+          <span>Theme</span>
+        </button>
+        <button class="language-toggle">
+          <i class="fas fa-language"></i>
+          <span>Language</span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- New Section -->
-    <section class="new-section">
-        <div class="new-section-container">
-            <!-- Content will go here -->
-        </div>
-    </section>
+  <!-- Hero -->
+  <div class="home-hero">
+    <img src="gambar/destinasi.jpg" alt="Pantai Della" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-title">
+        <span class="explore-text fade-in delay-1">" Explore "</span>
+        <h1 class="fade-in delay-2">DELA 1001 OMBAK</h1>
+      </div>
+      <p class="hero-desc fade-in delay-3">
+        <em>Kampung Della, Distrik Selemkai, Kabupaten Tambrauw, Papua Barat Daya.</em>
+      </p>
+      <button class="hero-btn">Get Started</button>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="gambar/destinasi.jpg" class="carousel-img" alt="Pantai View 1">
+      <img src="gambar/destinasi1.jpg" class="carousel-img" alt="Pantai View 2">
+      <img src="gambar/destiniasi2.jpg" class="carousel-img" alt="Pantai View 3">
+      <img src="gambar/destiniasi3.jpg" class="carousel-img" alt="Pantai View 4">
+    </div>
+  </div>
+
+  <!-- About Us -->
+  <section class="about-section">
+    <h2 class="about-title">About Us</h2>
+    <div class="about-content">
+      <div class="about-images">
+        <div class="about-img-wrapper parallax-img">
+          <img src="gambar/destinasi.jpg" alt="Pantai Della 1" class="about-img">
+        </div>
+        <div class="about-img-wrapper parallax-img">
+          <img src="gambar/destinasi1.jpg" alt="Pantai Della 2" class="about-img">
+        </div>
+      </div>
+      <div class="about-text">
+        <span id="typing-text"></span>
+        <span class="typing-cursor">|</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tourist Attractive -->
+  <section class="new-section">
+    <div class="new-section-container">
+      <h2>Tourist Attractive</h2>
+      <div class="gallery">
+        <img src="gambar/wisata (1).jpg" alt="Pantai 1" class="active"
+          data-desc="🌊 Pantai Della punya ombak besar setinggi 3–4 meter yang seru untuk surfing 🏄."
+          data-img="gambar/wisata (1).jpg">
+        <img src="gambar/wisata (2).jpg" alt="Pantai 2"
+          data-desc="🐢 Di bulan April–Mei, Pantai Della jadi tempat bertelur penyu belimbing yang langka."
+          data-img="gambar/wisata (2).jpg">
+        <img src="gambar/wisata (3).jpg" alt="Pantai 3"
+          data-desc="🌅 Pantai ini menyuguhkan pasir gelap alami yang bersih dengan panorama luas."
+          data-img="gambar/wisata (3).jpg">
+        <img src="gambar/wisata (4).jpg" alt="Pantai 4"
+          data-desc="⛺ Pantai ini juga cocok untuk camping sambil menikmati sunrise."
+          data-img="gambar/wisata (4).jpg">
+      </div>
+      <p>Klik gambar untuk melihat daya tarik lainnya...</p>
+
+      <div class="description show" id="descBox">
+        <div class="desc-text" id="descText">
+          🌊 Pantai Della punya ombak besar setinggi 3–4 meter yang seru untuk surfing 🏄.
+          <p><strong>Lokasi:</strong> Pantai ...</p>
+        </div>
+        <div class="desc-img">
+          <img id="descImg" src="gambar/wisata (1).jpg" alt="Preview" class="active">
+          <div class="source" id="descSource">Source: IG</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Travel Potential Section -->
+  <section id="travel-potential">
+    <div class="travel-card">
+      <div class="moving-turtle">🐢</div>
+      <div class="title"><h2>Travel Potential</h2></div>
+      <div class="grid-container">
+        <div class="grid-item img-text full-width">
+          <div class="image-container">
+            <div class="image-placeholder ocean">
+              <img src="gambar/images (2).jpeg" alt="">
+              <div class="wave-decoration"></div>
+            </div>
+          </div>
+          <div class="caption">Pulau eksotis yang menawan</div>
+        </div>
+        <div class="grid-item text-img full-width">
+          <div class="image-container">
+            <div class="image-placeholder turtle">
+                <img src="gambar/1449462512.jpg" alt="">
+            </div>
+          </div>
+          <div class="caption">Penyu hijau yang berenang</div>
+        </div>
+        <div class="grid-item img-text full-width">
+          <div class="image-container">
+            <div class="image-placeholder surfing">
+              <img src="gambar/425f2bdc1ed6.jpg" alt="">
+              <div class="wave-decoration"></div>
+            </div>
+          </div>
+          <div class="caption">Surfing spot terbaik tempat internasional</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
