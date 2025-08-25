@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu toggle with smooth animation
     menuToggle.addEventListener('click', function(e) {
         e.stopPropagation();
+        this.classList.toggle('active');
         mobileMenu.classList.toggle('active');
     });
 
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
         if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
             mobileMenu.classList.remove('active');
-            menuToggle.style.transform = 'rotate(0deg)';
+            menuToggle.classList.remove('active'); // Reset hamburger icon
         }
     });
 
@@ -97,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(animate);
     }
 
+    // Remove any background styling
+    track.style.background = 'none';
+    document.querySelector('.carousel-container').style.background = 'none';
+
     // Start animation
     animate();
 
@@ -110,7 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (idx <= aboutText.length) {
             typingTarget.innerHTML = aboutText.slice(0, idx);
             idx++;
-            setTimeout(typeAbout, 18 + Math.random()*40);
+            // Reduced delay: changed from 18+random to 10+random
+            setTimeout(typeAbout, 10 + Math.random() * 20); // Faster typing speed with less random variation
         }
     }
     typeAbout();
@@ -128,5 +134,61 @@ document.addEventListener('DOMContentLoaded', function() {
             const img = this.querySelector('img');
             img.style.transform = '';
         });
+    });
+
+    // Add section sizing functionality
+    function setSectionHeights() {
+        const sections = document.querySelectorAll('section');
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+
+        sections.forEach(section => {
+            // Set minimum height to viewport height
+            section.style.minHeight = `${viewportHeight}px`;
+            // Set maximum width for larger screens
+            section.style.maxWidth = '1920px'; // Standard laptop screen width
+            section.style.margin = '0 auto'; // Center content
+            
+            // Add padding based on viewport size
+            const padding = viewportWidth > 1200 ? '4rem' : '2rem';
+            section.style.padding = padding;
+        });
+    }
+
+    // Initialize section sizes
+    setSectionHeights();
+
+    // Update sizes on window resize
+    window.addEventListener('resize', setSectionHeights);
+
+    // Dark mode toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved user preference, if any, on load of the website
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        }
+    }
+
+    // Toggle theme
+    themeToggle.addEventListener('click', () => {
+        let theme = 'light';
+        
+        if (document.documentElement.getAttribute('data-theme') !== 'dark') {
+            theme = 'dark';
+            themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        } else {
+            theme = 'light';
+            themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+            // Reset button styles to light mode
+            document.querySelector('.hero-btn').style = '';
+        }
+        
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
     });
 });

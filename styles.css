@@ -8,8 +8,10 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -21,6 +23,8 @@ body {
     font-family: 'Raleway', sans-serif;
     position: relative;
     z-index: 1002;
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--card-shadow);
 }
 
 /* Add padding to inner elements instead */
@@ -175,15 +179,45 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    font-size: 1.5rem;
-    z-index: 1001; /* Pastikan tombol bisa diklik */
-    color: white;
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 1001;
 }
 
-.menu-toggle:hover {
-    transform: rotate(90deg);
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 12px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 19px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 26px;
+}
+
+/* Animation for active state */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .mobile-menu {
@@ -244,6 +278,11 @@ body {
     
     .menu-toggle {
         display: block;
+    }
+    
+    section {
+        min-height: auto;
+        padding: 3rem 1rem;
     }
 }
 
@@ -316,7 +355,7 @@ button {
     width: 100%;
     height: 100%;
     display: block;
-    height: 420px;
+    height: 460px;
     filter: brightness(0.85);
 }
 .hero-bg img{
@@ -375,50 +414,39 @@ button {
 
 .hero-btn {
     margin-top: 0.2rem;
-    background: #88AFE6;
+    background: #88AFE6;  /* Restored to original blue */
     color: #222;
     border: none;
-    border-radius: 12px;
-    padding: 0.7em 2.5em;
-    font-size: 1.25rem;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
+    border-radius: 50px;
+    padding: 0.8em 3em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(136, 175, 230, 0.3);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-@keyframes shine {
-    0% {
-        transform: translateX(-100%) skewX(-15deg);
-    }
-    100% {
-        transform: translateX(200%) skewX(-15deg);
-    }
-}
-
-.hero-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -5%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 253, 253, 0.363) 50%
-    );
-    transform: skewX(-25deg);
-    animation: shine 5s infinite;
 }
 
 .hero-btn:hover {
     background: #5c8fd6;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(92, 143, 214, 0.3);
+    box-shadow: 0 8px 25px rgba(136, 175, 230, 0.4);
+}
+
+/* Update dark mode button */
+[data-theme="dark"] .hero-btn {
+    background: #88AFE6;  /* Keep same blue in dark mode */
+    color: #001220;
+    border: none;
+    box-shadow: 0 5px 15px rgba(136, 175, 230, 0.2);
+}
+
+[data-theme="dark"] .hero-btn:hover {
+    background: #5c8fd6;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(136, 175, 230, 0.3);
 }
 
 @media (max-width: 700px) {
@@ -449,6 +477,8 @@ button {
     overflow: hidden;
     border-radius: 15px;
     padding: 10px 0;
+    background: rgba(0, 30, 60, 0.3);
+    border: 1px solid rgba(0, 255, 136, 0.1);
 }
 
 .carousel-track {
@@ -506,26 +536,31 @@ button {
     background: #A9C8F0;
     border-radius: 32px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    margin: 2rem auto;
-    max-width: 1300px;
-    padding: 2.5rem 2rem 2rem 2rem;
+    margin: 4rem auto;
+    max-width: 1100px;
+    width: 90%; /* Add width control */
+    padding: 3rem 2rem;
+    min-height: 600px; /* Fixed height instead of viewport units */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--about-bg);
+    box-shadow: 0 0 20px var(--card-shadow);
 }
 
-.about-title {
-    text-align: center;
-    font-size: 2.8rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    letter-spacing: 1px;
+[data-theme="dark"] .about-section {
+    background: #001220;
+    border: 1px solid rgba(136, 175, 230, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .about-content {
+    max-width: 960px;
+    margin: 0 auto;
     display: flex;
-    gap: 2.5rem;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: flex-start; /* Change from center to flex-start */
+    padding: 1rem;
 }
 
 .about-images {
@@ -544,8 +579,8 @@ button {
 }
 
 .about-img {
-    width: 580px;
-    height: 270px;
+    width: 480px; /* Reduced from 580px */
+    height: 240px; /* Reduced from 270px */
     object-fit: cover;
     display: block;
     transition: transform 0.5s cubic-bezier(.25,.8,.25,1);
@@ -563,47 +598,136 @@ button {
 
 .about-text {
     flex: 1;
-    font-size: 1.40rem;
-    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-family: 'Dosis', sans-serif;
     color: #222;
-    min-width: 320px;
-    max-width: 540px;
-    margin-top: 0.50rem;
-    line-height: 1.7;
-    font-weight: 400;
-    position: relative;
+    line-height: 1.8; /* Increased line height for better readability */
+    text-align: left; /* Changed from justify to left */
+    padding: 1rem;
 }
 
-.typing-cursor {
-    display: inline-block;
+.about-title {
+    font-size: 2.4rem;
+    font-family: 'Dosis', sans-serif;
     color: #222;
-    font-weight: 600;
-    font-size: 1.2em;
-    animation: blink 0.8s steps(1) infinite;
-    margin-left: 2px;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+/* Update root variables */
+:root {
+    --bg-primary: #ffffff;
+    --text-primary: #222222;
+    --nav-bg: #88AFE6;
+    --about-bg: #A9C8F0;
+    --btn-bg: #88AFE6;
+    --btn-color: #222;
+    --title-color: #222;
+    --desc-color: #444;
+    --hero-title: #e6e6e6;
+    --hero-desc: #fffbe7;
 }
 
-@media (max-width: 900px) {
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .about-images {
-        flex-direction: row;
-        gap: 1rem;
-    }
-    .about-img {
-        width: 180px;
-        height: 110px;
-    }
-    .about-text {
-        max-width: 100%;
-        min-width: 0;
-        margin-top: 1.5rem;
+[data-theme="dark"] {
+    --bg-primary: #0a0a0a;
+    --text-primary: #88AFE6;  /* Changed from green to blue */
+    --nav-bg: rgba(0, 30, 60, 0.95);
+    --about-bg: #001220;
+    --btn-bg: #001220;
+    --btn-color: #88AFE6;  /* Changed from green to blue */
+    --title-color: #88AFE6;  /* Changed from green to blue */
+    --desc-color: #ffffff;
+    --hero-title: #88AFE6;  /* Changed from green to blue */
+    --hero-desc: rgba(136, 175, 230, 0.9);  /* Changed from green to blue */
+    --about-text: #ffffff;
+    --about-title: #88AFE6;
+}
+
+/* Update dark mode specific styles */
+[data-theme="dark"] .mobile-menu {
+    background: #001220;
+    border: 1px solid rgba(136, 175, 230, 0.1);  /* Changed from green to blue */
+}
+
+[data-theme="dark"] .mobile-menu button {
+    color: #88AFE6;  /* Changed from green to blue */
+}
+
+[data-theme="dark"] .mobile-menu button:hover {
+    background: rgba(136, 175, 230, 0.1);  /* Changed from green to blue */
+    color: #ffffff;
+}
+
+[data-theme="dark"] .about-img-wrapper {
+    background: #001830;
+    border: 1px solid rgba(136, 175, 230, 0.1);  /* Changed from green to blue */
+}
+
+[data-theme="dark"] .menu-toggle span {
+    background-color: #88AFE6;  /* Changed from green to blue */
+}
+
+[data-theme="dark"] .dropdown-content {
+    background: #001220;
+    border: 1px solid rgba(136, 175, 230, 0.1);  /* Changed from green to blue */
+}
+
+[data-theme="dark"] .dropdown-content a {
+    color: #88AFE6;  /* Changed from green to blue */
+}
+
+[data-theme="dark"] .hero-btn {
+    background: #88AFE6;  /* Keep same blue in dark mode */
+    color: #001220;
+    border: none;
+    box-shadow: 0 5px 15px rgba(136, 175, 230, 0.2);
+}
+
+[data-theme="dark"] .hero-btn:hover {
+    background: #5c8fd6;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(136, 175, 230, 0.3);
+}
+
+[data-theme="dark"] .about-text {
+    color: var(--about-text);
+}
+
+[data-theme="dark"] .about-title {
+    color: var(--about-title);
+    text-shadow: 0 0 10px rgba(136, 175, 230, 0.3);
+}
+
+.new-section {
+    min-height: 600px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 4rem auto;
+    background: linear-gradient(135deg, #88AFE6, #A9C8F0);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-section-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .new-section {
+    background: linear-gradient(135deg, #001830, #001220);
+    border: 1px solid rgba(136, 175, 230, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .new-section {
+        padding: 2rem 1rem;
+        margin: 2rem auto;
     }
 }
