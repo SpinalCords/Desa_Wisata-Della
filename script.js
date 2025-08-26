@@ -237,13 +237,16 @@ function moveTurtle() {
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
+  // pindah pelan ke posisi baru
   turtle.style.left = randomX + 'px';
   turtle.style.top = randomY + 'px';
 
+  // rotasi juga smooth
   const rotation = Math.random() * 360;
   turtle.style.transform = `rotate(${rotation}deg)`;
 
-  const nextMove = 2000 + Math.random() * 3000;
+  // lama gerakan disamakan dengan transition
+  const nextMove = 4000 + Math.random() * 2000;
   setTimeout(moveTurtle, nextMove);
 }
 
