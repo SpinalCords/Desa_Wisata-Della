@@ -253,3 +253,57 @@ function moveTurtle() {
 window.addEventListener('load', () => {
   setTimeout(moveTurtle, 1000);
 });
+// === JS: Animasi Scroll Reveal untuk Rules ===
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".rules-card");
+
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < windowHeight - 50) {
+        card.classList.add("show");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // jalanin pas load awal
+});
+// Footer Scroll Reveal
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    reveals.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 50) {
+        el.classList.add("show");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+});
+
+// Footer Reveal Animation
+document.addEventListener('DOMContentLoaded', function() {
+  const footerSections = document.querySelectorAll('.footer-section');
+  
+  const observerFooter = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        observerFooter.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  footerSections.forEach(section => {
+    observerFooter.observe(section);
+  });
+});
