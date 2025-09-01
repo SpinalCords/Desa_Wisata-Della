@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.remove('active'); // Reset hamburger icon
         }
     });
-
+21
     // Smooth scroll for nav items
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -199,31 +199,131 @@ document.addEventListener('DOMContentLoaded', function() {
 // ====== Script Tambahan untuk Gallery ======
 const images = document.querySelectorAll('.gallery img');
 const descBox = document.getElementById('descBox');
+
+// Hide the description box initially (if exists)
+if (descBox) { descBox.style.display = 'none'; }
 const descText = document.getElementById('descText');
 const descImg = document.getElementById('descImg');
 const descSource = document.getElementById('descSource');
 
-if (images.length > 0) {
-  images.forEach(img => {
+// Create modal for enlarged images
+const modal = document.createElement('div');
+modal.className = 'modal';
+modal.innerHTML = `
+  <img src="" alt="Enlarged image">
+`;
+document.body.appendChild(modal);
+
+// Activate overlay within each gallery item instead of floating text boxes
+function activateGalleryOverlay() {
+  const items = document.querySelectorAll('.gallery-item');
+  items.forEach((item) => {
+    const img = item.querySelector('img');
+    const overlay = item.querySelector('.gallery-overlay');
+    const textEl = overlay.querySelector('.gallery-text');
+    const locEl = overlay.querySelector('.gallery-location');
+
+    // Fill overlay content from data- attributes
+    const desc = img.getAttribute('data-desc') || '';
+    const loc = img.getAttribute('data-location') || '';
+    textEl.textContent = desc;
+    locEl.innerHTML = `<strong>Lokasi:</strong> ${loc}`;
+
+    // Click to activate this item overlay, deactivate others
     img.addEventListener('click', () => {
       images.forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.gallery-item').forEach(it => it.classList.remove('active'));
       img.classList.add('active');
-
-      descBox.classList.remove('show');
-      descImg.classList.remove('active');
-
-      setTimeout(() => {
-        descText.innerHTML = img.getAttribute('data-desc') + 
-          '<p><strong>Lokasi:</strong> Pantai ...</p>';
-        descImg.src = img.getAttribute('data-img');
-        descSource.textContent = "Source: IG";
-
-        descBox.classList.add('show');
-        setTimeout(() => descImg.classList.add('active'), 100);
-      }, 250);
+      item.classList.add('active');
     });
+
+    // Double click to open modal
+    img.addEventListener('dblclick', () => {
+      const modalImg = modal.querySelector('img');
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      modal.classList.add('active');
+    });
+
+    // Learn more button (per-item)
+    const btn = overlay.querySelector('.gallery-learn-more');
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showLearnMoreCard(img);
+      });
+    }
   });
 }
+
+if (images.length > 0) {
+  activateGalleryOverlay();
+  // Start with all images flat; do not activate any by default
+}
+
+// ===== Learn More Card Functionality =====
+// Create the learn more card modal
+const learnMoreCard = document.createElement('div');
+learnMoreCard.className = 'learn-more-card-overlay';
+learnMoreCard.innerHTML = `
+  <div class="learn-more-card">
+    <button class="close-card-btn">&times;</button>
+    <div class="card-image-container">
+      <img src="" alt="Card Image" class="card-image">
+    </div>
+    <div class="card-description">
+      <p></p>
+    </div>
+  </div>
+`;
+document.body.appendChild(learnMoreCard);
+
+// Function to show the learn more card
+function showLearnMoreCard(imgElement) {
+  const cardImage = learnMoreCard.querySelector('.card-image');
+  const cardDesc = learnMoreCard.querySelector('.card-description p');
+
+  // Get image and description from the clicked gallery item
+  const imgSrc = imgElement.src;
+  const imgAlt = imgElement.alt;
+  const description = imgElement.getAttribute('data-desc') || 'Deskripsi tidak tersedia';
+
+  // Set card content
+  cardImage.src = imgSrc;
+  cardImage.alt = imgAlt;
+  cardDesc.textContent = description;
+
+  // Show the card
+  learnMoreCard.classList.add('active');
+}
+
+// Close card when clicking outside or close button
+learnMoreCard.addEventListener('click', (e) => {
+  if (e.target === learnMoreCard || e.target.classList.contains('close-card-btn')) {
+    learnMoreCard.classList.remove('active');
+  }
+});
+
+// Close card with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && learnMoreCard.classList.contains('active')) {
+    learnMoreCard.classList.remove('active');
+  }
+});
+
+// Close modal when clicking outside the image
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('active')) {
+    modal.classList.remove('active');
+  }
+});
 
 // ===== Travel Potential Turtle Animation =====
 function moveTurtle() {
