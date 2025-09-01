@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fasilitas - Desa Wisata Della</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <script src="../script.js"></script>
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span style="font-size: 1.5rem; font-weight: bold; color: white;">Desa Wisata Della</span>
+    </div>
+
+    <div class="nav-links">
+      <div class="dropdown">
+        <button class="dropbtn">Profile</button>
+        <div class="dropdown-content">
+          <a href="#">About</a>
+          <a href="#">Home</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Wisata</button>
+        <div class="dropdown-content">
+          <a href="#">Tourist Attractive</a>
+          <a href="#travel-potential">Travel Potential</a>
+          <a href="#">Facilities</a>
+          <a href="#">Rules</a>
+          <a href="#">Activities</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav-item">Meet Us</a>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-menu">
+        <a href="#facilities" class="mobile-menu-item">
+          <i class="fas fa-umbrella-beach"></i>
+          <span>Our Facilities</span>
+        </a>
+        <a href="#budaya-adat" class="mobile-menu-item">
+          <i class="fas fa-landmark"></i>
+          <span>Budaya Adat</span>
+        </a>
+        <button class="theme-toggle">
+          <i class="fas fa-moon"></i>
+          <span>Theme</span>
+        </button>
+        <button class="language-toggle">
+          <i class="fas fa-language"></i>
+          <span>Language</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="fasilitas-main" style="max-width: 1100px; margin: 3rem auto; padding: 0 1rem;">
+    <h1 class="about-title" style="text-align: center; margin-bottom: 2rem;">Fasilitas</h1>
+    <p style="text-align: center; margin-bottom: 3rem; color: var(--desc-color); font-family: 'Poppins', sans-serif;">
+      Berikut adalah fasilitas yang tersedia di Desa Wisata Della untuk kenyamanan dan pengalaman terbaik Anda selama berkunjung.
+    </p>
+
+    <section class="facility-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img src="../gambar/iseng.png" alt="Kamar Mandi Umum" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Kamar Mandi Umum</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+          Kamar mandi umum yang bersih dan terawat tersedia di beberapa titik strategis desa untuk kenyamanan pengunjung.
+        </p>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">Rp 10.000</p>
+        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+      </article>
+
+      <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img src="../gambar/iseng.png" alt="Homestay" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Homestay</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+          Homestay dengan suasana tradisional dan fasilitas modern untuk memberikan pengalaman menginap yang nyaman dan autentik.
+        </p>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">Rp 150.000 / malam</p>
+        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+      </article>
+
+      <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img src="../gambar/iseng.png" alt="Rumah Adat" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Rumah Adat</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+          Rumah adat yang menjadi simbol budaya dan sejarah desa, terbuka untuk kunjungan dan edukasi budaya.
+        </p>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">0 Rupiah</p>
+        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+      </article>
+
+      <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img src="../gambar/iseng.png" alt="Area Parkir" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Area Parkir</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+          Area parkir yang luas dan aman untuk kendaraan pengunjung, dengan akses mudah ke berbagai titik wisata.
+        </p>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">0 Rupiah</p>
+        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+      </article>
+
+      <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img src="../gambar/iseng.png" alt="Tempat Makan" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Tempat Makan</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+          Berbagai pilihan tempat makan yang menyajikan kuliner lokal dan internasional untuk memanjakan lidah Anda.
+        </p>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">0 Rupiah</p>
+        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+      </article>
+
+      <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif;">
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Area Rekreasi</h2>
+        <p style="font-size: 1rem; line-height: 1.5;">
+          Area rekreasi yang luas dengan fasilitas olahraga dan permainan tradisional untuk segala usia.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer" style="margin-top: 4rem;">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section reveal">
+          <h3>Desa Wisata Della</h3>
+          <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
+          <p>Indonesia</p>
+        </div>
+        <div class="footer-section reveal">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#budaya-adat">Budaya Adat</a></li>
+            <li><a href="#rules">Rules</a></li>
+          </ul>
+        </div>
+        <div class="footer-section reveal">
+          <h4>Contact Info</h4>
+          <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+          <p><i class="fas fa-envelope"></i> info@dellawisata.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> GPS: -1.2345, 130.6789</p>
+        </div>
+        <div class="footer-section reveal">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-wave">&copy; 2024 Desa Wisata Della. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -262,24 +262,41 @@ if (images.length > 0) {
 }
 
 // ===== Learn More Card Functionality =====
-// Create the learn more card modal
-const learnMoreCard = document.createElement('div');
-learnMoreCard.className = 'learn-more-card-overlay';
+// Initialize learnMoreCard overlay once on DOMContentLoaded
+let learnMoreCard;
+
+document.addEventListener('DOMContentLoaded', () => {
+  learnMoreCard = document.querySelector('.learn-more-card-overlay');
+
+  if (!learnMoreCard) {
+    learnMoreCard = document.createElement('div');
+    learnMoreCard.className = 'learn-more-card-overlay';
 learnMoreCard.innerHTML = `
-  <div class="learn-more-card">
-    <button class="close-card-btn">&times;</button>
-    <div class="card-image-container">
-      <img src="" alt="Card Image" class="card-image">
-    </div>
-    <div class="card-description">
-      <p></p>
-    </div>
-  </div>
-`;
-document.body.appendChild(learnMoreCard);
+      <div class="learn-more-card">
+        <button class="close-card-btn"></button>
+        <div class="card-image-container">
+          <img src="" alt="Card Image" class="card-image">
+        </div>
+        <div class="card-description">
+          <p></p>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(learnMoreCard);
+  }
+
+  // Close card when clicking outside or close button
+  learnMoreCard.addEventListener('click', (e) => {
+    if (e.target === learnMoreCard || e.target.classList.contains('close-card-btn')) {
+      learnMoreCard.classList.remove('active');
+    }
+  });
+});
 
 // Function to show the learn more card
 function showLearnMoreCard(imgElement) {
+  if (!learnMoreCard) return;
+
   const cardImage = learnMoreCard.querySelector('.card-image');
   const cardDesc = learnMoreCard.querySelector('.card-description p');
 
@@ -296,13 +313,6 @@ function showLearnMoreCard(imgElement) {
   // Show the card
   learnMoreCard.classList.add('active');
 }
-
-// Close card when clicking outside or close button
-learnMoreCard.addEventListener('click', (e) => {
-  if (e.target === learnMoreCard || e.target.classList.contains('close-card-btn')) {
-    learnMoreCard.classList.remove('active');
-  }
-});
 
 // Close card with Escape key
 document.addEventListener('keydown', (e) => {
