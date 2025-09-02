@@ -5,6 +5,444 @@
     box-sizing: border-box;
 }
 
+/* CSS Variables for themes */
+:root {
+    /* Light theme variables */
+    --bg-primary: #ffffff;
+    --text-primary: #1f2937;
+    --nav-bg: #88AFE6;
+    --about-bg: #f8f9fa;
+    --desc-color: #6c757d;
+    --card-shadow: rgba(0,0,0,0.1);
+    --footer-bg: #f8f9fa;
+    --footer-text: #6c757d;
+}
+
+/* Dark theme variables */
+.dark-theme {
+    --bg-primary: #1a1a1a;
+    --text-primary: #f8f9fa;
+    --nav-bg: #2d3748;
+    --about-bg: #2d3748;
+    --desc-color: #a0aec0;
+    --card-shadow: rgba(0,0,0,0.3);
+    --footer-bg: #2d3748;
+    --footer-text: #a0aec0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* Footer styles */
+.footer {
+  display: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.footer-section.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-section h3 {
+  color: #f8f9fa;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+.footer-section h4 {
+  color: #f8f9fa;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+.footer-section p {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #3b82f6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: #f8f9fa;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #3b82f6;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #374151;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-wave {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+[data-theme="dark"] .footer {
+  background: #242323;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: #88AFE6;
+    box-shadow: 0 2px 10px rgba(136,175,230,0.3);
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    z-index: 1002;
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--card-shadow);
+}
+
+/* Add padding to inner elements instead */
+.nav-logo {
+    padding-left: 2rem;
+    flex: 1;
+}
+
+.nav-logo img {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+.dropbtn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.dropbtn:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    opacity: 0;
+    z-index: 1100;
+}
+
+.dropdown-content a {
+    color: #88AFE6;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.dropdown-content a:hover {
+    background-color: #88AFE6;
+    color: white;
+    padding-left: 24px;
+    z-index: 2;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 1;
+}
+
+.nav-buttons {
+    padding-right: 2rem;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    align-items: center;
+    margin-left: auto; /* Memastikan posisi di kanan */
+}
+
+.nav-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 12px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 19px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 26px;
+}
+
+/* Animation for active state */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px; /* Sesuaikan dengan tinggi navbar */
+    background-color: white;
+    border-radius: 8px;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    min-width: 200px;
+    z-index: 1000; /* Pastikan menu muncul di atas konten lain */
+}
+
+.mobile-menu.active {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-menu a,
+.mobile-menu button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #88AFE6;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mobile-menu a:hover,
+.mobile-menu button:hover {
+    background-color: #88AFE6;
+    color: white;
+    padding-left: 24px;
+}
+
+.mobile-menu a span,
+.mobile-menu button span {
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.nav-buttons {
+    position: relative; /* Penting untuk positioning mobile-menu */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    section {
+        min-height: auto;
+        padding: 3rem 1rem;
+    }
+}
+
 /* Add styles for logo container */
 .logo-container {
     display: flex;
@@ -382,7 +820,4 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Add smooth transition for card background */
-.group {
-  transition: background-color 0.3s ease;
-}
+
