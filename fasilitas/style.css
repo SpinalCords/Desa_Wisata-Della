@@ -5,29 +5,31 @@
     box-sizing: border-box;
 }
 
-/* CSS Variables for themes */
+/* CSS Variables for themes - consistent with main styles.css */
 :root {
-    /* Light theme variables */
     --bg-primary: #ffffff;
-    --text-primary: #1f2937;
+    --text-primary: #222222;
     --nav-bg: #88AFE6;
-    --about-bg: #f8f9fa;
-    --desc-color: #6c757d;
-    --card-shadow: rgba(0,0,0,0.1);
-    --footer-bg: #f8f9fa;
-    --footer-text: #6c757d;
+    --about-bg: #A9C8F0;
+    --btn-bg: #88AFE6;
+    --btn-color: #222;
+    --title-color: #222;
+    --desc-color: #444;
+    --hero-title: #e6e6e6;
+    --hero-desc: #fffbe7;
 }
 
-/* Dark theme variables */
-.dark-theme {
-    --bg-primary: #1a1a1a;
-    --text-primary: #f8f9fa;
-    --nav-bg: #2d3748;
-    --about-bg: #2d3748;
-    --desc-color: #a0aec0;
-    --card-shadow: rgba(0,0,0,0.3);
-    --footer-bg: #2d3748;
-    --footer-text: #a0aec0;
+[data-theme="dark"] {
+    --bg-primary: #0a0a0a;
+    --text-primary: #88AFE6;
+    --nav-bg: rgba(0, 30, 60, 0.95);
+    --about-bg: #001220;
+    --btn-bg: #001220;
+    --btn-color: #88AFE6;
+    --title-color: #88AFE6;
+    --desc-color: #ffffff;
+    --hero-title: #88AFE6;
+    --hero-desc: rgba(136, 175, 230, 0.9);
 }
 
 body {
@@ -40,7 +42,12 @@ body {
 
 /* Footer styles */
 .footer {
-  display: none;
+  background-color: #1a1a1a;
+  color: #f8f9fa;
+  padding: 4rem 0 2rem;
+  position: relative;
+  margin-top: 4rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-container {
@@ -128,18 +135,6 @@ body {
 }
 
 .footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid #374151;
-  color: #94a3b8;
-  font-size: 0.9rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.footer-wave {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #94a3b8;
 }
 
 /* Responsive Footer */
