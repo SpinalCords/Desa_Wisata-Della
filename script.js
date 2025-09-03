@@ -365,7 +365,7 @@ window.addEventListener('load', () => {
 });
 // === JS: Animasi Scroll Reveal untuk Rules ===
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".rules-card");
+  const cards = document.querySelectorAll(".rules-card, .activity-card");
 
   const revealOnScroll = () => {
     const windowHeight = window.innerHeight;

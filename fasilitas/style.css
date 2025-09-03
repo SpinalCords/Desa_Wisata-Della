@@ -425,18 +425,30 @@ body {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
+  /* Navbar */
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
+  .nav-logo { padding-left: 1rem; }
+  .nav-buttons { padding-right: 1rem; }
 
-    .menu-toggle {
-        display: block;
-    }
+  /* Generic section */
+  section { min-height: auto; padding: 2rem 1rem; }
 
-    section {
-        min-height: auto;
-        padding: 3rem 1rem;
-    }
+  /* Facility list grid */
+  .facility-list { grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .facility-card { padding: 1rem !important; }
+
+  /* Titles */
+  .about-title { font-size: 2rem; }
+
+  /* Footer */
+  .footer-content { grid-template-columns: 1fr; }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .about-title { font-size: 1.75rem; }
+  .btn-pesan { padding: 0.5rem 1.25rem; }
 }
 
 /* Add styles for logo container */
