@@ -1257,6 +1257,469 @@ button {
   transform: translateY(0);
 }
 
+/* === CSS untuk Contact Section === */
+.contact-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #88AFE6, #fff);
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  margin: 4rem auto;
+}
+.contact-form small{
+  color:  #88AFE6;
+}
+.contact-form p{
+  color:  #88AFE6; 
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2E86C1;
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+}
+
+.contact-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #2E86C1;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info, .contact-form {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover, .contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.contact-info h3, .contact-form h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2E86C1;
+  font-family: 'Raleway', sans-serif;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.contact-item:hover {
+  background: #e9ecef;
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  color: #88AFE6;
+  margin-top: 5px;
+}
+
+.contact-item div {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.contact-item strong {
+  color: #2E86C1;
+}
+
+/* Contact Form Styles */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #88AFE6;
+  box-shadow: 0 0 0 3px rgba(136, 175, 230, 0.1);
+}
+
+.submit-btn {
+  background: #88AFE6;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn:hover {
+  background: #5c8fd6;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(136, 175, 230, 0.3);
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 18px 36px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  font-family: 'Poppins', sans-serif;
+  justify-content: center; /* Center horizontally */
+  margin: 25px auto 10px auto; /* Center horizontally with margin */
+  display: block; /* Make button block for centering */
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+}
+
+.whatsapp-btn:hover,
+.whatsapp-btn:focus {
+  background: #128c7e;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+  outline: none;
+}
+
+.whatsapp-btn i {
+  font-size: 1.4rem;
+}
+
+.contact-note {
+  margin-top: 20px;
+  font-size: 1.05rem; /* Slightly larger font */
+  color: #88AFE6; /* Changed to match the heading color */
+  font-style: italic;
+  line-height: 1.5; /* Improved line height */
+  text-align: center; /* Center text */
+  max-width: 340px; /* Limit width for readability */
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hubungi Kami container improvements */
+.contact-form {
+  padding: 35px 30px 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  background: #fefefe;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+}
+
+.contact-form h3 {
+  font-size: 2rem;
+  color: #2E86C1;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-form p {
+  font-size: 1.15rem;
+  color: #2E86C1; /* Changed to match the heading color */
+  max-width: 420px;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Hubungi Kami container improvements */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  padding: 40px 30px;
+}
+
+/* Paragraph inside Hubungi Kami */
+.contact-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color:  #88AFE6;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 30px 20px;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .whatsapp-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+/* === CSS untuk Location Section === */
+.location-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #A9C8F0, #fff);
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  margin: 4rem auto;
+}
+
+.location-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2E86C1;
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+}
+
+.location-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #2E86C1;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+.location-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 10px;
+}
+
+.map-container iframe {
+  border-radius: 10px;
+  width: 100%;
+  height: 400px;
+}
+
+.location-details {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.location-details h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2E86C1;
+  font-family: 'Raleway', sans-serif;
+}
+
+.location-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.location-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.location-item:hover {
+  background: #e9ecef;
+}
+
+.location-item i {
+  font-size: 1.5rem;
+  color: #88AFE6;
+  margin-top: 5px;
+}
+
+.location-item div {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.location-item strong {
+  color: #2E86C1;
+}
+
+/* Dark mode styles for contact and location sections */
+[data-theme="dark"] .contact-section,
+[data-theme="dark"] .location-section {
+  background: linear-gradient(135deg, #001220, rgba(136, 175, 230, 0.1));
+  border: 1px solid rgba(136, 175, 230, 0.1);
+}
+
+[data-theme="dark"] .contact-info,
+[data-theme="dark"] .contact-form,
+[data-theme="dark"] .location-details,
+[data-theme="dark"] .map-container {
+  background: #001830;
+  border: 1px solid rgba(136, 175, 230, 0.1);
+}
+
+[data-theme="dark"] .contact-item,
+[data-theme="dark"] .location-item {
+  background: #002040;
+  border: 1px solid rgba(136, 175, 230, 0.1);
+}
+
+[data-theme="dark"] .contact-item:hover,
+[data-theme="dark"] .location-item:hover {
+  background: #003060;
+}
+
+[data-theme="dark"] .contact-title,
+[data-theme="dark"] .location-title,
+[data-theme="dark"] .contact-info h3,
+[data-theme="dark"] .contact-form h3,
+[data-theme="dark"] .location-details h3 {
+  color: #88AFE6;
+}
+
+[data-theme="dark"] .contact-item strong,
+[data-theme="dark"] .location-item strong {
+  color: #88AFE6;
+}
+
+[data-theme="dark"] .form-group label {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+  background: #002040;
+  border-color: rgba(136, 175, 230, 0.3);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  border-color: #88AFE6;
+  box-shadow: 0 0 0 3px rgba(136, 175, 230, 0.2);
+}
+
+/* Responsive styles for contact and location sections */
+@media (max-width: 768px) {
+  .contact-section,
+  .location-section {
+    width: 95%;
+    padding: 40px 15px;
+    margin: 2rem auto;
+  }
+
+  .contact-container,
+  .location-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-title,
+  .location-title {
+    font-size: 2rem;
+  }
+
+  .contact-info,
+  .contact-form,
+  .location-details {
+    padding: 20px;
+  }
+
+  .location-info {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+}
+
 /* Wave animation di footer bottom */
 .footer-wave {
   display: inline-block;
