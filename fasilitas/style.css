@@ -35,19 +35,28 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-primary);
     color: var(--text-primary);
     transition: all 0.3s ease;
 }
-
+.container{
+    /* Removed background image as per user request */
+    /* background-image: url('../images/bg-fasilitas.png'); */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
 /* Footer styles */
 .footer {
-  background-color: #1a1a1a;
-  color: #f8f9fa;
+  background: #6e9dbd;
+  color: #fff;
   padding: 4rem 0 2rem;
   position: relative;
   margin-top: 4rem;
-  font-family: 'Poppins', sans-serif;
 }
 
 .footer-container {
@@ -57,18 +66,16 @@ body {
 }
 
 .footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
 .footer-section {
-  flex: 1 1 200px;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s ease;
+  transition: all 0.8s ease;
 }
 
 .footer-section.reveal {
@@ -77,26 +84,23 @@ body {
 }
 
 .footer-section h3 {
-  color: #f8f9fa;
+  color: #254546;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   font-family: 'Raleway', sans-serif;
-  font-weight: 700;
 }
 
 .footer-section h4 {
-  color: #f8f9fa;
+  color: #254546;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   font-family: 'Raleway', sans-serif;
-  font-weight: 600;
 }
 
 .footer-section p {
   margin-bottom: 0.8rem;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #cbd5e1;
 }
 
 .footer-section ul {
@@ -109,13 +113,13 @@ body {
 }
 
 .footer-section ul li a {
-  color: #60a5fa;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-  color: #3b82f6;
+  color: #88AFE6;
 }
 
 .social-links {
@@ -125,13 +129,13 @@ body {
 }
 
 .social-links a {
-  color: #f8f9fa;
+  color: #fff;
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #3b82f6;
+  color: #88AFE6;
 }
 
 /* Responsive Footer */
@@ -810,6 +814,37 @@ body {
 
 .btn-pesan:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* About title style for fasilitas page */
+.about-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8rem;
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Ripple effect styles */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+button {
+    position: relative;
+    overflow: hidden;
 }
 
 
