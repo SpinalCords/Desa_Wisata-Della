@@ -10,536 +10,580 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-logo">
-      <img src="logo.png" alt="Logo">
-    </div>
-
-    <div class="nav-links">
-      <div class="dropdown">
-        <button class="dropbtn">Profile</button>
-        <div class="dropdown-content">
-          <a href="#">About</a>
-          <a href="#">Home</a>
-        </div>
+  <body>
+    <!-- Navbar --><nav class="navbar">
+      <div class="nav-logo">
+        <img src="logo.png" alt="Logo">
       </div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Wisata</button>
-        <div class="dropdown-content">
-          <a href="#">Tourist Attractive</a>
-          <a href="#travel-potential">Travel Potential</a>
-          <a href="/fasilitas/index.html">Facilities</a>
-          <a href="#activities">Activities</a>
-          <a href="#rules">Rules</a>
+      <div class="nav-links">
+        <div class="dropdown">
+          <button class="dropbtn" data-i18n="profile">Profile</button>
+          <div class="dropdown-content">
+            <a href="#" data-i18n="about">About</a>
+            <a href="#" data-i18n="home">Home</a>
+          </div>
         </div>
+
+        <div class="dropdown">
+          <button class="dropbtn" data-i18n="wisata">Wisata</button>
+          <div class="dropdown-content">
+            <a href="#" data-i18n="touristAttractive">Tourist Attractive</a>
+            <a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a>
+            <a href="/fasilitas/index.html" data-i18n="facilities">Facilities</a>
+            <a href="#activities" data-i18n="activities">Activities</a>
+            <a href="#rules" data-i18n="rules">Rules</a>
+          </div>
+        </div>
+
+        <a href="#" class="nav-item" data-i18n="meetUs">Meet Us</a>
       </div>
 
-      <a href="#" class="nav-item">Meet Us</a>
-    </div>
-
-    <div class="nav-buttons">
-      <button class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="mobile-menu">
-        <a href="/fasilitas/index.html" class="mobile-menu-item">
-          <i class="fas fa-umbrella-beach"></i>
-          <span>Our Facilities</span>
-        </a>
-        <a href="#budaya-adat" class="mobile-menu-item">
-          <i class="fas fa-landmark"></i>
-          <span>Budaya Adat</span>
-        </a>
-        <button class="theme-toggle">
-          <i class="fas fa-moon"></i>
-          <span>Theme</span>
+      <div class="nav-buttons">
+        <button class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-        <button class="language-toggle">
-          <i class="fas fa-language"></i>
-          <span>Language</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <div class="home-hero">
-    <img src="gambar/destinasi.jpg" alt="Pantai Della" class="hero-bg">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-title">
-        <span class="explore-text fade-in delay-1">" Explore "</span>
-        <h1 class="fade-in delay-2">DELA 1001 OMBAK</h1>
-      </div>
-      <p class="hero-desc fade-in delay-3">
-        <em>Kampung Della, Distrik Selemkai, Kabupaten Tambrauw, Papua Barat Daya.</em>
-      </p>
-      <button class="hero-btn">Get Started</button>
-    </div>
-  </div>
-
-  <!-- Carousel -->
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <img src="gambar/destinasi.jpg" class="carousel-img" alt="Pantai View 1">
-      <img src="gambar/destinasi1.jpg" class="carousel-img" alt="Pantai View 2">
-      <img src="gambar/destinasi2.jpg" class="carousel-img" alt="Pantai View 3">
-      <img src="gambar/destinasi3.jpg" class="carousel-img" alt="Pantai View 4">
-    </div>
-  </div>
-
-  <!-- About Us -->
-  <section class="about-section">
-    <h2 class="about-title">About Us</h2>
-    <div class="about-content">
-      <div class="about-images">
-        <div class="about-img-wrapper parallax-img">
-          <img src="gambar/destinasi.jpg" alt="Pantai Della 1" class="about-img">
-        </div>
-        <div class="about-img-wrapper parallax-img">
-          <img src="gambar/destinasi1.jpg" alt="Pantai Della 2" class="about-img">
+        <div class="mobile-menu">
+          <a href="/fasilitas/index.html" class="mobile-menu-item">
+            <i class="fas fa-umbrella-beach"></i>
+            <span data-i18n="ourFacilities">Our Facilities</span>
+          </a>
+          <a href="#budaya-adat" class="mobile-menu-item">
+            <i class="fas fa-landmark"></i>
+            <span data-i18n="budayaAdat">Budaya Adat</span>
+          </a>
+          <button class="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <span data-i18n="theme">Theme</span>
+          </button>
+          <button class="language-toggle">
+            <i class="fas fa-language"></i>
+            <span data-i18n="language">Language</span>
+          </button>
         </div>
       </div>
-      <div class="about-text">
-        <span id="typing-text"></span>
-        <span class="typing-cursor">|</span>
+    </nav>
+
+    <!-- Hero -->
+    <div class="home-hero">
+      <img src="gambar/destinasi.jpg" alt="Pantai Della" class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-title">
+          <span class="explore-text fade-in delay-1" data-i18n="explore">" Explore "</span>
+          <h1 class="fade-in delay-2" data-i18n="heroTitle">DELA 1001 OMBAK</h1>
+        </div>
+        <p class="hero-desc fade-in delay-3">
+          <em data-i18n="heroLocation">Kampung Della, Distrik Selemkai, Kabupaten Tambrauw, Papua Barat Daya.</em>
+        </p>
+        <button class="hero-btn" data-i18n="getStarted">Get Started</button>
       </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <img src="gambar/destinasi.jpg" class="carousel-img" alt="Pantai View 1">
+        <img src="gambar/destinasi1.jpg" class="carousel-img" alt="Pantai View 2">
+        <img src="gambar/destinasi2.jpg" class="carousel-img" alt="Pantai View 3">
+        <img src="gambar/destinasi3.jpg" class="carousel-img" alt="Pantai View 4">
+      </div>
+    </div>
+
+    <!-- About Us -->
+    <section class="about-section">
+      <h2 class="about-title" data-i18n="aboutUs">About Us</h2>
+      <div class="about-content">
+        <div class="about-images">
+          <div class="about-img-wrapper parallax-img">
+            <img src="gambar/destinasi.jpg" alt="Pantai Della 1" class="about-img">
+          </div>
+          <div class="about-img-wrapper parallax-img">
+            <img src="gambar/destinasi1.jpg" alt="Pantai Della 2" class="about-img">
+          </div>
+        </div>
+        <div class="about-text">
+          <span id="typing-text"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tourist Attractive -->
+  <section class="new-section">
+    <div class="new-section-container">
+      <h2 data-i18n="touristAttractiveTitle">Tourist Attractive</h2>
+      <p data-i18n="touristAttractiveDesc">Klik gambar untuk melihat daya tarik lainnya...</p>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="gambar/wisata (1).jpg" alt="Pantai 1"
+              data-desc="🌊 Pantai Della punya ombak besar setinggi 3–4 meter yang seru untuk surfing 🏄."
+              data-location="Pantai Della, Papua Barat Daya"
+              data-img="gambar/wisata (1).jpg">
+          <div class="gallery-overlay">
+            <div class="gallery-text" data-i18n="surfDesc">🌊 Pantai Della punya ombak besar setinggi 3–4 meter yang seru untuk surfing 🏄.</div>
+            <p class="gallery-location"><strong data-i18n="location">Lokasi:</strong> Pantai Della, Papua Barat Daya</p>
+            <button class="gallery-learn-more" data-i18n="getStarted">Learn More</button>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="gambar/wisata (2).jpg" alt="Pantai 2"
+              data-desc="🐢 Di bulan April–Mei, Pantai Della jadi tempat bertelur penyu belimbing yang langka."
+              data-location="Pantai Della, Papua Barat Daya"
+              data-img="gambar/wisata (2).jpg">
+          <div class="gallery-overlay">
+            <div class="gallery-text" data-i18n="turtleDesc">🐢 Di bulan April–Mei, Pantai Della jadi tempat bertelur penyu belimbing yang langka.</div>
+            <p class="gallery-location"><strong data-i18n="location">Lokasi:</strong> Pantai Della, Papua Barat Daya</p>
+            <button class="gallery-learn-more" data-i18n="getStarted">Learn More</button>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="gambar/wisata (3).jpg" alt="Pantai 3"
+              data-desc="🌅 Pantai ini menyuguhkan pasir gelap alami yang bersih dengan panorama luas."
+              data-location="Pantai Della, Papua Barat Daya"
+              data-img="gambar/wisata (3).jpg">
+          <div class="gallery-overlay">
+            <div class="gallery-text" data-i18n="sandDesc">🌅 Pantai ini menyuguhkan pasir gelap alami yang bersih dengan panorama luas.</div>
+            <p class="gallery-location"><strong data-i18n="location">Lokasi:</strong> Pantai Della, Papua Barat Daya</p>
+            <button class="gallery-learn-more" data-i18n="getStarted">Learn More</button>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="gambar/wisata (4).jpg" alt="Pantai 4"
+              data-desc="⛺ Pantai ini juga cocok untuk camping sambil menikmati sunrise."
+              data-location="Pantai Della, Papua Barat Daya"
+              data-img="gambar/wisata (4).jpg">
+          <div class="gallery-overlay">
+            <div class="gallery-text" data-i18n="campDesc">⛺ Pantai ini juga cocok untuk camping sambil menikmati sunrise.</div>
+            <p class="gallery-location"><strong data-i18n="location">Lokasi:</strong> Pantai Della, Papua Barat Daya</p>
+            <button class="gallery-learn-more" data-i18n="getStarted">Learn More</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Tourist Attractive -->
-<section class="new-section">
-  <div class="new-section-container">
-    <h2>Tourist Attractive</h2>
-    <p>Klik gambar untuk melihat daya tarik lainnya...</p>
-
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="gambar/wisata (1).jpg" alt="Pantai 1"
-             data-desc="🌊 Pantai Della punya ombak besar setinggi 3–4 meter yang seru untuk surfing 🏄."
-             data-location="Pantai Della, Papua Barat Daya"
-             data-img="gambar/wisata (1).jpg">
-        <div class="gallery-overlay">
-          <div class="gallery-text">🌊 Pantai Della punya ombak besar setinggi 3–4 meter yang seru untuk surfing 🏄.</div>
-          <p class="gallery-location"><strong>Lokasi:</strong> Pantai Della, Papua Barat Daya</p>
-          <button class="gallery-learn-more">Learn More</button>
+    <!-- ✅ Travel Potential Section -->
+    <section id="travel-potential">
+      <div class="travel-card">
+        <div class="moving-turtle">🐢</div>
+        <div class="title"><h2 data-i18n="travelPotentialTitle">Travel Potential</h2></div>
+        <div class="grid-container">
+          <div class="grid-item img-text full-width">
+            <div class="image-container">
+              <div class="image-placeholder ocean">
+                <img src="gambar/images (2).jpeg" alt="">
+                <div class="wave-decoration"></div>
+              </div>
+            </div>
+            <div class="caption" data-i18n="exoticIsland">Pulau eksotis yang menawan</div>
+          </div>
+          <div class="grid-item text-img full-width">
+            <div class="image-container">
+              <div class="image-placeholder turtle">
+                  <img src="gambar/1449462512.jpg" alt="">
+              </div>
+            </div>
+            <div class="caption" data-i18n="greenTurtle">Penyu hijau yang berenang</div>
+          </div>
+          <div class="grid-item img-text full-width">
+            <div class="image-container">
+              <div class="image-placeholder surfing">
+                <img src="gambar/425f2bdc1ed6.jpg" alt="">
+                <div class="wave-decoration"></div>
+              </div>
+            </div>
+            <div class="caption" data-i18n="surfingSpot">Surfing spot terbaik tempat internasional</div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="gallery-item">
-        <img src="gambar/wisata (2).jpg" alt="Pantai 2"
-             data-desc="🐢 Di bulan April–Mei, Pantai Della jadi tempat bertelur penyu belimbing yang langka."
-             data-location="Pantai Della, Papua Barat Daya"
-             data-img="gambar/wisata (2).jpg">
-        <div class="gallery-overlay">
-          <div class="gallery-text">🐢 Di bulan April–Mei, Pantai Della jadi tempat bertelur penyu belimbing yang langka.</div>
-          <p class="gallery-location"><strong>Lokasi:</strong> Pantai Della, Papua Barat Daya</p>
-          <button class="gallery-learn-more">Learn More</button>
-        </div>
-      </div>
+    <!-- Activities Section -->
+    <section id="activities" class="activities-section">
+      <div class="container">
+        <h2 class="activities-title" data-i18n="activities">Activities</h2>
+        <p class="activities-subtitle" data-i18n="activitiesSubtitle">Seru-seruan di Dela 1001 Ombak! Pilih aktivitas favoritmu.</p>
 
-      <div class="gallery-item">
-        <img src="gambar/wisata (3).jpg" alt="Pantai 3"
-             data-desc="🌅 Pantai ini menyuguhkan pasir gelap alami yang bersih dengan panorama luas."
-             data-location="Pantai Della, Papua Barat Daya"
-             data-img="gambar/wisata (3).jpg">
-        <div class="gallery-overlay">
-          <div class="gallery-text">🌅 Pantai ini menyuguhkan pasir gelap alami yang bersih dengan panorama luas.</div>
-          <p class="gallery-location"><strong>Lokasi:</strong> Pantai Della, Papua Barat Daya</p>
-          <button class="gallery-learn-more">Learn More</button>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="gambar/wisata (4).jpg" alt="Pantai 4"
-             data-desc="⛺ Pantai ini juga cocok untuk camping sambil menikmati sunrise."
-             data-location="Pantai Della, Papua Barat Daya"
-             data-img="gambar/wisata (4).jpg">
-        <div class="gallery-overlay">
-          <div class="gallery-text">⛺ Pantai ini juga cocok untuk camping sambil menikmati sunrise.</div>
-          <p class="gallery-location"><strong>Lokasi:</strong> Pantai Della, Papua Barat Daya</p>
-          <button class="gallery-learn-more">Learn More</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- ✅ Travel Potential Section -->
-  <section id="travel-potential">
-    <div class="travel-card">
-      <div class="moving-turtle">🐢</div>
-      <div class="title"><h2>Travel Potential</h2></div>
-      <div class="grid-container">
-        <div class="grid-item img-text full-width">
-          <div class="image-container">
-            <div class="image-placeholder ocean">
-              <img src="gambar/images (2).jpeg" alt="">
-              <div class="wave-decoration"></div>
+        <div class="activities-grid">
+          <!-- Surfing -->
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="gambar/wisata (4).jpg" alt="Surfing di ombak besar" />
+            </div>
+            <div class="activity-content">
+              <h3 data-i18n="surfing">Surfing</h3>
+              <p data-i18n="surfingDesc">Rasakan sensasi ombak setinggi 3–4 meter, cocok untuk pemula hingga pro.</p>
+              <ul>
+                <li data-i18n="bestSeason">Musim terbaik: Juni–September</li>
+                <li data-i18n="boardRental">Sewa papan tersedia</li>
+                <li data-i18n="localGuide">Panduan lokal berpengalaman</li>
+              </ul>
             </div>
           </div>
-          <div class="caption">Pulau eksotis yang menawan</div>
-        </div>
-        <div class="grid-item text-img full-width">
-          <div class="image-container">
-            <div class="image-placeholder turtle">
-                <img src="gambar/1449462512.jpg" alt="">
+
+          <!-- Turtle Watching -->
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="gambar/wisata (2).jpg" alt="Melihat penyu bertelur" />
+            </div>
+            <div class="activity-content">
+              <h3 data-i18n="turtleWatching">Turtle Watching</h3>
+              <p data-i18n="turtleWatchingDesc">Momen langka menyaksikan penyu belimbing bertelur di pantai.</p>
+              <ul>
+                <li data-i18n="time">Waktu: April–Mei (malam hari)</li>
+                <li data-i18n="conservation">Didampingi petugas konservasi</li>
+                <li data-i18n="noFlash">Tanpa flash & sentuhan</li>
+              </ul>
             </div>
           </div>
-          <div class="caption">Penyu hijau yang berenang</div>
-        </div>
-        <div class="grid-item img-text full-width">
-          <div class="image-container">
-            <div class="image-placeholder surfing">
-              <img src="gambar/425f2bdc1ed6.jpg" alt="">
-              <div class="wave-decoration"></div>
+
+          <!-- Camping -->
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="gambar/wisata (3).jpg" alt="Camping di tepi pantai" />
+            </div>
+            <div class="activity-content">
+              <h3 data-i18n="camping">Camping</h3>
+              <p data-i18n="campingDesc">Nikmati sunrise dan suasana pantai yang tenang saat bermalam.</p>
+              <ul>
+                <li data-i18n="openArea">Area lapang dekat pos jaga</li>
+                <li data-i18n="tentRental">Sewa tenda & matras</li>
+                <li data-i18n="bonfire">Api unggun sesuai aturan</li>
+              </ul>
             </div>
           </div>
-          <div class="caption">Surfing spot terbaik tempat internasional</div>
+
+          <!-- Snorkeling -->
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="gambar/wisata (6).jpg" alt="Snorkeling di perairan jernih" />
+            </div>
+            <div class="activity-content">
+              <h3 data-i18n="snorkeling">Snorkeling</h3>
+              <p data-i18n="snorkelingDesc">Air laut yang jernih dengan biota laut yang beragam.</p>
+              <ul>
+                <li data-i18n="equipment">Peralatan tersedia</li>
+                <li data-i18n="certifiedGuide">Guide bersertifikat</li>
+                <li data-i18n="beginnerFriendly">Lokasi ramah pemula</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Kuliner UMKM -->
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="gambar/wisata (7).jpg" alt="Kuliner UMKM lokal" />
+            </div>
+            <div class="activity-content">
+              <h3 data-i18n="umkm">Kuliner UMKM</h3>
+              <p data-i18n="umkmDesc">Cicipi kuliner khas Papua dan dukung UMKM lokal.</p>
+              <ul>
+                <li data-i18n="grilledFish">Ikan bakar segar</li>
+                <li data-i18n="sagoCoconut">Olahan sagu & kelapa</li>
+                <li data-i18n="localCoffee">Kopi lokal</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Jelajah Budaya -->
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="gambar/wisata (8).jpg" alt="Jelajah budaya lokal" />
+            </div>
+            <div class="activity-content">
+              <h3 data-i18n="culture">Jelajah Budaya</h3>
+              <p data-i18n="cultureDesc">Belajar adat, tarian, dan kerajinan dari masyarakat setempat.</p>
+              <ul>
+                <li data-i18n="educationalVisit">Kunjungan edukatif</li>
+                <li data-i18n="craftWorkshop">Workshop kerajinan</li>
+                <li data-i18n="villageTour">Tur desa bersama pemandu</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="activities-note">
+          <p><strong data-i18n="activitiesNote">Catatan:</strong> <span data-i18n="activitiesNote">Beberapa aktivitas memerlukan reservasi. Hubungi kami melalui WhatsApp pada bagian Kontak.</span></p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Activities Section -->
-  <section id="activities" class="activities-section">
+    <script src="translations.js"></script>
+    <script>
+    // Language toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const langBtn = document.querySelector('.language-toggle');
+      let currentLang = localStorage.getItem('lang') || 'id';
+
+      function setLang(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+
+        // Update all elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+          }
+        });
+
+        // Update typing effect for About section
+        const typingTarget = document.getElementById('typing-text');
+        if (typingTarget && translations[lang].aboutTyping) {
+          typingTarget.innerHTML = '';
+          let idx = 0;
+          function typeAbout() {
+            if (idx <= translations[lang].aboutTyping.length) {
+              typingTarget.innerHTML = translations[lang].aboutTyping.slice(0, idx);
+              idx++;
+              setTimeout(typeAbout, 10 + Math.random() * 20);
+            }
+          }
+          typeAbout();
+        }
+      }
+
+      // Cycle language: id -> en -> zh -> id ...
+      langBtn.addEventListener('click', function() {
+        const langs = ['id', 'en', 'zh'];
+        let idx = langs.indexOf(currentLang);
+        idx = (idx + 1) % langs.length;
+        setLang(langs[idx]);
+      });
+
+      // Set initial language
+      setLang(currentLang);
+    });
+    </script>
+    <script src="script.js"></script>
+
+    <!-- Rules Section -->
+  <section id="rules" class="rules-section">
     <div class="container">
-      <h2 class="activities-title">Activities</h2>
-      <p class="activities-subtitle">Seru-seruan di Dela 1001 Ombak! Pilih aktivitas favoritmu.</p>
-
-      <div class="activities-grid">
-        <!-- Surfing -->
-        <div class="activity-card">
-          <div class="activity-image">
-            <img src="gambar/wisata (4).jpg" alt="Surfing di ombak besar" />
-          </div>
-          <div class="activity-content">
-            <h3>Surfing</h3>
-            <p>Rasakan sensasi ombak setinggi 3–4 meter, cocok untuk pemula hingga pro.</p>
+      <h2 class="rules-title" data-i18n="rules">Rules</h2>
+      
+      <div class="rules-container">
+        
+        <!-- Do's Card -->
+        <div class="rules-card dos">
+          <h3 data-i18n="dos">Do's</h3>
+          <div class="rules-content">
             <ul>
-              <li>Musim terbaik: Juni–September</li>
-              <li>Sewa papan tersedia</li>
-              <li>Panduan lokal berpengalaman</li>
+              <li data-i18n="keepClean">Jaga kebersihan pantai</li>
+              <li data-i18n="respectCulture">Hormati budaya lokal</li>
+              <li data-i18n="register">Daftarkan diri di pos jaga</li>
+              <li data-i18n="obeySafety">Patuhi aturan keselamatan</li>
+              <li data-i18n="reefSafe">Gunakan sunscreen ramah laut</li>
             </ul>
           </div>
         </div>
-
-        <!-- Turtle Watching -->
-        <div class="activity-card">
-          <div class="activity-image">
-            <img src="gambar/wisata (2).jpg" alt="Melihat penyu bertelur" />
-          </div>
-          <div class="activity-content">
-            <h3>Turtle Watching</h3>
-            <p>Momen langka menyaksikan penyu belimbing bertelur di pantai.</p>
+        
+        <!-- Don'ts Card -->
+        <div class="rules-card donts">
+          <h3 data-i18n="donts">Don't</h3>
+          <div class="rules-content">
             <ul>
-              <li>Waktu: April–Mei (malam hari)</li>
-              <li>Didampingi petugas konservasi</li>
-              <li>Tanpa flash & sentuhan</li>
+              <li data-i18n="noLitter">Buang sampah sembarangan</li>
+              <li data-i18n="noDisturbTurtle">Ganggu habitat penyu</li>
+              <li data-i18n="noCoral">Rusak terumbu karang</li>
+              <li data-i18n="noNoise">Buat keributan</li>
+              <li data-i18n="noTakeSea">Bawa pulang biota laut</li>
             </ul>
           </div>
         </div>
-
-        <!-- Camping -->
-        <div class="activity-card">
-          <div class="activity-image">
-            <img src="gambar/wisata (3).jpg" alt="Camping di tepi pantai" />
-          </div>
-          <div class="activity-content">
-            <h3>Camping</h3>
-            <p>Nikmati sunrise dan suasana pantai yang tenang saat bermalam.</p>
-            <ul>
-              <li>Area lapang dekat pos jaga</li>
-              <li>Sewa tenda & matras</li>
-              <li>Api unggun sesuai aturan</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Snorkeling -->
-        <div class="activity-card">
-          <div class="activity-image">
-            <img src="gambar/wisata (6).jpg" alt="Snorkeling di perairan jernih" />
-          </div>
-          <div class="activity-content">
-            <h3>Snorkeling</h3>
-            <p>Air laut yang jernih dengan biota laut yang beragam.</p>
-            <ul>
-              <li>Peralatan tersedia</li>
-              <li>Guide bersertifikat</li>
-              <li>Lokasi ramah pemula</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Kuliner UMKM -->
-        <div class="activity-card">
-          <div class="activity-image">
-            <img src="gambar/wisata (7).jpg" alt="Kuliner UMKM lokal" />
-          </div>
-          <div class="activity-content">
-            <h3>Kuliner UMKM</h3>
-            <p>Cicipi kuliner khas Papua dan dukung UMKM lokal.</p>
-            <ul>
-              <li>Ikan bakar segar</li>
-              <li>Olahan sagu & kelapa</li>
-              <li>Kopi lokal</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Jelajah Budaya -->
-        <div class="activity-card">
-          <div class="activity-image">
-            <img src="gambar/wisata (8).jpg" alt="Jelajah budaya lokal" />
-          </div>
-          <div class="activity-content">
-            <h3>Jelajah Budaya</h3>
-            <p>Belajar adat, tarian, dan kerajinan dari masyarakat setempat.</p>
-            <ul>
-              <li>Kunjungan edukatif</li>
-              <li>Workshop kerajinan</li>
-              <li>Tur desa bersama pemandu</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="activities-note">
-        <p><strong>Catatan:</strong> Beberapa aktivitas memerlukan reservasi. Hubungi kami melalui WhatsApp pada bagian Kontak.</p>
+        
       </div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+    <!-- Kontak Section -->
+    <section class="contact-section">
+      <div class="container">
+        <h2 class="contact-title" data-i18n="contactUs">Kontak Kami</h2>
 
-  <!-- Rules Section -->
-<section id="rules" class="rules-section">
-  <div class="container">
-    <h2 class="rules-title">Rules</h2>
-    
-    <div class="rules-container">
-      
-      <!-- Do's Card -->
-      <div class="rules-card dos">
-        <h3>Do's</h3>
-        <div class="rules-content">
+        <div class="contact-container">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <h3 data-i18n="contactInfo">Informasi Kontak</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <strong data-i18n="phone">Telepon:</strong><br>
+                  +62 812-3456-7890
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <strong data-i18n="email">Email:</strong><br>
+                  info@dellawisata.com
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong data-i18n="address">Alamat:</strong><br>
+                  Kampung Della, Distrik Selemkai<br>
+                  Kabupaten Tambrauw, Papua Barat Daya<br>
+                  Indonesia
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <strong data-i18n="operational">Jam Operasional:</strong><br>
+                  <span data-i18n="monFri">Senin - Jumat: 08:00 - 17:00</span><br>
+                  <span data-i18n="satSun">Sabtu - Minggu: 09:00 - 16:00</span>
+                </div>
+              </div>
+            </div>
+            <!-- Move Hubungi Kami explanation here -->
+            <div class="contact-form">
+              <h3 data-i18n="contactForm">Hubungi Kami</h3>
+              <p data-i18n="contactFormDesc">Untuk informasi lebih lanjut atau reservasi, silakan hubungi kami melalui WhatsApp:</p>
+              <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20bertanya%20tentang%20Desa%20Wisata%20Della" target="_blank" class="whatsapp-btn" data-i18n="chatWhatsapp">
+                <i class="fab fa-whatsapp"></i>
+                Chat WhatsApp
+              </a>
+              <p class="contact-note">
+                <small data-i18n="contactNote">*Pesan akan langsung terkirim ke admin Desa Wisata Della</small>
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+      <div class="container">
+        <h2 class="location-title" data-i18n="ourLocation">Lokasi Kami</h2>
+
+        <div class="location-container">
+          <!-- Map Container -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456789012!2d130.6789!3d-1.2345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTQnMDYuMCJTIDEzMMKwNDAnNDQuMCJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
+              width="100%"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <!-- Location Details -->
+          <div class="location-details">
+            <h3 data-i18n="locationDetails">Detail Lokasi</h3>
+            <div class="location-info">
+              <div class="location-item">
+                <i class="fas fa-compass"></i>
+                <div>
+                  <strong data-i18n="gps">Koordinat GPS:</strong><br>
+                  -1.2345, 130.6789
+                </div>
+              </div>
+              <div class="location-item">
+                <i class="fas fa-route"></i>
+                <div>
+                  <strong data-i18n="access">Akses:</strong><br>
+                  <span data-i18n="landRoute">Jalur darat dari Sorong</span><br>
+                  <span data-i18n="seaRoute">Jalur laut dari Raja Ampat</span>
+                </div>
+              </div>
+              <div class="location-item">
+                <i class="fas fa-plane"></i>
+                <div>
+                  <strong data-i18n="nearestAirport">Bandara Terdekat:</strong><br>
+                  <span data-i18n="airportName">Bandara Domine Eduard Osok (SOQ)</span><br>
+                  <span data-i18n="distance">Jarak: ~150 km</span>
+                </div>
+              </div>
+              <div class="location-item">
+                <i class="fas fa-ship"></i>
+                <div>
+                  <strong data-i18n="nearestPort">Pelabuhan Terdekat:</strong><br>
+                  <span data-i18n="portName">Pelabuhan Sorong</span><br>
+                  <span data-i18n="portDistance">Jarak: ~120 km</span>
+                </div>
+              </div>
+              <div class="location-item">
+                <i class="fas fa-car"></i>
+                <div>
+                  <strong data-i18n="carRental">Penyewaan Mobil:</strong><br>
+                  <span data-i18n="carRentalInfo">Tersedia dengan harga Rp 1.200.000</span>
+                </div>
+              </div>
+              <div class="location-item">
+                <i class="fas fa-users"></i>
+                <div>
+                  <strong data-i18n="tourGuide">Tour Guide:</strong><br>
+                  <span data-i18n="tourGuideInfo">Tersedia untuk memandu wisatawan<br>dengan pengetahuan lokal yang mendalam</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        
+        <!-- Desa Wisata Info -->
+        <div class="footer-section reveal">
+          <h3>Desa Wisata Della</h3>
+          <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
+          <p>Indonesia</p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-section reveal">
+          <h4 data-i18n="quickLinks">Quick Links</h4>
           <ul>
-            <li>Jaga kebersihan pantai</li>
-            <li>Hormati budaya lokal</li>
-            <li>Daftarkan diri di pos jaga</li>
-            <li>Patuhi aturan keselamatan</li>
-            <li>Gunakan sunscreen ramah laut</li>
+            <li><a href="#" data-i18n="home">Home</a></li>
+            <li><a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a></li>
+            <li><a href="#facilities" data-i18n="facilities">Facilities</a></li>
+            <li><a href="#budaya-adat" data-i18n="budayaAdat">Budaya Adat</a></li>
           </ul>
         </div>
-      </div>
-      
-      <!-- Don'ts Card -->
-      <div class="rules-card donts">
-        <h3>Don't</h3>
-        <div class="rules-content">
-          <ul>
-            <li>Buang sampah sembarangan</li>
-            <li>Ganggu habitat penyu</li>
-            <li>Rusak terumbu karang</li>
-            <li>Buat keributan</li>
-            <li>Bawa pulang biota laut</li>
-          </ul>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-  <!-- Kontak Section -->
-  <section class="contact-section">
-    <div class="container">
-      <h2 class="contact-title">Kontak Kami</h2>
-
-      <div class="contact-container">
+        
         <!-- Contact Info -->
-        <div class="contact-info">
-          <h3>Informasi Kontak</h3>
-          <div class="contact-details">
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <strong>Telepon:</strong><br>
-                +62 812-3456-7890
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <strong>Email:</strong><br>
-                info@dellawisata.com
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <strong>Alamat:</strong><br>
-                Kampung Della, Distrik Selemkai<br>
-                Kabupaten Tambrauw, Papua Barat Daya<br>
-                Indonesia
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-clock"></i>
-              <div>
-                <strong>Jam Operasional:</strong><br>
-                Senin - Jumat: 08:00 - 17:00<br>
-                Sabtu - Minggu: 09:00 - 16:00
-              </div>
-            </div>
-          </div>
-          <!-- Move Hubungi Kami explanation here -->
-          <div class="contact-form">
-            <h3>Hubungi Kami</h3>
-            <p>Untuk informasi lebih lanjut atau reservasi, silakan hubungi kami melalui WhatsApp:</p>
-            <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20bertanya%20tentang%20Desa%20Wisata%20Della" target="_blank" class="whatsapp-btn">
-              <i class="fab fa-whatsapp"></i>
-              Chat WhatsApp
-            </a>
-            <p class="contact-note">
-              <small>*Pesan akan langsung terkirim ke admin Desa Wisata Della</small>
-            </p>
-          </div>
+        <div class="footer-section reveal">
+          <h4 data-i18n="contactInfo">Contact Info</h4>
+          <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+          <p><i class="fas fa-envelope"></i> info@dellawisata.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> GPS: -1.2345, 130.6789</p>
         </div>
-    </div>
-  </section>
-
-  <!-- Location Section -->
-  <section class="location-section">
-    <div class="container">
-      <h2 class="location-title">Lokasi Kami</h2>
-
-      <div class="location-container">
-        <!-- Map Container -->
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456789012!2d130.6789!3d-1.2345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTQnMDYuMCJTIDEzMMKwNDAnNDQuMCJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
-            width="100%"
-            height="400"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-
-        <!-- Location Details -->
-        <div class="location-details">
-          <h3>Detail Lokasi</h3>
-          <div class="location-info">
-            <div class="location-item">
-              <i class="fas fa-compass"></i>
-              <div>
-                <strong>Koordinat GPS:</strong><br>
-                -1.2345, 130.6789
-              </div>
-            </div>
-            <div class="location-item">
-              <i class="fas fa-route"></i>
-              <div>
-                <strong>Akses:</strong><br>
-                Jalur darat dari Sorong<br>
-                Jalur laut dari Raja Ampat
-              </div>
-            </div>
-            <div class="location-item">
-              <i class="fas fa-plane"></i>
-              <div>
-                <strong>Bandara Terdekat:</strong><br>
-                Bandara Domine Eduard Osok (SOQ)<br>
-                Jarak: ~150 km
-              </div>
-            </div>
-            <div class="location-item">
-              <i class="fas fa-ship"></i>
-              <div>
-                <strong>Pelabuhan Terdekat:</strong><br>
-                Pelabuhan Sorong<br>
-                Jarak: ~120 km
-              </div>
-            </div>
-            <div class="location-item">
-              <i class="fas fa-car"></i>
-              <div>
-                <strong>Penyewaan Mobil:</strong><br>
-                Tersedia dengan harga Rp 1.200.000
-              </div>
-            </div>
-            <div class="location-item">
-              <i class="fas fa-users"></i>
-              <div>
-                <strong>Tour Guide:</strong><br>
-                Tersedia untuk memandu wisatawan<br>
-                dengan pengetahuan lokal yang mendalam
-              </div>
-            </div>
+        
+        <!-- Social Links -->
+        <div class="footer-section reveal">
+          <h4 data-i18n="followUs">Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-content">
       
-      <!-- Desa Wisata Info -->
-      <div class="footer-section reveal">
-        <h3>Desa Wisata Della</h3>
-        <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
-        <p>Indonesia</p>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section reveal">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#travel-potential">Travel Potential</a></li>
-          <li><a href="#facilities">Facilities</a></li>
-          <li><a href="#budaya-adat">Budaya Adat</a></li>
-        </ul>
-      </div>
-      
-      <!-- Contact Info -->
-      <div class="footer-section reveal">
-        <h4>Contact Info</h4>
-        <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
-        <p><i class="fas fa-envelope"></i> info@dellawisata.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> GPS: -1.2345, 130.6789</p>
-      </div>
-      
-      <!-- Social Links -->
-      <div class="footer-section reveal">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-wave" data-i18n="allRights">&copy; 2024 Desa Wisata Della. All rights reserved.</p>
       </div>
     </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p class="footer-wave">&copy; 2024 Desa Wisata Della. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-</body>
+  </footer>
+  </body>
 </html>

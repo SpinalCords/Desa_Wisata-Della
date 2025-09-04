@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.remove('active'); // Reset hamburger icon
         }
     });
-21
+
     // Smooth scroll for nav items
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -84,57 +84,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function animate() {
         position -= speed;
-        
         // Reset position when first set of images is completely scrolled
-        const slideWidth = slides[0].offsetWidth;
+        const slideWidth = slides[0] ? slides[0].offsetWidth : 0;
         const gap = 20;
         const totalWidth = slides.length * (slideWidth + gap);
-        
         if (position <= -totalWidth) {
             position = 0;
         }
-        
         track.style.transform = `translateX(${position}px)`;
         requestAnimationFrame(animate);
     }
 
     // Remove any background styling
-    track.style.background = 'none';
-    document.querySelector('.carousel-container').style.background = 'none';
+    if (track) track.style.background = 'none';
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) carouselContainer.style.background = 'none';
 
     // Start animation
-    animate();
+    if (slides.length > 0) animate();
 
-    // Animasi ketik untuk About Us
-    const aboutText = `Pantai Della, Papua Barat 🌴🏖️ adalah surga kecil dengan laut biru jernih, pasir putih yang lembut, dan suasana alami yang bikin hati tenang. Di sini, kamu bisa menikmati indahnya panorama pantai sambil merasakan keramahan masyarakat sekitar. Nggak hanya liburan, setiap kunjunganmu juga ikut mendukung UMKM lokal lewat kuliner khas, hasil olahan laut segar, hingga kerajinan tangan yang unik. Cocok banget buat tempat healing sekaligus pengalaman wisata yang berkesan.`;
-    const typingTarget = document.getElementById('typing-text');
-    const cursor = document.querySelector('.typing-cursor');
-    let idx = 0;
-
-    function typeAbout() {
-        if (idx <= aboutText.length) {
-            typingTarget.innerHTML = aboutText.slice(0, idx);
-            idx++;
-            // Reduced delay: changed from 18+random to 10+random
-            setTimeout(typeAbout, 10 + Math.random() * 20); // Faster typing speed with less random variation
+    // Typing effect for About Us, always uses current language
+    function runAboutTyping(lang) {
+        const typingTarget = document.getElementById('typing-text');
+        if (!typingTarget || !translations[lang] || !translations[lang].aboutTyping) return;
+        typingTarget.innerHTML = '';
+        let idx = 0;
+        function typeAbout() {
+            if (idx <= translations[lang].aboutTyping.length) {
+                typingTarget.innerHTML = translations[lang].aboutTyping.slice(0, idx);
+                idx++;
+                setTimeout(typeAbout, 10 + Math.random() * 20);
+            }
         }
+        typeAbout();
     }
-    typeAbout();
-
-    // Parallax effect on image hover
-    document.querySelectorAll('.parallax-img').forEach(wrapper => {
-        wrapper.addEventListener('mousemove', function(e) {
-            const img = this.querySelector('img');
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width/2;
-            const y = e.clientY - rect.top - rect.height/2;
-            img.style.transform = `scale(1.08) translate(${x/18}px,${y/18}px)`;
-        });
-        wrapper.addEventListener('mouseleave', function() {
-            const img = this.querySelector('img');
-            img.style.transform = '';
-        });
-    });
 
     // Add section sizing functionality
     function setSectionHeights() {
@@ -164,256 +147,290 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dark mode toggle functionality
     const themeToggle = document.querySelector('.theme-toggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    // Check for saved user preference, if any, on load of the website
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
-        if (currentTheme === 'dark') {
+        if (currentTheme === 'dark' && themeToggle) {
             themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
         }
     }
 
-    // Toggle theme
-    themeToggle.addEventListener('click', () => {
-        let theme = 'light';
-        
-        if (document.documentElement.getAttribute('data-theme') !== 'dark') {
-            theme = 'dark';
-            themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-        } else {
-            theme = 'light';
-            themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
-            // Reset button styles to light mode
-            document.querySelector('.hero-btn').style = '';
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            let theme = 'light';
+            if (document.documentElement.getAttribute('data-theme') !== 'dark') {
+                theme = 'dark';
+                themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            } else {
+                theme = 'light';
+                themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+                const heroBtn = document.querySelector('.hero-btn');
+                if (heroBtn) heroBtn.style = '';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    }
+
+    // Language toggle
+    const langBtn = document.querySelector('.language-toggle');
+    let currentLang = localStorage.getItem('lang') || 'id';
+
+    function setLang(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+
+        // Update all elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Update typing effect for About section
+        runAboutTyping(lang);
+    }
+
+    if (langBtn) {
+        langBtn.addEventListener('click', function() {
+            const langs = ['id', 'en', 'zh'];
+            let idx = langs.indexOf(currentLang);
+            idx = (idx + 1) % langs.length;
+            setLang(langs[idx]);
+        });
+    }
+
+    // Set initial language
+    setLang(currentLang);
+
+    // Parallax effect on image hover
+    document.querySelectorAll('.parallax-img').forEach(wrapper => {
+        wrapper.addEventListener('mousemove', function(e) {
+            const img = this.querySelector('img');
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width/2;
+            const y = e.clientY - rect.top - rect.height/2;
+            img.style.transform = `scale(1.08) translate(${x/18}px,${y/18}px)`;
+        });
+        wrapper.addEventListener('mouseleave', function() {
+            const img = this.querySelector('img');
+            img.style.transform = '';
+        });
+    });
+
+    // ====== Script Tambahan untuk Gallery ======
+    const images = document.querySelectorAll('.gallery img');
+    const descBox = document.getElementById('descBox');
+
+    // Hide the description box initially (if exists)
+    if (descBox) { descBox.style.display = 'none'; }
+    const descText = document.getElementById('descText');
+    const descImg = document.getElementById('descImg');
+    const descSource = document.getElementById('descSource');
+
+    // Create modal for enlarged images
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+      <img src="" alt="Enlarged image">
+    `;
+    document.body.appendChild(modal);
+
+    // Activate overlay within each gallery item instead of floating text boxes
+    function activateGalleryOverlay() {
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach((item) => {
+        const img = item.querySelector('img');
+        const overlay = item.querySelector('.gallery-overlay');
+        const textEl = overlay.querySelector('.gallery-text');
+        const locEl = overlay.querySelector('.gallery-location');
+
+        // Fill overlay content from data- attributes
+        const desc = img.getAttribute('data-desc') || '';
+        const loc = img.getAttribute('data-location') || '';
+        textEl.textContent = desc;
+        locEl.innerHTML = `<strong>Lokasi:</strong> ${loc}`;
+
+        // Click to activate this item overlay, deactivate others
+        img.addEventListener('click', () => {
+          images.forEach(i => i.classList.remove('active'));
+          document.querySelectorAll('.gallery-item').forEach(it => it.classList.remove('active'));
+          img.classList.add('active');
+          item.classList.add('active');
+        });
+
+        // Double click to open modal
+        img.addEventListener('dblclick', () => {
+          const modalImg = modal.querySelector('img');
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+          modal.classList.add('active');
+        });
+
+        // Learn more button (per-item)
+        const btn = overlay.querySelector('.gallery-learn-more');
+        if (btn) {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showLearnMoreCard(img);
+          });
         }
-        
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-    });
-});
-
-// ====== Script Asli (Desa Wisata) ======
-// (semua kode navbar, theme toggle, dll tetap ada)
-
-// ====== Script Tambahan untuk Gallery ======
-const images = document.querySelectorAll('.gallery img');
-const descBox = document.getElementById('descBox');
-
-// Hide the description box initially (if exists)
-if (descBox) { descBox.style.display = 'none'; }
-const descText = document.getElementById('descText');
-const descImg = document.getElementById('descImg');
-const descSource = document.getElementById('descSource');
-
-// Create modal for enlarged images
-const modal = document.createElement('div');
-modal.className = 'modal';
-modal.innerHTML = `
-  <img src="" alt="Enlarged image">
-`;
-document.body.appendChild(modal);
-
-// Activate overlay within each gallery item instead of floating text boxes
-function activateGalleryOverlay() {
-  const items = document.querySelectorAll('.gallery-item');
-  items.forEach((item) => {
-    const img = item.querySelector('img');
-    const overlay = item.querySelector('.gallery-overlay');
-    const textEl = overlay.querySelector('.gallery-text');
-    const locEl = overlay.querySelector('.gallery-location');
-
-    // Fill overlay content from data- attributes
-    const desc = img.getAttribute('data-desc') || '';
-    const loc = img.getAttribute('data-location') || '';
-    textEl.textContent = desc;
-    locEl.innerHTML = `<strong>Lokasi:</strong> ${loc}`;
-
-    // Click to activate this item overlay, deactivate others
-    img.addEventListener('click', () => {
-      images.forEach(i => i.classList.remove('active'));
-      document.querySelectorAll('.gallery-item').forEach(it => it.classList.remove('active'));
-      img.classList.add('active');
-      item.classList.add('active');
-    });
-
-    // Double click to open modal
-    img.addEventListener('dblclick', () => {
-      const modalImg = modal.querySelector('img');
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
-      modal.classList.add('active');
-    });
-
-    // Learn more button (per-item)
-    const btn = overlay.querySelector('.gallery-learn-more');
-    if (btn) {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showLearnMoreCard(img);
       });
     }
-  });
-}
 
-if (images.length > 0) {
-  activateGalleryOverlay();
-  // Start with all images flat; do not activate any by default
-}
-
-// ===== Learn More Card Functionality =====
-// Initialize learnMoreCard overlay once on DOMContentLoaded
-let learnMoreCard;
-
-document.addEventListener('DOMContentLoaded', () => {
-  learnMoreCard = document.querySelector('.learn-more-card-overlay');
-
-  if (!learnMoreCard) {
-    learnMoreCard = document.createElement('div');
-    learnMoreCard.className = 'learn-more-card-overlay';
-learnMoreCard.innerHTML = `
-      <div class="learn-more-card">
-        <button class="close-card-btn"></button>
-        <div class="card-image-container">
-          <img src="" alt="Card Image" class="card-image">
-        </div>
-        <div class="card-description">
-          <p></p>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(learnMoreCard);
-  }
-
-  // Close card when clicking outside or close button
-  learnMoreCard.addEventListener('click', (e) => {
-    if (e.target === learnMoreCard || e.target.classList.contains('close-card-btn')) {
-      learnMoreCard.classList.remove('active');
+    if (images.length > 0) {
+      activateGalleryOverlay();
+      // Start with all images flat; do not activate any by default
     }
-  });
-});
 
-// Function to show the learn more card
-function showLearnMoreCard(imgElement) {
-  if (!learnMoreCard) return;
+    // ===== Learn More Card Functionality =====
+    // Initialize learnMoreCard overlay once on DOMContentLoaded
+    let learnMoreCard;
 
-  const cardImage = learnMoreCard.querySelector('.card-image');
-  const cardDesc = learnMoreCard.querySelector('.card-description p');
+    learnMoreCard = document.querySelector('.learn-more-card-overlay');
 
-  // Get image and description from the clicked gallery item
-  const imgSrc = imgElement.src;
-  const imgAlt = imgElement.alt;
-  const description = imgElement.getAttribute('data-desc') || 'Deskripsi tidak tersedia';
+    if (!learnMoreCard) {
+      learnMoreCard = document.createElement('div');
+      learnMoreCard.className = 'learn-more-card-overlay';
+      learnMoreCard.innerHTML = `
+        <div class="learn-more-card">
+          <button class="close-card-btn"></button>
+          <div class="card-image-container">
+            <img src="" alt="Card Image" class="card-image">
+          </div>
+          <div class="card-description">
+            <p></p>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(learnMoreCard);
+    }
 
-  // Set card content
-  cardImage.src = imgSrc;
-  cardImage.alt = imgAlt;
-  cardDesc.textContent = description;
-
-  // Show the card
-  learnMoreCard.classList.add('active');
-}
-
-// Close card with Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && learnMoreCard.classList.contains('active')) {
-    learnMoreCard.classList.remove('active');
-  }
-});
-
-// Close modal when clicking outside the image
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.classList.contains('active')) {
-    modal.classList.remove('active');
-  }
-});
-
-// ===== Travel Potential Turtle Animation =====
-function moveTurtle() {
-  const turtle = document.querySelector('.moving-turtle');
-  const card = document.querySelector('.travel-card');
-  if (!turtle || !card) return;
-
-  const maxX = card.offsetWidth - 60;
-  const maxY = card.offsetHeight - 60;
-
-  const randomX = Math.random() * maxX;
-  const randomY = Math.random() * maxY;
-
-  // pindah pelan ke posisi baru
-  turtle.style.left = randomX + 'px';
-  turtle.style.top = randomY + 'px';
-
-  // rotasi juga smooth
-  const rotation = Math.random() * 360;
-  turtle.style.transform = `rotate(${rotation}deg)`;
-
-  // lama gerakan disamakan dengan transition
-  const nextMove = 4000 + Math.random() * 2000;
-  setTimeout(moveTurtle, nextMove);
-}
-
-window.addEventListener('load', () => {
-  setTimeout(moveTurtle, 1000);
-});
-// === JS: Animasi Scroll Reveal untuk Rules ===
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".rules-card, .activity-card");
-
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    cards.forEach(card => {
-      const cardTop = card.getBoundingClientRect().top;
-      if (cardTop < windowHeight - 50) {
-        card.classList.add("show");
+    // Close card when clicking outside or close button
+    learnMoreCard.addEventListener('click', (e) => {
+      if (e.target === learnMoreCard || e.target.classList.contains('close-card-btn')) {
+        learnMoreCard.classList.remove('active');
       }
     });
-  };
 
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll(); // jalanin pas load awal
-});
-// Footer Scroll Reveal
-document.addEventListener("DOMContentLoaded", () => {
-  const reveals = document.querySelectorAll(".reveal");
+    // Function to show the learn more card
+    function showLearnMoreCard(imgElement) {
+      if (!learnMoreCard) return;
 
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    reveals.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 50) {
-        el.classList.add("show");
+      const cardImage = learnMoreCard.querySelector('.card-image');
+      const cardDesc = learnMoreCard.querySelector('.card-description p');
+
+      // Get image and description from the clicked gallery item
+      const imgSrc = imgElement.src;
+      const imgAlt = imgElement.alt;
+      const description = imgElement.getAttribute('data-desc') || 'Deskripsi tidak tersedia';
+
+      // Set card content
+      cardImage.src = imgSrc;
+      cardImage.alt = imgAlt;
+      cardDesc.textContent = description;
+
+      // Show the card
+      learnMoreCard.classList.add('active');
+    }
+
+    // Close card with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && learnMoreCard.classList.contains('active')) {
+        learnMoreCard.classList.remove('active');
       }
     });
-  };
 
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-});
-
-// Footer Reveal Animation
-document.addEventListener('DOMContentLoaded', function() {
-  const footerSections = document.querySelectorAll('.footer-section');
-  
-  const observerFooter = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-        observerFooter.unobserve(entry.target);
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
       }
     });
-  }, {
-    threshold: 0.2
-  });
 
-  footerSections.forEach(section => {
-    observerFooter.observe(section);
-  });
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+
+    // ===== Travel Potential Turtle Animation =====
+    function moveTurtle() {
+      const turtle = document.querySelector('.moving-turtle');
+      const card = document.querySelector('.travel-card');
+      if (!turtle || !card) return;
+
+      const maxX = card.offsetWidth - 60;
+      const maxY = card.offsetHeight - 60;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      // pindah pelan ke posisi baru
+      turtle.style.left = randomX + 'px';
+      turtle.style.top = randomY + 'px';
+
+      // rotasi juga smooth
+      const rotation = Math.random() * 360;
+      turtle.style.transform = `rotate(${rotation}deg)`;
+
+      // lama gerakan disamakan dengan transition
+      const nextMove = 4000 + Math.random() * 2000;
+      setTimeout(moveTurtle, nextMove);
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(moveTurtle, 1000);
+    });
+
+    // === JS: Animasi Scroll Reveal untuk Rules ===
+    const cards = document.querySelectorAll(".rules-card, .activity-card");
+
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < windowHeight - 50) {
+          card.classList.add("show");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // jalanin pas load awal
+
+    // Footer Scroll Reveal
+    const reveals = document.querySelectorAll(".reveal");
+
+    const revealFooterOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 50) {
+          el.classList.add('show');
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealFooterOnScroll);
+    revealFooterOnScroll();
+
+    // Footer Reveal Animation
+    const footerSections = document.querySelectorAll('.footer-section');
+    const observerFooter = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observerFooter.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    footerSections.forEach(section => {
+      observerFooter.observe(section);
+    });
 });
