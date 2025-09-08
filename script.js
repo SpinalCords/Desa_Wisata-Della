@@ -144,6 +144,86 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update sizes on window resize
     window.addEventListener('resize', setSectionHeights);
 
+    // === Fun Facts interactions ===
+    const funFactCards = document.querySelectorAll('.fun-fact-card');
+    const funFactModal = document.querySelector('.fun-fact-modal');
+    const modalTitle = document.querySelector('.modal-title');
+    const modalIcon = document.querySelector('.modal-icon');
+    const modalStatus = document.querySelector('.modal-meta .status');
+    const modalSeason = document.querySelector('.modal-meta .season');
+    const modalEthics = document.querySelector('.modal-meta .ethics');
+    const modalDesc = document.querySelector('.modal-desc');
+
+    function openFunFactModal(card) {
+      if (!funFactModal) return;
+      const title = card.getAttribute('data-title') || 'Fun Fact';
+      const icon = card.getAttribute('data-icon') || '❇️';
+      const status = card.getAttribute('data-status') || '';
+      const season = card.getAttribute('data-season') || '';
+      const ethics = card.getAttribute('data-ethics') || '';
+      const desc = card.getAttribute('data-desc') || '';
+
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalIcon) modalIcon.textContent = icon;
+      if (modalStatus) modalStatus.textContent = status ? `Status: ${status}` : '';
+      if (modalSeason) modalSeason.textContent = season ? `Musim: ${season}` : '';
+      if (modalEthics) modalEthics.textContent = ethics ? `Etika: ${ethics}` : '';
+      if (modalDesc) modalDesc.textContent = desc;
+
+      funFactModal.classList.add('active');
+      funFactModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeFunFactModal() {
+      if (!funFactModal) return;
+      funFactModal.classList.remove('active');
+      funFactModal.setAttribute('aria-hidden', 'true');
+    }
+
+    funFactCards.forEach(card => {
+      // click on card
+      card.addEventListener('click', () => openFunFactModal(card));
+      // keyboard accessibility
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openFunFactModal(card);
+        }
+      });
+      // button inside card
+      const btn = card.querySelector('.btn-more');
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openFunFactModal(card);
+        });
+      }
+    });
+
+    // modal close handlers
+    if (funFactModal) {
+      const closeBtn = funFactModal.querySelector('.modal-close');
+      if (closeBtn) closeBtn.addEventListener('click', closeFunFactModal);
+      funFactModal.addEventListener('click', (e) => { if (e.target === funFactModal) closeFunFactModal(); });
+    }
+
+    // Escape close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && funFactModal && funFactModal.classList.contains('active')) closeFunFactModal();
+    });
+
+    // reveal on scroll
+    const revealEls = document.querySelectorAll('.fun-fact-card.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+
     // Dark mode toggle functionality
     const themeToggle = document.querySelector('.theme-toggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');

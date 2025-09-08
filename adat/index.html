@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budaya Adat - Desa Wisata Della</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="../logo.png" alt="Logo">
+    </div>
+
+    <div class="nav-links">
+      <div class="dropdown">
+        <button class="dropbtn" data-i18n="profile">Profile</button>
+        <div class="dropdown-content">
+          <a href="#" data-i18n="about">About</a>
+          <a href="../index.html" data-i18n="home">Home</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" data-i18n="wisata">Wisata</button>
+        <div class="dropdown-content">
+          <a href="#" data-i18n="touristAttractive">Tourist Attractive</a>
+          <a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a>
+          <a href="../fasilitas/index.html" data-i18n="facilities">Facilities</a>
+          <a href="#activities" data-i18n="activities">Activities</a>
+          <a href="#rules" data-i18n="rules">Rules</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav-item" data-i18n="meetUs">Meet Us</a>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-menu">
+        <a href="../fasilitas/index.html" class="mobile-menu-item">
+          <i class="fas fa-umbrella-beach"></i>
+          <span data-i18n="ourFacilities">Our Facilities</span>
+        </a>
+        <a href="#budaya-adat" class="mobile-menu-item">
+          <i class="fas fa-landmark"></i>
+          <span data-i18n="budayaAdat">Budaya Adat</span>
+        </a>
+        <button class="theme-toggle">
+          <i class="fas fa-moon"></i>
+          <span data-i18n="theme">Theme</span>
+        </button>
+        <button class="language-toggle">
+          <i class="fas fa-language"></i>
+          <span data-i18n="language">Language</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title" data-i18n="cultureTitle">Budaya Adat Della</h1>
+      <p class="hero-desc" data-i18n="cultureDesc">Jelajahi kekayaan budaya dan tradisi masyarakat Della yang telah diwariskan turun-temurun</p>
+    </div>
+  </div>
+
+  <!-- Introduction Section -->
+  <section class="intro-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="cultureIntro">Pengantar Budaya</h2>
+      <div class="intro-content">
+        <div class="intro-text">
+          <p data-i18n="cultureIntroText">
+            Budaya adat Desa Della merupakan bagian integral dari identitas masyarakat Papua Barat Daya.
+            Tradisi-tradisi ini tidak hanya menjadi simbol keberagaman budaya Indonesia, tetapi juga
+            menjadi daya tarik wisata yang unik dan autentik.
+          </p>
+        </div>
+        <div class="intro-image">
+          <img src="../gambar/destinasi.jpg" alt="Budaya Della" class="culture-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traditions Section -->
+  <section class="traditions-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="traditions">Tradisi Utama</h2>
+      <div class="traditions-grid">
+
+        <!-- Upacara Adat -->
+        <div class="tradition-card">
+          <div class="tradition-icon">
+            <i class="fas fa-pray"></i>
+          </div>
+          <h3 data-i18n="ceremony">Upacara Adat</h3>
+          <p data-i18n="ceremonyDesc">
+            Upacara adat merupakan ritual penting dalam kehidupan masyarakat Della.
+            Termasuk upacara penyambutan tamu, pernikahan, dan perayaan panen.
+          </p>
+          <div class="tradition-details">
+            <h4 data-i18n="ceremonyTypes">Jenis Upacara:</h4>
+            <ul>
+              <li data-i18n="welcomeCeremony">Upacara Penyambutan</li>
+              <li data-i18n="weddingCeremony">Upacara Pernikahan</li>
+              <li data-i18n="harvestCeremony">Upacara Panen</li>
+              <li data-i18n="funeralCeremony">Upacara Kematian</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tarian Tradisional -->
+        <div class="tradition-card">
+          <div class="tradition-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <h3 data-i18n="traditionalDance">Tarian Tradisional</h3>
+          <p data-i18n="danceDesc">
+            Tarian tradisional Della menggambarkan cerita rakyat, kehidupan sehari-hari,
+            dan nilai-nilai budaya yang dijunjung tinggi oleh masyarakat setempat.
+          </p>
+          <div class="tradition-details">
+            <h4 data-i18n="danceTypes">Jenis Tarian:</h4>
+            <ul>
+              <li data-i18n="warDance">Tari Perang</li>
+              <li data-i18n="welcomeDance">Tari Penyambutan</li>
+              <li data-i18n="harvestDance">Tari Panen</li>
+              <li data-i18n="loveDance">Tari Percintaan</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Musik dan Alat Musik -->
+        <div class="tradition-card">
+          <div class="tradition-icon">
+            <i class="fas fa-drum"></i>
+          </div>
+          <h3 data-i18n="traditionalMusic">Musik Tradisional</h3>
+          <p data-i18n="musicDesc">
+            Musik tradisional Della menggunakan berbagai alat musik yang dibuat dari bahan
+            alam seperti kayu, bambu, dan kulit binatang.
+          </p>
+          <div class="tradition-details">
+            <h4 data-i18n="musicInstruments">Alat Musik:</h4>
+            <ul>
+              <li data-i18n="tifa">Tifa (gendang)</li>
+              <li data-i18n="suling">Suling bambu</li>
+              <li data-i18n="kulitDrum">Kulit drum</li>
+              <li data-i18n="flute">Seruling kayu</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Kerajinan Tangan -->
+        <div class="tradition-card">
+          <div class="tradition-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 data-i18n="handicraft">Kerajinan Tangan</h3>
+          <p data-i18n="handicraftDesc">
+            Kerajinan tangan Della terkenal dengan keunikan dan keindahannya.
+            Dibuat dari bahan-bahan alam seperti kayu, rotan, dan kulit.
+          </p>
+          <div class="tradition-details">
+            <h4 data-i18n="handicraftTypes">Jenis Kerajinan:</h4>
+            <ul>
+              <li data-i18n="woodCarving">Ukiran kayu</li>
+              <li data-i18n="wovenBamboo">Anyaman bambu</li>
+              <li data-i18n="traditionalCloth">Kain tenun</li>
+              <li data-i18n="shellCraft">Kerajinan kulit kerang</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bahasa Daerah -->
+        <div class="tradition-card">
+          <div class="tradition-icon">
+            <i class="fas fa-language"></i>
+          </div>
+          <h3 data-i18n="localLanguage">Bahasa Daerah</h3>
+          <p data-i18n="languageDesc">
+            Bahasa daerah Della merupakan bagian penting dari identitas budaya.
+            Digunakan dalam komunikasi sehari-hari dan upacara adat.
+          </p>
+          <div class="tradition-details">
+            <h4 data-i18n="languageFeatures">Ciri Bahasa:</h4>
+            <ul>
+              <li data-i18n="oralTradition">Tradisi lisan</li>
+              <li data-i18n="storytelling">Cerita rakyat</li>
+              <li data-i18n="proverbs">Peribahasa</li>
+              <li data-i18n="songs">Lagu daerah</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sistem Kekerabatan -->
+        <div class="tradition-card">
+          <div class="tradition-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 data-i18n="kinshipSystem">Sistem Kekerabatan</h3>
+          <p data-i18n="kinshipDesc">
+            Sistem kekerabatan Della didasarkan pada prinsip gotong royong
+            dan saling menghormati antar anggota keluarga besar.
+          </p>
+          <div class="tradition-details">
+            <h4 data-i18n="kinshipPrinciples">Prinsip:</h4>
+            <ul>
+              <li data-i18n="mutualHelp">Gotong royong</li>
+              <li data-i18n="respect">Saling hormat</li>
+              <li data-i18n="solidarity">Solidaritas</li>
+              <li data-i18n="traditionPreservation">Pelestarian tradisi</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Cultural Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="culturalValues">Nilai-Nilai Budaya</h2>
+      <div class="values-grid">
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 data-i18n="harmony">Harmoni dengan Alam</h3>
+          <p data-i18n="harmonyDesc">
+            Masyarakat Della hidup berdampingan dengan alam dan menghormati
+            keseimbangan ekosistem laut dan daratan.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3 data-i18n="solidarity">Gotong Royong</h3>
+          <p data-i18n="solidarityDesc">
+            Prinsip gotong royong menjadi dasar kehidupan sosial dan
+            menjadi kekuatan dalam menghadapi tantangan bersama.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-user-friends"></i>
+          </div>
+          <h3 data-i18n="respect">Saling Hormat</h3>
+          <p data-i18n="respectDesc">
+            Nilai saling menghormati antar individu dan kelompok menjadi
+            fondasi hubungan sosial yang harmonis.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-infinity"></i>
+          </div>
+          <h3 data-i18n="preservation">Pelestarian</h3>
+          <p data-i18n="preservationDesc">
+            Komitmen untuk melestarikan budaya dan tradisi sebagai warisan
+            bagi generasi mendatang.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Cultural Events Section -->
+  <section class="events-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="culturalEvents">Acara Budaya</h2>
+      <div class="events-grid">
+
+        <div class="event-card">
+          <div class="event-image">
+            <img src="../gambar/destinasi.jpg" alt="Festival Budaya">
+          </div>
+          <div class="event-content">
+            <h3 data-i18n="culturalFestival">Festival Budaya Della</h3>
+            <p data-i18n="festivalDesc">
+              Festival tahunan yang menampilkan berbagai aspek budaya Della
+              termasuk tarian, musik, dan kuliner tradisional.
+            </p>
+            <div class="event-details">
+              <span class="event-date" data-i18n="festivalDate">Agustus setiap tahun</span>
+              <span class="event-duration" data-i18n="festivalDuration">3 hari</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-image">
+            <img src="../gambar/destinasi1.jpg" alt="Upacara Adat">
+          </div>
+          <div class="event-content">
+            <h3 data-i18n="traditionalCeremony">Upacara Adat</h3>
+            <p data-i18n="ceremonyEventDesc">
+              Upacara adat yang dilakukan dalam berbagai kesempatan penting
+              dalam kehidupan masyarakat Della.
+            </p>
+            <div class="event-details">
+              <span class="event-date" data-i18n="ceremonyDate">Sesuai tradisi</span>
+              <span class="event-duration" data-i18n="ceremonyDuration">1-2 hari</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-image">
+            <img src="../gambar/destinasi2.jpg" alt="Workshop Budaya">
+          </div>
+          <div class="event-content">
+            <h3 data-i18n="culturalWorkshop">Workshop Budaya</h3>
+            <p data-i18n="workshopDesc">
+              Program edukasi budaya yang mengajak wisatawan belajar
+              tentang tradisi dan keterampilan lokal.
+            </p>
+            <div class="event-details">
+              <span class="event-date" data-i18n="workshopDate">Sepanjang tahun</span>
+              <span class="event-duration" data-i18n="workshopDuration">2-4 jam</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <script src="../translations.js"></script>
+  <script>
+  // Language toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const langBtn = document.querySelector('.language-toggle');
+    let currentLang = localStorage.getItem('lang') || 'id';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+
+      // Update all elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+    }
+
+    // Cycle language: id -> en -> zh -> id ...
+    langBtn.addEventListener('click', function() {
+      const langs = ['id', 'en', 'zh'];
+      let idx = langs.indexOf(currentLang);
+      idx = (idx + 1) % langs.length;
+      setLang(langs[idx]);
+    });
+
+    // Set initial language
+    setLang(currentLang);
+  });
+  </script>
+  <script src="script.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        
+        <!-- Desa Wisata Info -->
+        <div class="footer-section reveal">
+          <h3>Desa Wisata Della</h3>
+          <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
+          <p>Indonesia</p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-section reveal">
+          <h4 data-i18n="quickLinks">Quick Links</h4>
+          <ul>
+            <li><a href="#" data-i18n="home">Home</a></li>
+            <li><a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a></li>
+            <li><a href="#facilities" data-i18n="facilities">Facilities</a></li>
+            <li><a href="#budaya-adat" data-i18n="budayaAdat">Budaya Adat</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="footer-section reveal">
+          <h4 data-i18n="contactInfo">Contact Info</h4>
+          <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+          <p><i class="fas fa-envelope"></i> info@dellawisata.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> GPS: -1.2345, 130.6789</p>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="footer-section reveal">
+          <h4 data-i18n="followUs">Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-wave" data-i18n="allRights">&copy; 2024 Desa Wisata Della. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

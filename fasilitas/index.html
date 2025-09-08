@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fasilitas - Desa Wisata Della</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fasilitas - Desa Wisata Della</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="additional-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
 <body>
-  <div class="contai">
+  <div class="container">
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-logo">
@@ -20,25 +21,27 @@
 
     <div class="nav-links">
       <div class="dropdown">
-        <button class="dropbtn">Profile</button>
+        <button class="dropbtn" data-translate="nav.profile">Profile</button>
         <div class="dropdown-content">
-          <a href="#">About</a>
-          <a href="../index.html">Home</a>
+          <a href="#" data-translate="nav.about">About</a>
+          <a href="../index.html" data-translate="nav.home">Home</a>
         </div>
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn">Wisata</button>
+        <button class="dropbtn" data-translate="nav.wisata">Wisata</button>
         <div class="dropdown-content">
-          <a href="#">Tourist Attractive</a>
-          <a href="#travel-potential">Travel Potential</a>
-          <a href="#">Facilities</a>
-          <a href="#">Rules</a>
-          <a href="#">Activities</a>
+          <a href="#" data-translate="nav.touristAttractive">Tourist Attractive</a>
+          <a href="#travel-potential" data-translate="nav.travelPotential">Travel Potential</a>
+          <a href="#" data-translate="nav.facilities">Facilities</a>
+          <a href="#" data-translate="nav.rules">Rules</a>
+          <a href="#" data-translate="nav.activities">Activities</a>
         </div>
       </div>
 
-      <a href="#" class="nav-item">Meet Us</a>
+      <a href="#" class="nav-item" data-translate="nav.meetus">Meet Us</a>
+
+      <!-- Desktop Language Dropdown -->
     </div>
 
     <div class="nav-buttons">
@@ -50,145 +53,158 @@
       <div class="mobile-menu">
         <a href="#facilities" class="mobile-menu-item">
           <i class="fas fa-umbrella-beach"></i>
-          <span>Our Facilities</span>
+          <span data-translate="mobile.facilities">Our Facilities</span>
         </a>
         <a href="../adat/index.html" class="mobile-menu-item">
           <i class="fas fa-landmark"></i>
-          <span>Budaya Adat</span>
+          <span data-translate="mobile.budayaAdat">Budaya Adat</span>
         </a>
         <button class="theme-toggle">
           <i class="fas fa-moon"></i>
-          <span>Theme</span>
+          <span data-translate="ui.theme">Theme</span>
         </button>
         <button class="language-toggle">
           <i class="fas fa-language"></i>
-          <span>Language</span>
+          <span data-translate="ui.language">Language</span>
         </button>
       </div>
     </div>
   </nav>
 
+  <script src="../translations.js"></script>
   <script src="script.js"></script>
 
-
-  <main class="fasilitas-main" style="max-width: 1100px; margin: 3rem auto; padding: 0 1rem;">
-    <h1 class="about-title" style="text-align: center; margin-bottom: 2rem;">Fasilitas</h1>
-    <p style="text-align: center; margin-bottom: 3rem; color: var(--desc-color); font-family: 'Poppins', sans-serif;">
+  <main id="facilities" class="fasilitas-main" style="max-width: 1100px; margin: 3rem auto; padding: 0 1rem;">
+    <h1 class="about-title" style="text-align: center; margin-bottom: 2rem;" data-translate="facilities.title">Fasilitas</h1>
+    <p style="text-align: center; margin-bottom: 3rem; color: var(--desc-color); font-family: 'Poppins', sans-serif;" data-translate="facilities.description">
       Berikut adalah fasilitas yang tersedia di Desa Wisata Della untuk kenyamanan dan pengalaman terbaik Anda selama berkunjung.
     </p>
 
     <section class="facility-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
       <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <img src="../gambar/iseng.png" alt="Kamar Mandi Umum" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
-        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Kamar Mandi Umum</h2>
-        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+        <img src="https://via.placeholder.com/200x150?text=Kamar+Mandi+Umum" alt="Kamar Mandi Umum" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;" data-facility-name="0">Kamar Mandi Umum</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;" data-facility-desc="0">
           Kamar mandi umum yang bersih dan terawat tersedia di beberapa titik strategis desa untuk kenyamanan pengunjung.
         </p>
-        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">Rp 10.000</p>
-        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;" data-facility-price="0">Rp 10.000</p>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Kamar%20Mandi%20Umum" target="_blank" class="btn-pesan" data-translate="facilities.bookButton">
+          <i class="fab fa-whatsapp"></i> Pesan
+        </a>
       </article>
 
       <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <img src="../gambar/iseng.png" alt="Homestay" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
-        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Homestay</h2>
-        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+        <img src="https://via.placeholder.com/200x150?text=Homestay" alt="Homestay" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;" data-facility-name="1">Homestay</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;" data-facility-desc="1">
           Homestay dengan suasana tradisional dan fasilitas modern untuk memberikan pengalaman menginap yang nyaman dan autentik.
         </p>
-        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">Rp 300.000 / malam</p>
-        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;" data-facility-price="1">Rp 300.000 / malam</p>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Homestay" target="_blank" class="btn-pesan" data-translate="facilities.bookButton">
+          <i class="fab fa-whatsapp"></i> Pesan
+        </a>
       </article>
 
       <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <img src="../gambar/iseng.png" alt="Rumah Adat" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
-        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Rumah Adat</h2>
-        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+        <img src="https://via.placeholder.com/200x150?text=Rumah+Adat" alt="Rumah Adat" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;" data-facility-name="2">Rumah Adat</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;" data-facility-desc="2">
           Rumah adat yang menjadi simbol budaya dan sejarah desa, terbuka untuk kunjungan dan edukasi budaya.
         </p>
-        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">0 Rupiah</p>
-        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;" data-facility-price="2">0 Rupiah</p>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Rumah%20Adat" target="_blank" class="btn-pesan" data-translate="facilities.bookButton">
+          <i class="fab fa-whatsapp"></i> Pesan
+        </a>
       </article>
 
       <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <img src="../gambar/iseng.png" alt="Area Parkir" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
-        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Area Parkir</h2>
-        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+        <img src="https://via.placeholder.com/200x150?text=Area+Parkir" alt="Area Parkir" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;" data-facility-name="3">Area Parkir</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;" data-facility-desc="3">
           Area parkir yang luas dan aman untuk kendaraan pengunjung, dengan akses mudah ke berbagai titik wisata.
         </p>
-        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">0 Rupiah</p>
-        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;" data-facility-price="3">0 Rupiah</p>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Area%20Parkir" target="_blank" class="btn-pesan" data-translate="facilities.bookButton">
+          <i class="fab fa-whatsapp"></i> Pesan
+        </a>
       </article>
 
       <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <img src="../gambar/iseng.png" alt="Tempat Makan" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
-        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Tempat Makan</h2>
-        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+        <img src="https://via.placeholder.com/200x150?text=Tempat+Makan" alt="Tempat Makan" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;" data-facility-name="4">Tempat Makan</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;" data-facility-desc="4">
           Berbagai pilihan tempat makan yang menyajikan kuliner lokal dan internasional untuk memanjakan lidah Anda.
         </p>
-        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">0 Rupiah</p>
-        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;" data-facility-price="4">0 Rupiah</p>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Tempat%20Makan" target="_blank" class="btn-pesan" data-translate="facilities.bookButton">
+          <i class="fab fa-whatsapp"></i> Pesan
+        </a>
       </article>
 
       <article class="facility-card" style="background: var(--about-bg); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.5rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <img src="../gambar/iseng.png" alt="Area Rekreasi" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
-        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;">Area Rekreasi</h2>
-        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;">
+        <img src="https://via.placeholder.com/200x150?text=Area+Rekreasi" alt="Area Rekreasi" style="width: 100%; max-width: 200px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;" />
+        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 0.5rem;" data-facility-name="5">Area Rekreasi</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;" data-facility-desc="5">
           Area rekreasi yang luas dengan fasilitas olahraga dan permainan tradisional untuk segala usia.
         </p>
-        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;">0 Rupiah</p>
-        <button class="btn-pesan" style="background-color: #abd373; border: none; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">Pesan</button>
+        <p style="font-weight: 600; color: #4CAF50; font-size: 1.25rem; margin-bottom: 1rem;" data-facility-price="5">0 Rupiah</p>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Area%20Rekreasi" target="_blank" class="btn-pesan" data-translate="facilities.bookButton">
+          <i class="fab fa-whatsapp"></i> Pesan
+        </a>
       </article>
     </section>
   </main>
 
   <!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-content">
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
 
-      <!-- Desa Wisata Info -->
-      <div class="footer-section reveal">
-        <h3>Desa Wisata Della</h3>
-        <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
-        <p>Indonesia</p>
-      </div>
+        <!-- Desa Wisata Info -->
+        <div class="footer-section reveal">
+          <h3>Desa Wisata Della</h3>
+          <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
+          <p>Indonesia</p>
+        </div>
 
-      <!-- Quick Links -->
-      <div class="footer-section reveal">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../index.html#travel-potential">Travel Potential</a></li>
-          <li><a href="#facilities">Facilities</a></li>
-          <li><a href="../adat/index.html">Budaya Adat</a></li>
-        </ul>
-      </div>
+        <!-- Quick Links -->
+        <div class="footer-section reveal">
+          <h4>Tautan Cepat</h4>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#travel-potential">Potensi Wisata</a></li>
+            <li><a href="#facilities">Fasilitas</a></li>
+            <li><a href="#budaya-adat">Budaya Adat</a></li>
+          </ul>
+        </div>
 
-      <!-- Contact Info -->
-      <div class="footer-section reveal">
-        <h4>Contact Info</h4>
-        <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
-        <p><i class="fas fa-envelope"></i> info@dellawisata.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> GPS: -1.2345, 130.6789</p>
-      </div>
+        <!-- Contact Info -->
+        <div class="footer-section reveal">
+          <h4>Informasi Kontak</h4>
+          <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+          <p><i class="fas fa-envelope"></i> info@dellawisata.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> GPS: -1.2345, 130.6789</p>
+        </div>
 
-      <!-- Social Links -->
-      <div class="footer-section reveal">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+        <!-- Social Links -->
+        <div class="footer-section reveal">
+          <h4>Ikuti Kami</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom" style="text-align: center; padding-top: 1rem;">
-      <p class="footer-wave">&copy; 2024 Desa Wisata Della. All rights reserved.</p>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-wave">&copy; 2024 Desa Wisata Della. Hak cipta dilindungi undang-undang.</p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
 </div>
 
 </body>

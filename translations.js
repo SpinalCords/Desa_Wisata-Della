@@ -123,6 +123,42 @@ const translations = {
     tourGuide: "Tour Guide",
     tourGuideInfo: "Available to guide tourists with deep local knowledge",
 
+    // Fun Facts
+    funFactsTitle: "Fun Facts",
+    funFactsSubtitle: "Interesting facts about nature and culture in Della 1001 Waves.",
+
+    // Ketam Kenari
+    ketamKenariTitle: "Coconut Crab",
+    ketamKenariBrief: "Largest land crab in the world with super strong claws.",
+    ketamKenariDesc: "Coconut crab (coconut crab) is the largest land crab in the world, capable of climbing coconut trees and cracking coconuts with its very strong claws.",
+    ketamKenariStatus: "Vulnerable (local)",
+    ketamKenariSeason: "Sep–Dec (often seen)",
+    ketamKenariEthics: "Don't touch, keep distance, avoid feeding",
+
+    // Penyu Belimbing
+    penyuBelimbingTitle: "Leatherback Turtle",
+    penyuBelimbingBrief: "Giant sea creature that visits to lay eggs on our beach.",
+    penyuBelimbingDesc: "Leatherback turtle is the largest turtle species in the world and is a protected wildlife. The nesting season is usually in April–May at night.",
+    penyuBelimbingStatus: "Critical (IUCN)",
+    penyuBelimbingSeason: "Apr–May (laying eggs, night)",
+    penyuBelimbingEthics: "Without flash, no touching, stay calm, follow officer instructions",
+
+    // Upacara Penyambutan
+    upacaraPenyambutanTitle: "Welcome Ceremony",
+    upacaraPenyambutanBrief: "Warm ritual as a sign of respect for guests.",
+    upacaraPenyambutanDesc: "Visitors are welcomed with a traditional ceremony from Della Village consisting of dances, songs, and symbolic gestures of respect for guests.",
+    upacaraPenyambutanStatus: "Local Culture",
+    upacaraPenyambutanSeason: "According to visit schedule",
+    upacaraPenyambutanEthics: "Follow elder instructions, dress appropriately, ask permission for recording",
+
+    // 1001 Ombak
+    seribuOmbakTitle: "1001 Waves",
+    seribuOmbakBrief: "Uniqueness of waves with constantly changing character.",
+    seribuOmbakDesc: "\"1001 Waves\" is inspired by the varied and dynamic wave character, providing unique and challenging panoramas for surfing.",
+    seribuOmbakStatus: "Geotourism",
+    seribuOmbakSeason: "All year round",
+    seribuOmbakEthics: "Be aware of wave conditions, follow beach guard instructions",
+
     // Footer
     quickLinks: "Quick Links",
     followUs: "Follow Us",
@@ -380,6 +416,42 @@ const translations = {
     carRentalInfo: "可用，价格 Rp 1,200,000",
     tourGuide: "导游",
     tourGuideInfo: "有深厚本地知识的导游",
+
+    // Fun Facts
+    funFactsTitle: "趣味事实",
+    funFactsSubtitle: "关于德拉1001浪的自然和文化趣闻。",
+
+    // Ketam Kenari
+    ketamKenariTitle: "椰子蟹",
+    ketamKenariBrief: "世界上最大的陆蟹，具有超强有力的钳子。",
+    ketamKenariDesc: "椰子蟹（椰子蟹）是世界上最大的陆蟹，能够爬上椰子树并用其非常有力的钳子敲开椰子。",
+    ketamKenariStatus: "易危（本地）",
+    ketamKenariSeason: "9月–12月（经常可见）",
+    ketamKenariEthics: "不要触摸，保持距离，避免喂食",
+
+    // Penyu Belimbing
+    penyuBelimbingTitle: "棱皮龟",
+    penyuBelimbingBrief: "巨型海洋生物，会来我们的海滩产卵。",
+    penyuBelimbingDesc: "棱皮龟是世界上最大的龟类物种，是受保护的野生动物。产卵季节通常在四月至五月的夜晚。",
+    penyuBelimbingStatus: "极危（IUCN）",
+    penyuBelimbingSeason: "4月–5月（产卵，夜晚）",
+    penyuBelimbingEthics: "无闪光灯，不触摸，保持冷静，跟随工作人员指示",
+
+    // Upacara Penyambutan
+    upacaraPenyambutanTitle: "欢迎仪式",
+    upacaraPenyambutanBrief: "作为对客人尊重的温暖仪式。",
+    upacaraPenyambutanDesc: "游客们会受到来自德拉村的传统仪式欢迎，包括舞蹈、歌曲和象征性尊重客人的手势。",
+    upacaraPenyambutanStatus: "当地文化",
+    upacaraPenyambutanSeason: "根据访问时间表",
+    upacaraPenyambutanEthics: "遵循长者指示，穿着得体，请求录制许可",
+
+    // 1001 Ombak
+    seribuOmbakTitle: "1001浪",
+    seribuOmbakBrief: "波浪的独特性，具有不断变化的性格。",
+    seribuOmbakDesc: "\"1001浪\"的灵感来自于多样化和动态的波浪性格，为冲浪提供独特而具有挑战性的全景。",
+    seribuOmbakStatus: "地质旅游",
+    seribuOmbakSeason: "全年",
+    seribuOmbakEthics: "注意波浪状况，跟随海滩守卫指示",
 
     // Footer
     quickLinks: "快速链接",
