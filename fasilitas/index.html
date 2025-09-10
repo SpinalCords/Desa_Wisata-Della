@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Fasilitas - Desa Wisata Della</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="additional-styles.css" />
+    <link rel="stylesheet" href="global-elements/global-navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,62 +14,62 @@
 <body>
   <div class="container">
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-logo">
-      <img src="../logo.png" alt="Logo">
-    </div>
+  <script src="global-navbar.js"></script>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="logo.png" alt="Logo">
+      </div>
 
-    <div class="nav-links">
-      <div class="dropdown">
-        <button class="dropbtn" data-translate="nav.profile">Profile</button>
-        <div class="dropdown-content">
-          <a href="#" data-translate="nav.about">About</a>
-          <a href="../index.html" data-translate="nav.home">Home</a>
+      <div class="nav-links">
+        <div class="dropdown">
+          <button class="dropbtn" data-i18n="profile">Profile </button>
+          <div class="dropdown-content">
+            <a href="#" data-i18n="about">About</a>
+            <a href="#" data-i18n="home">Home</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn" data-i18n="wisata">Wisata</button>
+          <div class="dropdown-content">
+            <a href="#" data-i18n="touristAttractive">Tourist Attractive</a>
+            <a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a>
+            <a href="/fasilitas/index.html" data-i18n="facilities">Facilities</a>
+            <a href="#activities" data-i18n="activities">Activities</a>
+            <a href="#rules" data-i18n="rules">Rules</a>
+          </div>
+        </div>
+
+        <a href="#" class="nav-item" data-i18n="meetUs">Meet Us</a>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="mobile-menu">
+          <a href="/fasilitas/index.html" class="mobile-menu-item">
+            <i class="fas fa-umbrella-beach"></i>
+            <span data-i18n="ourFacilities">Our Facilities</span>
+          </a>
+          <a href="#budaya-adat" class="mobile-menu-item">
+            <i class="fas fa-landmark"></i>
+            <span data-i18n="budayaAdat">Budaya Adat</span>
+          </a>
+          <button class="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <span data-i18n="theme">Theme</span>
+          </button>
+          <button class="language-toggle">
+            <i class="fas fa-language"></i>
+            <span data-i18n="language">Language</span>
+          </button>
         </div>
       </div>
+    </nav>
 
-      <div class="dropdown">
-        <button class="dropbtn" data-translate="nav.wisata">Wisata</button>
-        <div class="dropdown-content">
-          <a href="#" data-translate="nav.touristAttractive">Tourist Attractive</a>
-          <a href="#travel-potential" data-translate="nav.travelPotential">Travel Potential</a>
-          <a href="#" data-translate="nav.facilities">Facilities</a>
-          <a href="#" data-translate="nav.rules">Rules</a>
-          <a href="#" data-translate="nav.activities">Activities</a>
-        </div>
-      </div>
-
-      <a href="#" class="nav-item" data-translate="nav.meetus">Meet Us</a>
-
-      <!-- Desktop Language Dropdown -->
-    </div>
-
-    <div class="nav-buttons">
-      <button class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="mobile-menu">
-        <a href="#facilities" class="mobile-menu-item">
-          <i class="fas fa-umbrella-beach"></i>
-          <span data-translate="mobile.facilities">Our Facilities</span>
-        </a>
-        <a href="../adat/index.html" class="mobile-menu-item">
-          <i class="fas fa-landmark"></i>
-          <span data-translate="mobile.budayaAdat">Budaya Adat</span>
-        </a>
-        <button class="theme-toggle">
-          <i class="fas fa-moon"></i>
-          <span data-translate="ui.theme">Theme</span>
-        </button>
-        <button class="language-toggle">
-          <i class="fas fa-language"></i>
-          <span data-translate="ui.language">Language</span>
-        </button>
-      </div>
-    </div>
-  </nav>
 
   <script src="../translations.js"></script>
   <script src="script.js"></script>
