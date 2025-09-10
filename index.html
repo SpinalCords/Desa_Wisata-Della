@@ -6,6 +6,7 @@
   <title>Desa Wisata</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="global-elements/global-navbar.css">
+  <link rel="stylesheet" href="global-elements/global-footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,23 +24,24 @@
         <div class="dropdown">
           <button class="dropbtn" data-i18n="profile">Profile</button>
           <div class="dropdown-content">
-            <a href="#" data-i18n="about">About</a>
-            <a href="#" data-i18n="home">Home</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
           </div>
         </div>
 
         <div class="dropdown">
           <button class="dropbtn" data-i18n="wisata">Wisata</button>
           <div class="dropdown-content">
-            <a href="#" data-i18n="touristAttractive">Tourist Attractive</a>
             <a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a>
-            <a href="fasilitas\index.html" data-i18n="facilities">Facilities</a>
+            <a href="#fun-facts">Fun Fact</a>
+            <a href="..\struktur\index.html">Structures</a>
+            <a href="..\fasilitas\index.html" data-i18n="facilities">Facilities</a>
             <a href="#activities" data-i18n="activities">Activities</a>
             <a href="#rules" data-i18n="rules">Rules</a>
           </div>
         </div>
 
-        <a href="#" class="nav-item" data-i18n="meetUs">Meet Us</a>
+        <a href="#contact" class="nav-item" data-i18n="meetUs">Meet Us</a>
       </div>
 
       <div class="nav-buttons">
@@ -49,11 +51,11 @@
           <span></span>
         </button>
         <div class="mobile-menu">
-          <a href="fasilitas\index.html" class="mobile-menu-item">
+          <a href="..\fasilitas\index.html" class="mobile-menu-item">
             <i class="fas fa-umbrella-beach"></i>
             <span data-i18n="ourFacilities">Our Facilities</span>
           </a>
-          <a href="#budaya-adat" class="mobile-menu-item">
+          <a href="..\adat\index.html" class="mobile-menu-item">
             <i class="fas fa-landmark"></i>
             <span data-i18n="budayaAdat">Budaya Adat</span>
           </a>
@@ -70,7 +72,7 @@
     </nav>
 
     <!-- Hero -->
-    <div class="home-hero">
+    <div id="home" class="home-hero">
       <img src="gambar/destinasi.jpg" alt="Pantai Della" class="hero-bg">
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -96,7 +98,7 @@
     </div>
 
     <!-- About Us -->
-    <section class="about-section">
+    <section id="about" class="about-section">
       <h2 class="about-title" data-i18n="aboutUs">About Us</h2>
       <div class="about-content">
         <div class="about-images">
@@ -464,7 +466,7 @@
   </section>
 <br><br>
     <!-- Kontak Section -->
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
       <div class="container">
         <h2 class="contact-title" data-i18n="contactUs">Kontak Kami</h2>
 
@@ -596,6 +598,8 @@
     </section>
 
     <!-- Footer -->
+  <script src="global-elements\global-footer.js"></script>
+
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-content">

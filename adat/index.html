@@ -6,6 +6,8 @@
   <title>Budaya Adat - Desa Wisata Della</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../global-elements/global-navbar.css">
+    <link rel="stylesheet" href="../global-elements/global-footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,63 +15,73 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-logo">
-      <img src="../logo.png" alt="Logo">
-    </div>
+<script src="..\global-elements\global-navbar.js"></script>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="logo.png" alt="Logo">
+      </div>
 
-    <div class="nav-links">
-      <div class="dropdown">
-        <button class="dropbtn" data-i18n="profile">Profile</button>
-        <div class="dropdown-content">
-          <a href="#" data-i18n="about">About</a>
-          <a href="../index.html" data-i18n="home">Home</a>
+      <div class="nav-links">
+        <div class="dropdown">
+          <button class="dropbtn" data-i18n="profile">Profile</button>
+          <div class="dropdown-content">
+            <a href="#" data-i18n="about">About</a>
+            <a href="#" data-i18n="home">Home</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn" data-i18n="wisata">Wisata</button>
+          <div class="dropdown-content">
+            <a href="#" data-i18n="touristAttractive">Tourist Attractive</a>
+            <a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a>
+            <a href="..\fasilitas\index.html" data-i18n="facilities">Facilities</a>
+            <a href="#activities" data-i18n="activities">Activities</a>
+            <a href="#rules" data-i18n="rules">Rules</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" data-i18n="budaya">Budaya</button>
+          <div class="dropdown-content">
+            <a href="#utamaadat" data-i18n="travelPotential">Beranda Budaya</a>
+            <a href="#pengantar">Tentang Budaya</a>
+            <a href="..\fasilitas\index.html" data-i18n="facilities">Facilities</a>
+            <a href="#activities" data-i18n="activities">Activities</a>
+            <a href="#rules" data-i18n="rules">Rules</a>
+          </div>
+        </div>
+        <a href="..\index.html#contact" class="nav-item" data-i18n="meetUs">Meet Us</a>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="mobile-menu">
+          <a href="..\fasilitas\index.html" class="mobile-menu-item">
+            <i class="fas fa-umbrella-beach"></i>
+            <span data-i18n="ourFacilities">Our Facilities</span>
+          </a>
+          <a href="..\adat\index.html" class="mobile-menu-item">
+            <i class="fas fa-landmark"></i>
+            <span data-i18n="budayaAdat">Budaya Adat</span>
+          </a>
+          <button class="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <span data-i18n="theme">Theme</span>
+          </button>
+          <button class="language-toggle">
+            <i class="fas fa-language"></i>
+            <span data-i18n="language">Language</span>
+          </button>
         </div>
       </div>
-
-      <div class="dropdown">
-        <button class="dropbtn" data-i18n="wisata">Wisata</button>
-        <div class="dropdown-content">
-          <a href="#" data-i18n="touristAttractive">Tourist Attractive</a>
-          <a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a>
-          <a href="../fasilitas/index.html" data-i18n="facilities">Facilities</a>
-          <a href="#activities" data-i18n="activities">Activities</a>
-          <a href="#rules" data-i18n="rules">Rules</a>
-        </div>
-      </div>
-
-      <a href="#" class="nav-item" data-i18n="meetUs">Meet Us</a>
-    </div>
-
-    <div class="nav-buttons">
-      <button class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="mobile-menu">
-        <a href="../fasilitas/index.html" class="mobile-menu-item">
-          <i class="fas fa-umbrella-beach"></i>
-          <span data-i18n="ourFacilities">Our Facilities</span>
-        </a>
-        <a href="#budaya-adat" class="mobile-menu-item">
-          <i class="fas fa-landmark"></i>
-          <span data-i18n="budayaAdat">Budaya Adat</span>
-        </a>
-        <button class="theme-toggle">
-          <i class="fas fa-moon"></i>
-          <span data-i18n="theme">Theme</span>
-        </button>
-        <button class="language-toggle">
-          <i class="fas fa-language"></i>
-          <span data-i18n="language">Language</span>
-        </button>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Hero Section -->
-  <div class="hero-section">
+  <div id="utamaadat" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="hero-title" data-i18n="cultureTitle">Budaya Adat Della</h1>
@@ -78,7 +90,7 @@
   </div>
 
   <!-- Introduction Section -->
-  <section class="intro-section">
+  <section id="pengantar" class="intro-section">
     <div class="container">
       <h2 class="section-title" data-i18n="cultureIntro">Pengantar Budaya</h2>
       <div class="intro-content">
@@ -383,6 +395,7 @@
   <script src="script.js"></script>
 
   <!-- Footer -->
+  <script src="..\global-elements\global-footer.js"></script>
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-content">

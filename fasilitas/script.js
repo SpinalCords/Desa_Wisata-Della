@@ -119,16 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (items[i]?.price && price) price.textContent = items[i].price;
       if (btn && t.facilities?.bookButton) btn.lastChild.textContent = ` ${t.facilities.bookButton}`;
     });
-
-    // Footer text
-    const quickLinks = document.querySelector('.footer .footer-section:nth-of-type(2) h4');
-    if (quickLinks && t.footer?.quickLinks) quickLinks.textContent = t.footer.quickLinks;
-    const contactInfo = document.querySelector('.footer .footer-section:nth-of-type(3) h4');
-    if (contactInfo && t.footer?.contactInfo) contactInfo.textContent = t.footer.contactInfo;
-    const followUs = document.querySelector('.footer .footer-section:nth-of-type(4) h4');
-    if (followUs && t.footer?.followUs) followUs.textContent = t.footer.followUs;
-    const footerBottom = document.querySelector('.footer-bottom p');
-    if (footerBottom && t.footer?.bottom) footerBottom.textContent = t.footer.bottom;
   }
 
   // Build simple language dropdown under mobile menu

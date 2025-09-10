@@ -55,7 +55,6 @@ body {
   .facility-list { grid-template-columns: 1fr !important; gap: 1rem !important; }
   .facility-card { padding: 1rem !important; }
   .about-title { font-size: 2rem; }
-  .footer-content { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

@@ -379,9 +379,4 @@ particleStyleSheet.textContent = particleStyles;
 document.head.appendChild(particleStyleSheet);
 
 // Remove footer element as requested
-document.addEventListener('DOMContentLoaded', function() {
-    const footer = document.querySelector('footer.footer');
-    if (footer) {
-        footer.remove();
-    }
-});
+

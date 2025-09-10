@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Fasilitas - Desa Wisata Della</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="global-elements/global-navbar.css">
+    <link rel="stylesheet" href="../fasilitas/style.css">
+    <link rel="stylesheet" href="../global-elements/global-navbar.css">
+    <link rel="stylesheet" href="../global-elements/global-footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
 <body>
-  <script src="global-elements/global-navbar.js"></script>
+<script src="..\global-elements\global-navbar.js"></script>
     <nav class="navbar">
       <div class="nav-logo">
         <img src="logo.png" alt="Logo">
@@ -20,7 +21,7 @@
 
       <div class="nav-links">
         <div class="dropdown">
-          <button class="dropbtn" data-i18n="profile">Profile </button>
+          <button class="dropbtn" data-i18n="profile">Profile</button>
           <div class="dropdown-content">
             <a href="#" data-i18n="about">About</a>
             <a href="#" data-i18n="home">Home</a>
@@ -32,7 +33,7 @@
           <div class="dropdown-content">
             <a href="#" data-i18n="touristAttractive">Tourist Attractive</a>
             <a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a>
-            <a href="/fasilitas/index.html" data-i18n="facilities">Facilities</a>
+            <a href="fasilitas\index.html" data-i18n="facilities">Facilities</a>
             <a href="#activities" data-i18n="activities">Activities</a>
             <a href="#rules" data-i18n="rules">Rules</a>
           </div>
@@ -48,11 +49,11 @@
           <span></span>
         </button>
         <div class="mobile-menu">
-          <a href="/fasilitas/index.html" class="mobile-menu-item">
+          <a href="fasilitas\index.html" class="mobile-menu-item">
             <i class="fas fa-umbrella-beach"></i>
             <span data-i18n="ourFacilities">Our Facilities</span>
           </a>
-          <a href="#budaya-adat" class="mobile-menu-item">
+          <a href="..\adat\index.html" class="mobile-menu-item">
             <i class="fas fa-landmark"></i>
             <span data-i18n="budayaAdat">Budaya Adat</span>
           </a>
@@ -155,39 +156,42 @@
   </main>
 
   <!-- Footer -->
+
+</div>
+ <script src="..\global-elements\global-footer.js"></script>
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-content">
-
+        
         <!-- Desa Wisata Info -->
         <div class="footer-section reveal">
           <h3>Desa Wisata Della</h3>
           <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
           <p>Indonesia</p>
         </div>
-
+        
         <!-- Quick Links -->
         <div class="footer-section reveal">
-          <h4>Tautan Cepat</h4>
+          <h4 data-i18n="quickLinks">Quick Links</h4>
           <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#travel-potential">Potensi Wisata</a></li>
-            <li><a href="#facilities">Fasilitas</a></li>
-            <li><a href="#budaya-adat">Budaya Adat</a></li>
+            <li><a href="#" data-i18n="home">Home</a></li>
+            <li><a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a></li>
+            <li><a href="#facilities" data-i18n="facilities">Facilities</a></li>
+            <li><a href="#budaya-adat" data-i18n="budayaAdat">Budaya Adat</a></li>
           </ul>
         </div>
-
+        
         <!-- Contact Info -->
         <div class="footer-section reveal">
-          <h4>Informasi Kontak</h4>
+          <h4 data-i18n="contactInfo">Contact Info</h4>
           <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
           <p><i class="fas fa-envelope"></i> info@dellawisata.com</p>
           <p><i class="fas fa-map-marker-alt"></i> GPS: -1.2345, 130.6789</p>
         </div>
-
+        
         <!-- Social Links -->
         <div class="footer-section reveal">
-          <h4>Ikuti Kami</h4>
+          <h4 data-i18n="followUs">Follow Us</h4>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -196,15 +200,12 @@
           </div>
         </div>
       </div>
-
+      
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p class="footer-wave">&copy; 2024 Desa Wisata Della. Hak cipta dilindungi undang-undang.</p>
+        <p class="footer-wave" data-i18n="allRights">&copy; 2024 Desa Wisata Della. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
-</div>
-
 </body>
 </html>
