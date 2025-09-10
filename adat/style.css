@@ -10,13 +10,13 @@ body {
 
 /* Root variables for vibrant cultural theme */
 :root {
-    --cultural-primary: #FF6B35;
-    --cultural-secondary: #F7931E;
-    --cultural-accent: #FFD23F;
-    --cultural-bg: #FFF5E4;
+    --cultural-primary: #647FBC;
+    --cultural-secondary: #91ADC8;
+    --cultural-accent: #647FBC;
+    --cultural-bg: #e4f7ff;
     --cultural-dark: #2D3748;
-    --cultural-gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD23F 100%);
-    --cultural-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
+    --cultural-gradient: linear-gradient(135deg, #647FBC 0%, #91ADC8 50%, #515050 100%);
+    --cultural-shadow: 0 8px 32px rgba(53, 178, 255, 0.3);
 }
 
 /* Navbar Styles for dark navbar matching screenshot */
@@ -279,7 +279,7 @@ body {
 
 @keyframes heroGlow {
     from { box-shadow: var(--cultural-shadow); }
-    to { box-shadow: 0 8px 40px rgba(255, 107, 53, 0.5); }
+    to { box-shadow: 0 8px 40px rgba(59, 97, 181, 0.5); }
 }
 
 .hero-section::before {
@@ -303,7 +303,7 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255, 107, 53, 0.3) 0%, rgba(247, 147, 30, 0.5) 50%, rgba(255, 210, 63, 0.7) 100%);
+    background: linear-gradient(180deg, rgba(68, 115, 135, 0.3) 0%, rgba(50, 90, 107, 0.3) 50%, rgba(66, 68, 69, 0.3) 100%);
     z-index: 2;
 }
 
@@ -358,7 +358,7 @@ body {
     max-width: 1100px;
     width: 90%;
     border-radius: 32px;
-    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.1);
+    box-shadow: 0 8px 32px rgba(19, 125, 139, 0.1); /p
     position: relative;
     overflow: hidden;
     animation: slideInFromLeft 1s ease-out;
@@ -371,7 +371,7 @@ body {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(53, 70, 255, 0.05) 0%, transparent 70%);
     animation: rotate 20s linear infinite;
 }
 
@@ -424,7 +424,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(115, 124, 132, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -460,12 +460,12 @@ body {
 /* Traditions Section */
 .traditions-section {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+    background: linear-gradient(135deg, #dcf8ff 0%, #b3daf5 100%);
     margin: 4rem auto;
     max-width: 1200px;
     width: 90%;
     border-radius: 32px;
-    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.1);
+    box-shadow: 0 8px 32px rgba(19, 79, 139, 0.1);
     position: relative;
     overflow: hidden;
     animation: slideInFromBottom 1s ease-out;
@@ -478,7 +478,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.03) 0%, transparent 50%);
+    background: radial-gradient(ellipse at center, rgba(53, 90, 255, 0.03) 0%, transparent 50%);
     animation: pulse 4s ease-in-out infinite;
 }
 
@@ -504,9 +504,9 @@ body {
     background: #fff;
     border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
+    box-shadow: 0 8px 32px rgba(19, 61, 139, 0.15);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 2px solid rgba(139, 69, 19, 0.1);
+    border: 2px solid rgba(19, 101, 139, 0.1);
     position: relative;
     overflow: hidden;
     animation: cardFloat 6s ease-in-out infinite;
@@ -542,7 +542,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 107, 53, 0.05) 50%, transparent 70%);
+    background: linear-gradient(45deg, transparent 30%, rgba(53, 144, 255, 0.05) 50%, transparent 70%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -553,7 +553,7 @@ body {
 
 .tradition-card:hover {
     transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 20px 60px rgba(19, 47, 139, 0.3);
     border-color: var(--cultural-primary);
 }
 
@@ -568,7 +568,7 @@ body {
     color: white;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 16px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 4px 16px rgba(19, 93, 139, 0.3);
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
@@ -576,7 +576,7 @@ body {
 
 .tradition-card:hover .tradition-icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.5);
+    box-shadow: 0 8px 24px rgba(53, 110, 255, 0.5);
 }
 
 .tradition-card h3 {
@@ -597,7 +597,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    color: #654321;
+    color: #ffffff;
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 2;
