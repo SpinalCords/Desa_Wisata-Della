@@ -1,27 +1,37 @@
-const translations = {
+// translations.js
+
+window.translations = {
   en: {
-    // Navbar
+    // Navbar & Menu
     profile: "Profile",
     about: "About",
     home: "Home",
     wisata: "Tourism",
-    touristAttractive: "Tourist Attraction",
     travelPotential: "Travel Potential",
-    funfact : "Fun Facts",
-    structure : "Village Structure",
+    funFact: "Fun Fact",
+    structures: "Structures",
     facilities: "Facilities",
     activities: "Activities",
     rules: "Rules",
+    budaya: "Culture",
+    berandabudaya: "Culture Home",
+    pengantar: "About Culture",
+    tradisi: "Traditions",
+    nilai: "Values",
+    acara: "Events",
     meetUs: "Meet Us",
     ourFacilities: "Our Facilities",
     budayaAdat: "Traditional Culture",
     theme: "Theme",
     language: "Language",
 
+    // Hero & Intro
     cultureTitle: "Della Traditional Culture",
     cultureDesc: "Explore the rich culture and traditions of Della society passed down through generations",
     cultureIntro: "Culture Introduction",
     cultureIntroText: "The traditional culture of Della Village is an integral part of the identity of Southwest Papua society. These traditions are not only a symbol of Indonesia's cultural diversity, but also a unique and authentic tourist attraction.",
+
+    // Traditions Section
     traditions: "Main Traditions",
     ceremony: "Traditional Ceremony",
     ceremonyDesc: "Traditional ceremonies are important rituals in Della society. Includes welcoming guests, weddings, and harvest celebrations.",
@@ -64,15 +74,17 @@ const translations = {
     respect: "Respect",
     solidarity: "Solidarity",
     traditionPreservation: "Tradition preservation",
+
+    // Values Section
     culturalValues: "Cultural Values",
     harmony: "Harmony with Nature",
     harmonyDesc: "Della people live in harmony with nature and respect the balance of marine and land ecosystems.",
-    solidarity: "Solidarity",
     solidarityDesc: "The principle of mutual cooperation is the foundation of social life and a strength in facing challenges together.",
-    respect: "Respect",
     respectDesc: "The value of mutual respect between individuals and groups is the foundation of harmonious social relations.",
     preservation: "Preservation",
     preservationDesc: "Commitment to preserve culture and traditions as a legacy for future generations.",
+
+    // Events Section
     culturalEvents: "Cultural Events",
     culturalFestival: "Della Cultural Festival",
     festivalDesc: "An annual festival showcasing various aspects of Della culture including dance, music, and traditional cuisine.",
@@ -86,35 +98,45 @@ const translations = {
     workshopDesc: "Cultural education programs inviting tourists to learn about local traditions and skills.",
     workshopDate: "All year round",
     workshopDuration: "2-4 hours",
-    
+
+    // Footer
+    villageName: "Desa Wisata Della",
+    villageAddress: "Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya",
+    country: "Indonesia",
     quickLinks: "Quick Links",
-    contactInfo: "Contact Information",
+    contactInfo: "Contact Info",
     followUs: "Follow Us",
-    allRights: "&copy; 2024 Desa Wisata Della. All rights reserved.",
+    allRights: "&copy; 2024 Desa Wisata Della. All rights reserved."
   },
-  
-  id:{
+
+  id: {
     profile: "Profil",
     about: "Tentang",
     home: "Beranda",
     wisata: "Wisata",
-    touristAttractive: "Daya Tarik Wisata",
     travelPotential: "Potensi Wisata",
-    funfact : "Fakta Menarik",
-    structure : "Struktur Desa",
+    funFact: "Fakta Menarik",
+    structures: "Struktur",
     facilities: "Fasilitas",
     activities: "Aktivitas",
     rules: "Aturan",
-    meetUs: "Temui Kami",
+    budaya: "Budaya",
+    berandabudaya: "Beranda Budaya",
+    pengantar: "Tentang Budaya",
+    tradisi: "Tradisi",
+    nilai: "Nilai-nilai",
+    acara: "Acara",
+    meetUs: "Hubungi Kami",
     ourFacilities: "Fasilitas Kami",
     budayaAdat: "Budaya Adat",
     theme: "Tema",
     language: "Bahasa",
 
-        cultureTitle: "Budaya Adat Della",
+    cultureTitle: "Budaya Adat Della",
     cultureDesc: "Jelajahi kekayaan budaya dan tradisi masyarakat Della yang telah diwariskan turun-temurun",
     cultureIntro: "Pengantar Budaya",
     cultureIntroText: "Budaya adat Desa Della merupakan bagian integral dari identitas masyarakat Papua Barat Daya. Tradisi-tradisi ini tidak hanya menjadi simbol keberagaman budaya Indonesia, tetapi juga menjadi daya tarik wisata yang unik dan autentik.",
+
     traditions: "Tradisi Utama",
     ceremony: "Upacara Adat",
     ceremonyDesc: "Upacara adat merupakan ritual penting dalam kehidupan masyarakat Della. Termasuk upacara penyambutan tamu, pernikahan, dan perayaan panen.",
@@ -157,15 +179,15 @@ const translations = {
     respect: "Saling hormat",
     solidarity: "Solidaritas",
     traditionPreservation: "Pelestarian tradisi",
+
     culturalValues: "Nilai-Nilai Budaya",
     harmony: "Harmoni dengan Alam",
     harmonyDesc: "Masyarakat Della hidup berdampingan dengan alam dan menghormati keseimbangan ekosistem laut dan daratan.",
-    solidarity: "Gotong Royong",
     solidarityDesc: "Prinsip gotong royong menjadi dasar kehidupan sosial dan menjadi kekuatan dalam menghadapi tantangan bersama.",
-    respect: "Saling Hormat",
     respectDesc: "Nilai saling menghormati antar individu dan kelompok menjadi fondasi hubungan sosial yang harmonis.",
     preservation: "Pelestarian",
     preservationDesc: "Komitmen untuk melestarikan budaya dan tradisi sebagai warisan bagi generasi mendatang.",
+
     culturalEvents: "Acara Budaya",
     culturalFestival: "Festival Budaya Della",
     festivalDesc: "Festival tahunan yang menampilkan berbagai aspek budaya Della termasuk tarian, musik, dan kuliner tradisional.",
@@ -180,23 +202,32 @@ const translations = {
     workshopDate: "Sepanjang tahun",
     workshopDuration: "2-4 jam",
 
+    villageName: "Desa Wisata Della",
+    villageAddress: "Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya",
+    country: "Indonesia",
     quickLinks: "Tautan Cepat",
+    contactInfo: "Kontak",
     followUs: "Ikuti Kami",
-    allRights: "&copy; 2024 Desa Wisata Della. Hak cipta dilindungi undang-undang.",
+    allRights: "&copy; 2024 Desa Wisata Della. Hak cipta dilindungi."
   },
 
-  zh : {
+  zh: {
     profile: "简介",
     about: "关于",
     home: "首页",
     wisata: "旅游",
-    touristAttractive: "旅游景点",
-    funfact: "趣味事实",
-    structure: "村庄结构",
     travelPotential: "旅游潜力",
+    funFact: "趣事",
+    structures: "结构",
     facilities: "设施",
     activities: "活动",
     rules: "规则",
+    budaya: "文化",
+    berandabudaya: "文化首页",
+    pengantar: "关于文化",
+    tradisi: "传统",
+    nilai: "价值观",
+    acara: "活动",
     meetUs: "联系我们",
     ourFacilities: "我们的设施",
     budayaAdat: "传统文化",
@@ -207,6 +238,7 @@ const translations = {
     cultureDesc: "探索 Della 社区世代相传的丰富文化与传统",
     cultureIntro: "文化介绍",
     cultureIntroText: "Della 村的传统文化是西巴布亚社会身份的重要组成部分。这些传统不仅是印度尼西亚文化多样性的象征，也是独特而真实的旅游吸引力。",
+
     traditions: "主要传统",
     ceremony: "传统仪式",
     ceremonyDesc: "传统仪式是 Della 社区生活中的重要仪式。包括迎宾、婚礼和丰收庆典。",
@@ -249,15 +281,15 @@ const translations = {
     respect: "尊重",
     solidarity: "团结",
     traditionPreservation: "传统保护",
+
     culturalValues: "文化价值观",
     harmony: "与自然和谐",
     harmonyDesc: "Della 人与自然和谐共处，尊重海洋和陆地生态系统的平衡。",
-    solidarity: "团结",
     solidarityDesc: "互助原则是社会生活的基础，也是共同应对挑战的力量。",
-    respect: "尊重",
     respectDesc: "个人和群体之间的相互尊重是和谐社会关系的基础。",
     preservation: "保护",
     preservationDesc: "致力于保护文化和传统，作为留给后代的遗产。",
+
     culturalEvents: "文化活动",
     culturalFestival: "Della 文化节",
     festivalDesc: "一年一度的节日，展示 Della 文化的各个方面，包括舞蹈、音乐和传统美食。",
@@ -272,8 +304,12 @@ const translations = {
     workshopDate: "全年",
     workshopDuration: "2-4小时",
 
+    villageName: "Desa Wisata Della",
+    villageAddress: "Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya",
+    country: "Indonesia",
     quickLinks: "快速链接",
+    contactInfo: "联系方式",
     followUs: "关注我们",
-    allRights: "&copy; 2024 Desa Wisata Della. 版权所有。",
+    allRights: "&copy; 2024 Desa Wisata Della. 版权所有。"
   }
 };

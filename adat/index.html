@@ -15,7 +15,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
+    <nav class="navbar">
     <div class="nav-logo">
       <img src="logo.png" alt="Logo">
     </div>
@@ -23,19 +23,19 @@
       <div class="dropdown">
         <button class="dropbtn" data-i18n="profile">Profil</button>
         <div class="dropdown-content">
-          <a href="..\index.html#home" data-i18n="home">Beranda</a>
-          <a href="..\index.html#about" data-i18n="about">Tentang</a>
+          <a href="../index.html#home" data-i18n="home">Beranda</a>
+          <a href="../index.html#about" data-i18n="about">Tentang</a>
         </div>
       </div>
       <div class="dropdown">
         <button class="dropbtn" data-i18n="wisata">Wisata</button>
         <div class="dropdown-content">
-          <a href="..\index.html#travel-potential" data-i18n="travelPotential">Potensi Wisata</a>
-          <a href="..\index.html#fun-facts" data-i18n="funFact">Fakta Menarik</a>
-          <a href="..\struktur\index.html" data-i18n="structures">Struktur</a>
-          <a href="..\fasilitas\index.html" data-i18n="facilities">Fasilitas</a>
-          <a href="..\index.html#activities" data-i18n="activities">Aktivitas</a>
-          <a href="..\index.html#rules" data-i18n="rules">Aturan</a>
+          <a href="../index.html#travel-potential" data-i18n="travelPotential">Potensi Wisata</a>
+          <a href="../index.html#fun-facts" data-i18n="funFact">Fakta Menarik</a>
+          <a href="../struktur/index.html" data-i18n="structures">Struktur</a>
+          <a href="../fasilitas/index.html" data-i18n="facilities">Fasilitas</a>
+          <a href="../index.html#activities" data-i18n="activities">Aktivitas</a>
+          <a href="../index.html#rules" data-i18n="rules">Aturan</a>
         </div>
       </div>
       <div class="dropdown">
@@ -48,31 +48,22 @@
           <a href="#event" data-i18n="acara">Acara</a>
         </div>
       </div>
-      <a href="..\index.html#contact" class="nav-item" data-i18n="meetUs">Hubungi Kami</a>
+      <a href="../index.html#contact" class="nav-item" data-i18n="meetUs">Hubungi Kami</a>
     </div>
     <div class="nav-buttons">
       <button class="menu-toggle" aria-label="Toggle mobile menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <div class="mobile-menu">
-        <a href="..\fasilitas\index.html" class="mobile-menu-item">
-          <i class="fas fa-umbrella-beach"></i>
-          <span data-i18n="ourFacilities">Fasilitas Kami</span>
+        <a href="../fasilitas/index.html" class="mobile-menu-item">
+          <i class="fas fa-umbrella-beach"></i><span data-i18n="ourFacilities">Fasilitas Kami</span>
         </a>
-        <a href="..\adat\index.html" class="mobile-menu-item">
-          <i class="fas fa-landmark"></i>
-          <span data-i18n="budayaAdat">Budaya Adat</span>
+        <a href="../adat/index.html" class="mobile-menu-item">
+          <i class="fas fa-landmark"></i><span data-i18n="budayaAdat">Budaya Adat</span>
         </a>
-        <button class="theme-toggle" aria-label="Toggle theme">
-          <i class="fas fa-moon"></i>
-          <span data-i18n="theme">Tema</span>
-        </button>
-        <button class="language-toggle" aria-label="Change language">
-          <i class="fas fa-language"></i>
-          <span data-i18n="language">Bahasa</span>
-        </button>
+        <button class="theme-toggle"><i class="fas fa-moon"></i><span data-i18n="theme">Tema</span></button>
+        <!-- Give the language toggle an id to be sure we select it reliably -->
+        <button id="language-toggle" class="language-toggle"><i class="fas fa-language"></i><span data-i18n="language">Bahasa</span></button>
       </div>
     </div>
   </nav>
@@ -361,10 +352,11 @@
       <div class="footer-content">
         <!-- Desa Wisata Info -->
         <div class="footer-section reveal">
-          <h3>Desa Wisata Della</h3>
-          <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
-          <p>Indonesia</p>
+          <h3 data-i18n="villageName">Desa Wisata Della</h3>
+          <p data-i18n="villageAddress">Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
+          <p data-i18n="country">Indonesia</p>
         </div>
+
         <!-- Quick Links -->
         <div class="footer-section reveal">
           <h4 data-i18n="quickLinks">Tautan Cepat</h4>
@@ -400,6 +392,7 @@
     </div>
   </footer>
 
+  <!-- load translations first, then the main script -->
   <script src="../translations.js"></script>
   <script src="script.js"></script>
 </body>
