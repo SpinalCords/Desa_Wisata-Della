@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setLang(currentLang);
 });
 
+
+
 // Theme toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
     const themeBtn = document.querySelector('.theme-toggle');
@@ -321,6 +323,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     images.forEach(img => imageObserver.observe(img));
 });
+
+// Language toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const langBtn = document.querySelector('.language-toggle');
+    let currentLang = localStorage.getItem('lang') || 'id';
+
+    function setLang(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+
+        // Update all elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Update typing effect for About section
+        runAboutTyping(lang);
+    }
+
+    // Cycle language: id -> en -> zh -> id ...
+    langBtn.addEventListener('click', function() {
+        const langs = ['id', 'en', 'zh'];
+        let idx = langs.indexOf(currentLang);
+        idx = (idx + 1) % langs.length;
+        setLang(langs[idx]);
+    });
+
+    // Set initial language
+    setLang(currentLang);
+});
+
+// Dummy typing effect function for About section
+function runAboutTyping(lang) {
+    // You can implement typing animation here if needed
+}
 
 // Cultural celebration effect
 function createCulturalParticles() {

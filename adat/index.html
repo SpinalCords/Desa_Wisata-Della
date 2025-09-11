@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budaya Adat - Desa Wisata Della</title>
+  <title data-i18n="cultureTitle">Budaya Adat - Desa Wisata Della</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="../global-elements/global-navbar.css">
-    <link rel="stylesheet" href="../global-elements/global-footer.css">
+  <link rel="stylesheet" href="../global-elements/global-navbar.css">
+  <link rel="stylesheet" href="../global-elements/global-footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,71 +15,67 @@
 </head>
 <body>
   <!-- Navbar -->
-<script src="..\global-elements\global-navbar.js"></script>
-    <nav class="navbar">
-      <div class="nav-logo">
-        <img src="logo.png" alt="Logo">
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="nav-links">
+      <div class="dropdown">
+        <button class="dropbtn" data-i18n="profile">Profil</button>
+        <div class="dropdown-content">
+          <a href="..\index.html#home" data-i18n="home">Beranda</a>
+          <a href="..\index.html#about" data-i18n="about">Tentang</a>
+        </div>
       </div>
-
-      <div class="nav-links">
-        <div class="dropdown">
-          <button class="dropbtn" data-i18n="profile">Profile</button>
-          <div class="dropdown-content">
-            <a href="..\index.html#home" data-i18n="home">Home</a>
-            <a href="..\index.html#about" data-i18n="about">About</a>
-          </div>
+      <div class="dropdown">
+        <button class="dropbtn" data-i18n="wisata">Wisata</button>
+        <div class="dropdown-content">
+          <a href="..\index.html#travel-potential" data-i18n="travelPotential">Potensi Wisata</a>
+          <a href="..\index.html#fun-facts" data-i18n="funFact">Fakta Menarik</a>
+          <a href="..\struktur\index.html" data-i18n="structures">Struktur</a>
+          <a href="..\fasilitas\index.html" data-i18n="facilities">Fasilitas</a>
+          <a href="..\index.html#activities" data-i18n="activities">Aktivitas</a>
+          <a href="..\index.html#rules" data-i18n="rules">Aturan</a>
         </div>
-
-        <div class="dropdown">
-          <button class="dropbtn" data-i18n="wisata">Wisata</button>
-          <div class="dropdown-content">
-            <a href="..\index.html#travel-potential" data-i18n="travelPotential">Travel Potential</a>
-            <a href="..\index.html#fun-facts" data-i18n="funFact">Fun Fact</a>
-            <a href="..\struktur\index.html">Structures</a>
-            <a href="..\fasilitas\index.html" data-i18n="facilities">Facilities</a>
-            <a href="..\index.html#activities" data-i18n="activities">Activities</a>
-            <a href="..\index.html#rules" data-i18n="rules">Rules</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn" data-i18n="budaya">Budaya</button>
-          <div class="dropdown-content">
-            <a href="#utamaadat" data-i18n="berandabudaya">Beranda Budaya</a>
-            <a href="#pengantar" data-i18n="pengantar">Tentang Budaya</a>
-            <a href="#traditions" data-i18n="tradisi">Tradisi</a>
-            <a href="#nilai" data-i18n="nilai">Nilai-nilai</a>
-            <a href="#event" data-i18n="acara">Acara</a>
-          </div>
-        </div>
-        <a href="..\index.html#contact" class="nav-item" data-i18n="meetUs">Meet Us</a>
       </div>
-
-      <div class="nav-buttons">
-        <button class="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+      <div class="dropdown">
+        <button class="dropbtn" data-i18n="budaya">Budaya</button>
+        <div class="dropdown-content">
+          <a href="#utamaadat" data-i18n="berandabudaya">Beranda Budaya</a>
+          <a href="#pengantar" data-i18n="pengantar">Tentang Budaya</a>
+          <a href="#traditions" data-i18n="tradisi">Tradisi</a>
+          <a href="#nilai" data-i18n="nilai">Nilai-nilai</a>
+          <a href="#event" data-i18n="acara">Acara</a>
+        </div>
+      </div>
+      <a href="..\index.html#contact" class="nav-item" data-i18n="meetUs">Hubungi Kami</a>
+    </div>
+    <div class="nav-buttons">
+      <button class="menu-toggle" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-menu">
+        <a href="..\fasilitas\index.html" class="mobile-menu-item">
+          <i class="fas fa-umbrella-beach"></i>
+          <span data-i18n="ourFacilities">Fasilitas Kami</span>
+        </a>
+        <a href="..\adat\index.html" class="mobile-menu-item">
+          <i class="fas fa-landmark"></i>
+          <span data-i18n="budayaAdat">Budaya Adat</span>
+        </a>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+          <span data-i18n="theme">Tema</span>
         </button>
-        <div class="mobile-menu">
-          <a href="..\fasilitas\index.html" class="mobile-menu-item">
-            <i class="fas fa-umbrella-beach"></i>
-            <span data-i18n="ourFacilities">Our Facilities</span>
-          </a>
-          <a href="..\adat\index.html" class="mobile-menu-item">
-            <i class="fas fa-landmark"></i>
-            <span data-i18n="budayaAdat">Budaya Adat</span>
-          </a>
-          <button class="theme-toggle">
-            <i class="fas fa-moon"></i>
-            <span data-i18n="theme">Theme</span>
-          </button>
-          <button class="language-toggle">
-            <i class="fas fa-language"></i>
-            <span data-i18n="language">Language</span>
-          </button>
-        </div>
+        <button class="language-toggle" aria-label="Change language">
+          <i class="fas fa-language"></i>
+          <span data-i18n="language">Bahasa</span>
+        </button>
       </div>
-    </nav>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
   <div id="utamaadat" class="hero-section">
@@ -359,77 +355,36 @@
     </div>
   </section>
 
-
-
-  <script src="../translations.js"></script>
-  <script>
-  // Language toggle
-  document.addEventListener('DOMContentLoaded', function() {
-    const langBtn = document.querySelector('.language-toggle');
-    let currentLang = localStorage.getItem('lang') || 'id';
-
-    function setLang(lang) {
-      currentLang = lang;
-      localStorage.setItem('lang', lang);
-
-      // Update all elements with data-i18n
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
-        }
-      });
-    }
-
-    // Cycle language: id -> en -> zh -> id ...
-    langBtn.addEventListener('click', function() {
-      const langs = ['id', 'en', 'zh'];
-      let idx = langs.indexOf(currentLang);
-      idx = (idx + 1) % langs.length;
-      setLang(langs[idx]);
-    });
-
-    // Set initial language
-    setLang(currentLang);
-  });
-  </script>
-  <script src="script.js"></script>
-
   <!-- Footer -->
-  <script src="..\global-elements\global-footer.js"></script>
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-content">
-        
         <!-- Desa Wisata Info -->
         <div class="footer-section reveal">
           <h3>Desa Wisata Della</h3>
           <p>Kampung Della, Distrik Selemkai<br>Kabupaten Tambrauw, Papua Barat Daya</p>
           <p>Indonesia</p>
         </div>
-        
         <!-- Quick Links -->
         <div class="footer-section reveal">
-          <h4 data-i18n="quickLinks">Quick Links</h4>
+          <h4 data-i18n="quickLinks">Tautan Cepat</h4>
           <ul>
-            <li><a href="#" data-i18n="home">Home</a></li>
-            <li><a href="#travel-potential" data-i18n="travelPotential">Travel Potential</a></li>
-            <li><a href="#facilities" data-i18n="facilities">Facilities</a></li>
+            <li><a href="#" data-i18n="home">Beranda</a></li>
+            <li><a href="#travel-potential" data-i18n="travelPotential">Potensi Wisata</a></li>
+            <li><a href="#facilities" data-i18n="facilities">Fasilitas</a></li>
             <li><a href="#budaya-adat" data-i18n="budayaAdat">Budaya Adat</a></li>
           </ul>
         </div>
-        
         <!-- Contact Info -->
         <div class="footer-section reveal">
-          <h4 data-i18n="contactInfo">Contact Info</h4>
+          <h4 data-i18n="contactInfo">Kontak</h4>
           <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
           <p><i class="fas fa-envelope"></i> info@dellawisata.com</p>
           <p><i class="fas fa-map-marker-alt"></i> GPS: -1.2345, 130.6789</p>
         </div>
-        
         <!-- Social Links -->
         <div class="footer-section reveal">
-          <h4 data-i18n="followUs">Follow Us</h4>
+          <h4 data-i18n="followUs">Ikuti Kami</h4>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -438,12 +393,14 @@
           </div>
         </div>
       </div>
-      
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p class="footer-wave" data-i18n="allRights">&copy; 2024 Desa Wisata Della. All rights reserved.</p>
+        <p class="footer-wave" data-i18n="allRights">&copy; 2024 Desa Wisata Della. Hak cipta dilindungi.</p>
       </div>
     </div>
   </footer>
+
+  <script src="../translations.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
