@@ -1,5 +1,3 @@
-// translations.js
-
 window.translations = {
   en: {
     // Navbar & Menu
