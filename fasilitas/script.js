@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', createRipple);
   });
 
-  // --- Theme Toggle (same behavior as homepage) ---
+  // --- Theme Toggle ---
   const themeToggle = document.querySelector('.theme-toggle');
   const currentTheme = localStorage.getItem('theme');
   if (currentTheme) {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       themeToggle?.querySelector('i')?.classList.replace('fa-moon', 'fa-sun');
       if (menuToggle) {
         menuToggle.querySelectorAll('span').forEach(span => {
-          span.style.backgroundColor = '#88AFE6'; // blue color for dark mode
+          span.style.backgroundColor = '#88AFE6';
         });
       }
     }
@@ -64,116 +64,114 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Language Toggle + Apply Translations (mirrors homepage) ---
-  const languageToggle = document.querySelector('.language-toggle');
+  // --- Language Toggle + Translations ---
+  function translateElement(el, langObj) {
+    if (!el || !langObj) return;
+    const key = el.getAttribute('data-i18n');
+    if (!key) return;
+    if (Object.prototype.hasOwnProperty.call(langObj, key)) {
+      const value = langObj[key];
+      if (typeof value === 'string' && /&[#\w]+;|<br|<span|<strong|<em/.test(value)) {
+        el.innerHTML = value;
+      } else {
+        el.textContent = value;
+      }
+    } else {
+      console.warn('Missing translation for key:', key);
+    }
+  }
 
   function applyTranslations(lang) {
-    const t = (window.translations && window.translations[lang]) || (window.translations && window.translations.id) || {};
-    document.documentElement.setAttribute('lang', lang);
-    localStorage.setItem('lang', lang);
-
-    // Navbar dropdowns
-    const navDropdowns = document.querySelectorAll('.nav-links .dropdown');
-    if (navDropdowns.length >= 1) {
-      const profileDrop = navDropdowns[0];
-      const profileBtn = profileDrop.querySelector('.dropbtn');
-      const links1 = profileDrop.querySelectorAll('.dropdown-content a');
-      if (profileBtn && t.nav?.profile) profileBtn.textContent = t.nav.profile;
-      if (links1[0] && t.nav?.about) links1[0].textContent = t.nav.about;
-      if (links1[1] && t.nav?.home) links1[1].textContent = t.nav.home;
+    if (!window.translations || !window.translations[lang]) {
+      console.error('No translations for language:', lang);
+      return;
     }
-    if (navDropdowns.length >= 2) {
-      const wisataDrop = navDropdowns[1];
-      const wisataBtn = wisataDrop.querySelector('.dropbtn');
-      const links2 = wisataDrop.querySelectorAll('.dropdown-content a');
-      if (wisataBtn && t.nav?.wisata) wisataBtn.textContent = t.nav.wisata;
-      if (links2[0] && t.nav?.touristAttractive) links2[0].textContent = t.nav.touristAttractive;
-      if (links2[1] && t.nav?.travelPotential) links2[1].textContent = t.nav.travelPotential;
-      if (links2[2] && t.nav?.facilities) links2[2].textContent = t.nav.facilities;
-      if (links2[3] && t.nav?.rules) links2[3].textContent = t.nav.rules;
-      if (links2[4] && t.nav?.activities) links2[4].textContent = t.nav.activities;
-    }
-    const meetUs = document.querySelector('.nav-links .nav-item');
-    if (meetUs && t.nav?.meetus) meetUs.textContent = t.nav.meetus;
-
-    // Mobile
-    const languageSpan = document.querySelector('.language-toggle span');
-    if (languageSpan && t.ui?.language) languageSpan.textContent = t.ui.language;
-
-    // Page title and description (facilities)
-    const titleEl = document.querySelector('[data-translate="facilities.title"]');
-    if (titleEl && t.facilities?.title) titleEl.textContent = t.facilities.title;
-    const descEl = document.querySelector('[data-translate="facilities.description"]');
-    if (descEl && t.facilities?.description) descEl.textContent = t.facilities.description;
-
-    // Facility items (names, desc, price, button)
-    const cards = document.querySelectorAll('.facility-card');
-    const items = t.facilities?.items || [];
-    cards.forEach((card, i) => {
-      const name = card.querySelector(`[data-facility-name="${i}"]`);
-      const desc = card.querySelector(`[data-facility-desc="${i}"]`);
-      const price = card.querySelector(`[data-facility-price="${i}"]`);
-      const btn = card.querySelector('.btn-pesan');
-      if (items[i]?.name && name) name.textContent = items[i].name;
-      if (items[i]?.desc && desc) desc.textContent = items[i].desc;
-      if (items[i]?.price && price) price.textContent = items[i].price;
-      if (btn && t.facilities?.bookButton) btn.lastChild.textContent = ` ${t.facilities.bookButton}`;
+    const langObj = window.translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      translateElement(el, langObj);
     });
-  }
 
-  // Build simple language dropdown under mobile menu
-  const mobileMenuEl = document.querySelector('.mobile-menu');
-  if (languageToggle && mobileMenuEl) {
-    const langMenu = document.createElement('div');
-    langMenu.className = 'lang-menu';
-    langMenu.style.display = 'none';
-    function renderLangMenuLabels() {
-      const currentLang = localStorage.getItem('lang') || 'id';
-      const names = (window.translations && window.translations[currentLang]?.langName) || { id: 'Indonesia', en: 'English', zh: '中文' };
-      langMenu.innerHTML = '';
-      ['id','en','zh'].forEach(code => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'mobile-lang-item';
-        b.dataset.lang = code;
-        b.textContent = names[code] || code;
-        langMenu.appendChild(b);
-      });
-    }
-    renderLangMenuLabels();
-    mobileMenuEl.appendChild(langMenu);
-
-    languageToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      renderLangMenuLabels();
-      langMenu.style.display = langMenu.style.display === 'none' ? 'block' : 'none';
-    });
-    langMenu.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[data-lang]');
-      if (!btn) return;
-      applyTranslations(btn.dataset.lang);
-      langMenu.style.display = 'none';
-    });
-    document.addEventListener('click', (e) => {
-      if (!langMenu.contains(e.target) && !languageToggle.contains(e.target)) {
-        langMenu.style.display = 'none';
+    const langBtn = document.getElementById('language-toggle') || document.querySelector('.language-toggle');
+    if (langBtn) {
+      const span = langBtn.querySelector('span');
+      if (span) {
+        const labels = { id: 'Bahasa', en: 'EN', zh: '中文' };
+        span.textContent = labels[lang] || lang;
       }
-    });
+    } else {
+      console.warn('Language toggle button not found when updating label');
+    }
   }
 
-  // Initialize language on load
-  const savedLang = localStorage.getItem('lang') || 'id';
-  applyTranslations(savedLang);
+  const langBtn = document.getElementById('language-toggle') || document.querySelector('.language-toggle');
+  console.log('langBtn', langBtn);
+  let currentLang = localStorage.getItem('lang') || 'id';
+  console.log('Starting language:', currentLang);
 
-  // --- WhatsApp Booking: ensure click opens WhatsApp ---
+  function setLang(lang) {
+    console.log('Setting language to:', lang);
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    applyTranslations(lang);
+  }
+
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      console.log('Language toggle clicked');
+      const langs = ['id', 'en', 'zh'];
+      let idx = langs.indexOf(currentLang);
+      if (idx === -1) idx = 0;
+      idx = (idx + 1) % langs.length;
+      setLang(langs[idx]);
+    });
+  } else {
+    console.error('No language toggle button found — click listener not attached');
+  }
+
+  setLang(currentLang);
+
+  const mutationObserver = new MutationObserver(mutations => {
+    let didChange = false;
+    for (const m of mutations) {
+      if (m.addedNodes && m.addedNodes.length) {
+        m.addedNodes.forEach(node => {
+          if (node.nodeType !== Node.ELEMENT_NODE) return;
+          if (node.hasAttribute && node.hasAttribute('data-i18n')) {
+            translateElement(node, window.translations[currentLang]);
+          }
+          node.querySelectorAll && node.querySelectorAll('[data-i18n]').forEach(el => {
+            translateElement(el, window.translations[currentLang]);
+          });
+        });
+        didChange = true;
+      }
+      if (m.type === 'attributes' && m.attributeName === 'data-i18n' && m.target) {
+        translateElement(m.target, window.translations[currentLang]);
+        didChange = true;
+      }
+    }
+    if (didChange) {
+      clearTimeout(window.__translate_debounce);
+      window.__translate_debounce = setTimeout(() => {
+        applyTranslations(currentLang);
+      }, 50);
+    }
+  });
+
+  mutationObserver.observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['data-i18n']
+  });
+
+  // --- WhatsApp Booking ---
   document.querySelectorAll('.btn-pesan').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      // Allow native anchor navigation if href is set
       const href = btn.getAttribute('href');
       if (href) {
-        // make sure it opens in new tab and has target
         btn.setAttribute('target', '_blank');
-        return; // let anchor default work
+        return;
       }
       e.preventDefault();
       const itemName = btn.closest('.facility-card')?.querySelector('h2')?.textContent?.trim() || 'Fasilitas';
@@ -184,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Reveal-on-scroll for cards ---
+  // --- Reveal-on-scroll ---
   const cards = document.querySelectorAll('.facility-card');
   const reveal = () => {
     const wh = window.innerHeight;
