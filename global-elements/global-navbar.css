@@ -211,3 +211,120 @@
 button { position: relative; overflow: hidden; }
 .ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background: rgba(255,255,255,0.6); pointer-events: none; }
 @keyframes ripple { to { transform: scale(4); opacity: 0; } }
+
+/* Responsive styles for mobile vertical navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-buttons {
+    padding-right: 0;
+  }
+  .mobile-menu {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    padding: 2rem 1rem 4rem 1rem;
+    border-radius: 0;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+    background-color: white;
+    transform: translateX(100%);
+    opacity: 1;
+    transition: transform 0.3s ease;
+    z-index: 1100;
+  }
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+  .mobile-menu a, .mobile-menu button {
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 1.1rem;
+    color: #333;
+    background: none;
+    border: none;
+    justify-content: flex-start;
+  }
+  .mobile-menu a:hover, .mobile-menu button:hover {
+    background-color: #88AFE6;
+    color: white;
+    padding-left: 1.5rem;
+  }
+  /* Bottom icon menu container */
+  .mobile-menu-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    border-top: 1px solid #ddd;
+  }
+  /* Theme and language buttons icon only */
+  .mobile-menu-bottom button {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    color: #88AFE6;
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+  }
+  .mobile-menu-bottom button span {
+    display: none;
+  }
+
+  /* Add all navbar menu items to mobile menu */
+  .nav-links a,
+  .nav-links .dropdown {
+    display: block;
+    width: 100%;
+    padding: 1rem 1rem;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links .dropdown:hover {
+    background-color: #88AFE6;
+    color: white;
+    padding-left: 1.5rem;
+  }
+
+  /* Dropdown content inside mobile menu */
+  .nav-links .dropdown-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+    opacity: 1;
+    display: none;
+    padding-left: 1rem;
+  }
+
+  .nav-links .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .nav-links .dropdown-content a {
+    color: #333;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-bottom: none;
+  }
+
+  .nav-links .dropdown-content a:hover {
+    background-color: #5c8fd6;
+    color: white;
+    padding-left: 1.5rem;
+  }
+}

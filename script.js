@@ -1,16 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // --- Navbar and UI ---
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
     const dropbtns = document.querySelectorAll('.dropbtn');
     const navItems = document.querySelectorAll('.nav-item');
-
-    // Hamburger menu toggle with smooth animation
-    menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    });
 
     // Add hover effect for nav items
     [...dropbtns, ...navItems].forEach(item => {
@@ -48,12 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-            mobileMenu.classList.remove('active');
-            menuToggle.classList.remove('active'); // Reset hamburger icon
-        }
-    });
+    // Removed this block to avoid conflict with global-navbar.js
 
     // Smooth scroll for nav items
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -512,6 +498,115 @@ document.addEventListener('DOMContentLoaded', function() {
 
     footerSections.forEach(section => {
       observerFooter.observe(section);
+    });
+
+    // ===== EmailJS Contact Form Handling =====
+    // Initialize EmailJS with your public key
+    // Replace these values with your actual EmailJS configuration from https://www.emailjs.com/
+    const EMAILJS_SERVICE_ID = 'your_service_id_here';
+    const EMAILJS_TEMPLATE_ID = 'your_template_id_here';
+    const EMAILJS_PUBLIC_KEY = 'your_public_key_here';
+
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
+    // Contact Form Handler
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            // Show loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            submitBtn.disabled = true;
+
+            // Clear previous messages
+            if (formMessage) {
+                formMessage.innerHTML = '';
+                formMessage.className = 'form-message';
+            }
+
+            // Prepare email template parameters
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+                to_email: 'info@dellawisata.com', // Replace with your admin email
+                reply_to: email
+            };
+
+            // Send email using EmailJS
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    console.log('Email sent successfully:', response);
+
+                    // Show success message
+                    if (formMessage) {
+                        formMessage.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Pesan berhasil dikirim! Kami akan segera menghubungi Anda.</div>';
+                        formMessage.classList.add('success');
+                    }
+
+                    // Reset form
+                    contactForm.reset();
+
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        if (formMessage) {
+                            formMessage.innerHTML = '';
+                            formMessage.className = 'form-message';
+                        }
+                    }, 5000);
+
+                }, function(error) {
+                    console.error('Email send failed:', error);
+
+                    // Show error message
+                    if (formMessage) {
+                        formMessage.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-triangle"></i> Maaf, terjadi kesalahan saat mengirim pesan. Silakan coba lagi atau hubungi kami melalui WhatsApp.</div>';
+                        formMessage.classList.add('error');
+                    }
+
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
+    // Form validation feedback
+    const formInputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+                this.classList.add('error');
+            } else {
+                this.classList.remove('error');
+            }
+        });
+
+        input.addEventListener('input', function() {
+            if (this.classList.contains('error') && this.value.trim() !== '') {
+                this.classList.remove('error');
+            }
+        });
     });
 });
 

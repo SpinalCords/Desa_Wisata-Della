@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Helper: keep mobile menu just under navbar ---
   function updateMobileTop() {
     if (mobileMenu && navbar) {
-      mobileMenu.style.top = `${navbar.offsetHeight}px`;
+      mobileMenu.style.top = `${navbar.offsetHeight - 10}px`;
     }
   }
 
@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       this.classList.toggle('active');
       mobileMenu.classList.toggle('active');
+
+      // Update accessibility attributes
+      const isExpanded = this.classList.contains('active');
+      this.setAttribute('aria-expanded', isExpanded);
+      mobileMenu.setAttribute('aria-hidden', !isExpanded);
 
       // if opening, ensure navbar is pinned so menu sits below it
       if (mobileMenu.classList.contains('active')) {
@@ -38,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenu && menuToggle && !mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
       mobileMenu.classList.remove('active');
       menuToggle.classList.remove('active');
+      // Update accessibility attributes
+      menuToggle.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('aria-hidden', true);
     }
   });
 
@@ -78,7 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (mobileMenu) {
         mobileMenu.classList.remove('active');
-        if (menuToggle) menuToggle.classList.remove('active');
+        if (menuToggle) {
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', false);
+          mobileMenu.setAttribute('aria-hidden', true);
+        }
       }
     });
   });
