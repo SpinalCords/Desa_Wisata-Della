@@ -19,6 +19,7 @@
 }
 
 body {
+    padding-top: 80px;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-primary);
@@ -90,24 +91,6 @@ body {
   }
   .about-title { font-size: 2.2rem; margin-bottom: 1.5rem; }
 
-  /* Travel Potential */
-  #travel-potential { padding: 2rem 0.5rem; }
-  .travel-card {
-    width: 95%;
-    padding: 20px 15px;
-  }
-  .travel-card .title h2 { font-size: 2rem; }
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .grid-item.full-width { grid-column: span 1; }
-  .image-container { width: 100%; height: auto; }
-  .caption {
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    text-align: center;
-  }
 
   /* Fun Facts */
   .fun-facts-section {
@@ -1196,6 +1179,49 @@ button {
 .grid-item.img-text .caption { text-align: left; padding-left: 15px; padding-right: 5px; }
 .grid-item.text-img .caption { text-align: right; padding-right: 15px; padding-left: 5px; }
 .grid-item.full-width .caption { text-align: center; padding: 10px 0 0 0; }
+
+/* Tambahan responsif untuk layar kecil */
+@media (max-width: 768px) {
+
+  /* ubah grid jadi satu kolom */
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: auto;
+  }
+
+  /* semua item full-width */
+  .grid-item,
+  .grid-item.full-width {
+    grid-column: span 1;
+    flex-direction: column !important; /* tumpuk gambar & teks */
+    text-align: center !important;
+  }
+
+  /* gambar full lebar */
+  .image-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* teks di bawah gambar */
+  .caption {
+    padding: 0 5px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    text-align: center !important;
+  }
+
+  /* judul lebih kecil */
+  .travel-card .title h2 {
+    font-size: 2rem;
+  }
+
+  /* ikon pesawat lebih kecil */
+  .travel-card::before,
+  .travel-card::after {
+    font-size: 1rem;
+  }
+}
 
 
 /* ===== Responsif untuk HP ===== */
