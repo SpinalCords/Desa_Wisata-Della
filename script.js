@@ -151,9 +151,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (modalTitle) modalTitle.textContent = title;
       if (modalIcon) modalIcon.textContent = icon;
-      if (modalStatus) modalStatus.textContent = status ? `Status: ${status}` : '';
-      if (modalSeason) modalSeason.textContent = season ? `Musim: ${season}` : '';
-      if (modalEthics) modalEthics.textContent = ethics ? `Etika: ${ethics}` : '';
+      const langForModal = typeof currentLang !== 'undefined' ? currentLang : (localStorage.getItem('lang') || 'id');
+      const t = (key) => (window.translations && window.translations[langForModal] && window.translations[langForModal][key]) || '';
+      if (modalStatus) modalStatus.textContent = status ? `${t('labelStatus')}: ${status}` : '';
+      if (modalSeason) modalSeason.textContent = season ? `${t('labelSeason')}: ${season}` : '';
+      if (modalEthics) modalEthics.textContent = ethics ? `${t('labelEthics')}: ${ethics}` : '';
       if (modalDesc) modalDesc.textContent = desc;
 
       funFactModal.classList.add('active');
@@ -608,6 +610,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Function to update Fun Facts content
+function updateFunFactsContent(lang) {
+  document.querySelectorAll('.fun-fact-card').forEach(card => {
+    const factId = card.dataset.title.toLowerCase().replace(/\s+/g, '');
+    if (translations[lang] && translations[lang][factId]) {
+      const trans = translations[lang][factId];
+      
+      // Update card content
+      card.querySelector('h3').textContent = trans.title;
+      card.querySelector('.fun-fact-brief').textContent = trans.brief;
+      
+      // Update data attributes
+      card.dataset.title = trans.title;
+      card.dataset.status = trans.status;
+      card.dataset.season = trans.season;
+      card.dataset.ethics = trans.ethics;
+      card.dataset.desc = trans.desc;
+    }
+  });
+}
+
+// Add language change event listener
+document.addEventListener('languageChanged', (e) => {
+  updateFunFactsContent(e.detail.lang);
+});
+
+// Initial update
+updateFunFactsContent(localStorage.getItem('lang') || 'id');
 });
 
 // test

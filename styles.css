@@ -1327,7 +1327,7 @@ button {
   background: linear-gradient(145deg, var(--card-bg, #ffffff) 0%, rgba(255,255,255,0.95) 100%);
   border: 2px solid rgba(136, 175, 230, 0.1);
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
@@ -1480,7 +1480,7 @@ button {
 }
 
 .fun-fact-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: all 0.4s ease;
   position: relative;
 }
@@ -1492,7 +1492,7 @@ button {
 
 .fun-fact-card h3 {
   color: #254546;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0;
   font-weight: 600;
   transition: color 0.3s ease;
