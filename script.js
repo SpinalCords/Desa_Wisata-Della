@@ -640,5 +640,3 @@ document.addEventListener('languageChanged', (e) => {
 // Initial update
 updateFunFactsContent(localStorage.getItem('lang') || 'id');
 });
-
-// test
