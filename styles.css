@@ -39,7 +39,11 @@ body {
   .menu-toggle { display: block; }
   .nav-logo { padding-left: 1rem; }
   .nav-buttons { padding-right: 1rem; }
-
+  .mobile-menu-items a {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: var(--mobile-menu-bg);
+  }
   /* Hero Section */
   .home-hero {
     position: relative;
@@ -635,7 +639,7 @@ button {
     --desc-color: #444;
     --hero-title: #e6e6e6;
     --hero-desc: #fffbe7;
-    --mobile-menu-bg: #0044ff;
+    --mobile-menu-bg: #4979ff;
 }
 
 [data-theme="dark"] {
@@ -651,7 +655,7 @@ button {
     --hero-desc: rgba(136, 175, 230, 0.9);  /* Changed from green to blue */
     --about-text: #ffffff;
     --about-title: #88AFE6;
-    --mobile-menu-bg: #ffffff;
+    --mobile-menu-bg: #ff0000;
 } 
 
 /* Update dark mode specific styles */
@@ -678,13 +682,10 @@ button {
     background-color: #88AFE6;  /* Changed from green to blue */
 }
 
+
 [data-theme="dark"] .dropdown-content {
     background: #001220;
     border: 1px solid rgba(136, 175, 230, 0.1);  /* Changed from green to blue */
-}
-
-[data-theme="dark"] .dropdown-content a {
-    color: var(--mobile-menu-bg);  /* Changed from green to blue */
 }
 
 [data-theme="dark"] .hero-btn {
