@@ -639,4 +639,20 @@ document.addEventListener('languageChanged', (e) => {
 
 // Initial update
 updateFunFactsContent(localStorage.getItem('lang') || 'id');
+
+// Section reveal animations
+let revealIndex = 0;
+const sectionReveals = document.querySelectorAll('.section-reveal');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('section-visible');
+      }, revealIndex * 200); // stagger by 200ms
+      revealIndex++;
+      sectionObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+sectionReveals.forEach(el => sectionObserver.observe(el));
 });

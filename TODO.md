@@ -1,4 +1,9 @@
-# TODO: Add Animation to About Us Title
+# TODO: Add Entrance Animations to Sections
 
-- [ ] Add CSS animation for .about-title to slide in from bottom to top
-- [ ] Test the animation by running the site
+## Tasks
+- [x] Add "section-reveal" class to main sections in index.html
+- [x] Add JavaScript code for scroll-triggered sequential animations in script.js
+- [x] Test the animations by running the site
+
+## Completed
+- [x] Analyze existing code and plan the implementation

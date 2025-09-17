@@ -120,6 +120,8 @@ body {
   .activity-card {
     padding: 20px;
     min-height: auto;
+    max-width: 90%;
+    margin: 0 -0.2rem;
   }
   .activity-image img { height: 180px; }
   .activity-content { padding: 18px 0; }
@@ -132,10 +134,18 @@ body {
     margin: 2rem auto;
     padding: 3rem 1rem;
   }
-  .rules-container { gap: 20px; }
+  .rules-container {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        margin: 0 -2rem;
+  }
   .rules-card {
     padding: 20px;
     min-height: auto;
+    width: 100%;
+    max-width: 280px;
   }
   .rules-title { font-size: 2.2rem; margin-bottom: 2rem; }
 
@@ -1165,6 +1175,7 @@ button {
 
 .image-container {
   width: 30vw; /* fleksibel */
+  max-width: 400px; /* limit max width */
   height: auto;
   border-radius: 8px;
   overflow: hidden;
@@ -1184,9 +1195,37 @@ button {
 }
 .image-placeholder img {
   width: 100%;    /* lebar penuh */
+  max-width: 100%; /* ensure max width */
   height: auto;   /* tinggi proporsional */
   display: block; /* hilangkan spasi bawah */
   object-fit: cover; /* isi container tanpa distorsi */
+}
+
+/* Additional explicit image size control for travel-potential images */
+#travel-potential .image-container {
+  width: 90vw;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+#travel-potential .image-placeholder img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #travel-potential .image-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  #travel-potential .image-placeholder img {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 
@@ -1244,6 +1283,14 @@ button {
   .travel-card::after {
     font-size: 1rem;
   }
+
+  /* Center rules-card dos show and donts show horizontally */
+  .rules-card.dos.show,
+  .rules-card.donts.show {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+  }
 }
 
 
@@ -1260,7 +1307,7 @@ button {
     padding: 20px 15px 20px 15px;
   }
   .image-container {
-    width: 80vw;
+    width: 60vw;
     margin-bottom: 1rem;
   }
   .grid-item {

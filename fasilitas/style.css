@@ -54,8 +54,19 @@ body {
 /* Responsive tweaks */
 @media (max-width: 768px) {
   section { min-height: auto; padding: 2rem 1rem; }
-  .facility-list { grid-template-columns: 1fr !important; gap: 1rem !important; }
-  .facility-card { padding: 1rem !important; }
+  .facility-list { 
+    grid-template-columns: 1fr !important; 
+    gap: 1rem !important; 
+    justify-content: center; 
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+  }
+  .facility-card { 
+    padding: 1rem !important; 
+    margin: 0 auto;
+    max-width: 100%;
+  }
   .about-title { font-size: 2rem; }
   .facility-card img { height: 160px; }
 }

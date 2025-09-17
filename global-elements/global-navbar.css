@@ -327,4 +327,20 @@ button { position: relative; overflow: hidden; }
     color: white;
     padding-left: 1.5rem;
   }
+
+  /* Dark mode styles for mobile navbar text */
+  [data-theme="dark"] .mobile-menu a,
+  [data-theme="dark"] .mobile-menu button {
+    color: #88AFE6;
+  }
+
+  [data-theme="dark"] .nav-links a,
+  [data-theme="dark"] .nav-links .dropdown {
+    color: #88AFE6;
+    border-bottom-color: rgba(136, 175, 230, 0.2);
+  }
+
+  [data-theme="dark"] .nav-links .dropdown-content a {
+    color: #88AFE6;
+  }
 }
