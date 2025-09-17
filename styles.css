@@ -195,10 +195,6 @@ body {
     display: none;
 }
 
-@keyframes blink {
-    /* Remove this animation if it exists */
-}
-
 /* Animation keyframes for dropdown items */
 @keyframes fadeIn {
     from {
@@ -475,13 +471,15 @@ button {
     max-width: 1100px;
     width: 90%; /* Add width control */
     padding: 3rem 2rem;
+    padding-top: 4rem;
     min-height: 600px; /* Fixed height instead of viewport units */
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
-    justify-content: center;
     background: var(--about-bg);
     box-shadow: 0 0 20px var(--card-shadow);
+    position: relative;
 }
 
 /* Responsive improvements for About Us section on mobile */
@@ -562,6 +560,13 @@ button {
     gap: 1.2rem;
 }
 
+.about-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
 .about-img-wrapper {
     border-radius: 16px;
     overflow: hidden;
@@ -590,7 +595,6 @@ button {
 }
 
 .about-text {
-    flex: 1;
     font-size: 1.1rem;
     font-family: 'Dosis', sans-serif;
     color: #222;
@@ -603,8 +607,21 @@ button {
   font-family: 'Raleway', sans-serif;
   font-size: 2.8rem;
   color: var(--title-color);
-  text-align: center;
-  margin-bottom: 1.5rem;
+  text-align: left;
+  margin-bottom: 0;
+  animation: slideInFromBottom 1s ease-out;
+}
+
+/* Animation keyframes for About Us title */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 /* Update root variables */
 :root {
@@ -618,6 +635,7 @@ button {
     --desc-color: #444;
     --hero-title: #e6e6e6;
     --hero-desc: #fffbe7;
+    --mobile-menu-bg: #0044ff;
 }
 
 [data-theme="dark"] {
@@ -633,7 +651,8 @@ button {
     --hero-desc: rgba(136, 175, 230, 0.9);  /* Changed from green to blue */
     --about-text: #ffffff;
     --about-title: #88AFE6;
-}
+    --mobile-menu-bg: #ffffff;
+} 
 
 /* Update dark mode specific styles */
 [data-theme="dark"] .mobile-menu {
@@ -665,7 +684,7 @@ button {
 }
 
 [data-theme="dark"] .dropdown-content a {
-    color: #88AFE6;  /* Changed from green to blue */
+    color: var(--mobile-menu-bg);  /* Changed from green to blue */
 }
 
 [data-theme="dark"] .hero-btn {
@@ -2369,6 +2388,18 @@ button {
     padding: 1.5rem 1.5rem 2rem;
     font-size: 1rem;
   }
+}
+
+/* ===== Section Scroll Reveal Animations ===== */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-reveal.section-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== EmailJS Contact Form Styles ===== */
