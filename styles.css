@@ -44,6 +44,9 @@ body {
     font-size: 1.1rem;
     color: var(--mobile-menu-bg);
   }
+  .mobile-menu{
+    margin-top: 0.8rem;
+  }
   /* Hero Section */
   .home-hero {
     position: relative;
