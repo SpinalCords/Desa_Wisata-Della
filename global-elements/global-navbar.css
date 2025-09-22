@@ -119,6 +119,9 @@
     align-items: center;
     margin-left: auto;
 }
+.nav-buttons .ba{
+  display: none;
+}
 .nav-buttons button { background: none; border: none; cursor: pointer; padding: 0.5rem; font-size: 1.2rem; }
 
 .nav-item {
@@ -178,13 +181,14 @@
     display: none;
     position: absolute;
     right: 0;
-    top: 60px; /* updated by JS at runtime */
+    top: 60px; /* updated by JS at runtime */ 
     background-color: white;
     border-radius: 8px;
     transform: translateY(-10px);
     opacity: 0;
     transition: all 0.3s ease;
     padding: 1rem;
+    margin-top: -0.4rem;
     min-width: 200px;
     z-index: 1000;
 }

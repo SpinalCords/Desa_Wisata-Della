@@ -97,11 +97,14 @@ body {
 .mobile-menu {
   display: none;
   position: absolute;
-  top: 60px;
   right: 0;
   background: var(--nav-bg);
   padding: 1rem;
   border-radius: 8px;
+}
+[data-theme="dark"] .mobile-menu {
+  background:#001220;
+  border: 1px solid rgba(136, 175, 230, 0.1);
 }
 .mobile-menu.active {
   display: block;

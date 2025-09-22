@@ -42,13 +42,13 @@
         <a href="..\index.html#contact" class="nav-item" data-i18n="meetUs">Meet Us</a>
       </div>
 
-      <div class="nav-buttons">
-        <button class="menu-toggle">
+            <div class="nav-buttons">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <div class="mobile-menu">
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
           <a href="..\fasilitas\index.html" class="mobile-menu-item">
             <i class="fas fa-umbrella-beach"></i>
             <span data-i18n="ourFacilities">Our Facilities</span>
@@ -57,14 +57,24 @@
             <i class="fas fa-landmark"></i>
             <span data-i18n="budayaAdat">Budaya Adat</span>
           </a>
-          <button class="theme-toggle">
-            <i class="fas fa-moon"></i>
-            <span data-i18n="theme">Theme</span>
-          </button>
-          <button class="language-toggle">
-            <i class="fas fa-language"></i>
-            <span data-i18n="language">Language</span>
-          </button>
+          <a href="..\index.html#home" class="mobile-menu-item">
+            <i class="fas fa-home"></i>
+            <span data-i18n="home">Home</span>
+          </a>
+          <a href="..\index.html#contact" class="mobile-menu-item">
+            <i class="fas fa-envelope"></i>
+            <span data-i18n="meetUs">Meet Us</span>
+          </a>
+          <div class="mobile-menu-bottom">
+            <button class="theme-toggle">
+              <i class="fas fa-moon"></i>
+              <span data-i18n="theme">Theme</span>
+            </button>
+            <button class="language-toggle">
+              <i class="fas fa-language"></i>
+              <span data-i18n="language">Language</span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
