@@ -212,6 +212,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.15 });
     revealEls.forEach(el => io.observe(el));
 
+    // Reveal for travel potential items
+    const travelRevealEls = document.querySelectorAll('.grid-item.reveal');
+    const travelIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          travelIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    travelRevealEls.forEach(el => travelIo.observe(el));
+
     // Dark mode toggle functionality
     const themeToggle = document.querySelector('.theme-toggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');

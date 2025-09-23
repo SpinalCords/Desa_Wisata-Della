@@ -25,6 +25,7 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     transition: all 0.3s ease;
+    overflow-x: hidden;
 }
 
 /* ===== COMPREHENSIVE MOBILE STYLES ===== */
@@ -1588,7 +1589,7 @@ button {
 }
 
 /* Modal */
-.fun-fact-modal { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,.5); z-index: 1500; padding: 1rem; }
+.fun-fact-modal { position: fixed; inset: 0; display: none; place-items: center; z-index: 1500; padding: 1rem; }
 .fun-fact-modal.active { display: grid; }
 .modal-content { background: var(--bg-primary); color: var(--text-primary); width: min(680px, 96vw); border-radius: 16px; padding: 1rem 1.25rem 1.25rem; box-shadow: 0 24px 64px rgba(0,0,0,.35); animation: pop .2s ease; }
 .modal-header { display: flex; align-items: center; gap: .6rem; margin-bottom: .25rem; }
