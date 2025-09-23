@@ -37,9 +37,7 @@
 
 .social-links a:hover {
   transform: scale(1.2) rotate(8deg);
-  background: rgba(255, 255, 255, 0.3);
 }
-
 /* Footer Styles */
 .footer {
   background: #6e9dbd;
