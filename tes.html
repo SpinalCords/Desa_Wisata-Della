@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Travel Potential</title>
+    <style>
+        :root {
+            --about-bg: #f8f9fa;
+            --card-shadow: rgba(0, 0, 0, 0.1);
+            --title-color: #2E86C1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        /* ===== Travel Potential Section ===== */
+        #travel-potential {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .travel-card {
+            width: 90vw;
+            max-width: 1200px;
+            background: var(--about-bg);
+            box-shadow: 0 0 20px var(--card-shadow);
+            border: 3px dashed #2E86C1;
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .travel-card::before,
+        .travel-card::after {
+            content: "✈";
+            position: absolute;
+            font-size: 1.5rem;
+            color: #2E86C1;
+        }
+
+        .travel-card::before { top: 10px; right: 15px; }
+        .travel-card::after { bottom: 10px; left: 15px; }
+
+        .travel-card .title h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.8rem;
+            color: var(--title-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .moving-turtle {
+            position: absolute;
+            font-size: 2rem;
+            z-index: 1;
+            transition: top 4s ease-in-out, left 4s ease-in-out, transform 2s ease-in-out;
+            opacity: 0.7;
+            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+            will-change: top, left, transform;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 20px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .grid-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        /* Layout order menggunakan grid-order */
+        .grid-item:nth-child(1) .image-container { order: 1; }
+        .grid-item:nth-child(1) .caption { order: 2; }
+
+        .grid-item:nth-child(2) .image-container { order: 2; }
+        .grid-item:nth-child(2) .caption { order: 1; text-align: right; }
+
+        .grid-item:nth-child(3) .image-container { order: 1; }
+        .grid-item:nth-child(3) .caption { order: 2; }
+
+        .image-container {
+            width: 100%;
+            max-width: 400px;
+            justify-self: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .caption {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            padding: 0 15px;
+        }
+
+        .wave-decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(45deg, #2E86C1 25%, transparent 25%);
+            background-size: 10px 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .travel-card .title h2 {
+                font-size: 2rem;
+            }
+
+            .grid-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 15px;
+            }
+
+            /* Reset semua order untuk mobile - semua jadi img di atas, text di bawah */
+            .grid-item:nth-child(1) .image-container,
+            .grid-item:nth-child(2) .image-container,
+            .grid-item:nth-child(3) .image-container { 
+                order: 1; 
+            }
+            
+            .grid-item:nth-child(1) .caption,
+            .grid-item:nth-child(2) .caption,
+            .grid-item:nth-child(3) .caption { 
+                order: 2; 
+                text-align: center; 
+            }
+
+            .caption {
+                padding: 0 10px;
+                font-size: 0.9rem;
+            }
+
+            .image-container {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .travel-card {
+                padding: 15px;
+            }
+
+            .travel-card .title h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .caption {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="travel-potential" class="section-reveal">
+        <div class="travel-card">
+            <div class="moving-turtle">🐢</div>
+            <div class="title">
+                <h2 data-i18n="travelPotentialTitle">Travel Potential</h2>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item reveal">
+                    <div class="image-container parallax-img">
+                        <img src="gambar/alam.jpg" alt="">
+                        <div class="wave-decoration"></div>
+                    </div>
+                    <div class="caption" data-i18n="exoticIsland">
+                        Di pantai ini, pengunjung disuguhkan pemandangan pepohonan yang rimbun dan udara yang segar — kombinasi yang membuat suasana tenang dan menenangkan.
+                    </div>
+                </div>
+                
+                <div class="grid-item reveal">
+                    <div class="image-container parallax-img">
+                        <img src="gambar/penyu.jpg" alt="">
+                    </div>
+                    <div class="caption" data-i18n="greenTurtle">
+                        Penyu belimbing, salah satu spesies langka, menjadikan Pantai Della sebagai lokasi penting untuk bertelur. Di pantai yang tenang ini, mereka melanjutkan siklus kehidupannya sekaligus menambah daya tarik ekowisata dan pentingnya pelestarian alam.
+                    </div>
+                </div>
+                
+                <div class="grid-item reveal">
+                    <div class="image-container parallax-img">
+                        <img src="gambar/laut.jpg" alt="">
+                        <div class="wave-decoration"></div>
+                    </div>
+                    <div class="caption" data-i18n="surfingSpot">
+                        Spot surfing unggulan dengan ombak yang konsisten dan menantang, menjadikannya destinasi favorit peselancar dari berbagai negara.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
