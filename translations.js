@@ -22,9 +22,9 @@ const translations = {
     aboutUs: "Tentang Kami",
     aboutTyping: "Desa Della adalah desa wisata yang indah yang terletak di Papua Barat Daya, Indonesia. Menawarkan pemandangan alam yang menakjubkan, warisan budaya yang kaya, dan keramahan hangat kepada pengunjung. Jelajahi tradisi, aktivitas, dan keajaiban alam yang membuat Della menjadi destinasi yang unik.",
     travelPotentialTitle: "Potensi Wisata",
-    exoticIsland: "Pulau eksotis yang menawan",
-    greenTurtle: "Penyu hijau yang berenang",
-    surfingSpot: "Spot surfing terbaik tempat internasional",
+    exoticIsland: "Di pantai ini, pengunjung disuguhkan pemandangan pepohonan yang rimbun dan udara yang segar — kombinasi yang membuat suasana tenang dan menenangkan.",
+    greenTurtle: "Penyu belimbing, salah satu spesies langka, menjadikan Pantai Della sebagai lokasi penting untuk bertelur. Di pantai yang tenang ini, mereka melanjutkan siklus kehidupannya sekaligus menambah daya tarik ekowisata dan pentingnya pelestarian alam.",
+    surfingSpot: "Spot surfing unggulan dengan ombak yang konsisten dan menantang, menjadikannya destinasi favorit peselancar dari berbagai negara.",
     funFacts: "Fakta Menarik",
 
 funFactsSubtitle: "Fakta menarik tentang alam dan budaya Dela 1001 Ombak.",
