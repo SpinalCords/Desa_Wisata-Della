@@ -31,7 +31,7 @@ window.translations = {
 
     facility0Name: "Public Restroom",
     facility0Desc: "Clean and well-maintained public restrooms are available at several strategic points in the village for visitors' convenience.",
-    facility0Price: "Rp 10,000",
+    facility0Price: "Free",
 
     facility1Name: "Homestay",
     facility1Desc: "Homestays with a traditional atmosphere and modern facilities for a comfortable and authentic stay experience.",
@@ -93,7 +93,7 @@ window.translations = {
 
     facility0Name: "Kamar Mandi Umum",
     facility0Desc: "Kamar mandi umum yang bersih dan terawat tersedia di beberapa titik strategis desa untuk kenyamanan pengunjung.",
-    facility0Price: "Rp 10.000",
+    facility0Price: "Gratis",
 
     facility1Name: "Homestay",
     facility1Desc: "Homestay dengan suasana tradisional dan fasilitas modern untuk memberikan pengalaman menginap yang nyaman dan autentik.",
@@ -154,7 +154,7 @@ window.translations = {
 
     facility0Name: "公共洗手间",
     facility0Desc: "干净整洁的公共洗手间设在村庄的几个战略位置，方便游客使用。",
-    facility0Price: "Rp 10,000",
+    facility0Price: "免费",
 
     facility1Name: "民宿",
     facility1Desc: "具有传统氛围和现代设施的民宿，提供舒适而真实的住宿体验。",

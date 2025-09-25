@@ -16,6 +16,11 @@
     --desc-color: #444;
     --hero-title: #e6e6e6;
     --hero-desc: #fffbe7;
+
+    /* Tambahan efek */
+    --card-bg: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(159, 199, 234, 0.75));
+    --card-border: rgba(0,0,0,0.06);
+    --card-shadow: 0 10px 28px rgba(0,0,0,0.08);
 }
 
 [data-theme="dark"] {
@@ -29,6 +34,11 @@
     --desc-color: #ffffff;
     --hero-title: #88AFE6;
     --hero-desc: rgba(136, 175, 230, 0.9);
+
+    /* Dark card style */
+    --card-bg: linear-gradient(180deg, rgba(0,18,32,0.85), rgba(0,18,32,0.65));
+    --card-border: rgba(136,175,230,0.15);
+    --card-shadow: 0 10px 28px rgba(0,0,0,0.35);
 }
 
 body {
@@ -101,13 +111,63 @@ body {
   background: var(--nav-bg);
   padding: 1rem;
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.mobile-menu a {
+  color: var(--text-primary);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.mobile-menu a:hover {
+  background-color: rgba(136, 175, 230, 0.1);
 }
 [data-theme="dark"] .mobile-menu {
-  background:#001220;
+  background: var(--nav-bg);
   border: 1px solid rgba(136, 175, 230, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+[data-theme="dark"] .mobile-menu a:hover {
+  background-color: rgba(136, 175, 230, 0.15);
 }
 .mobile-menu.active {
   display: block;
+}
+
+/* New mobile menu button styles */
+.mobile-menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.mobile-menu-button:hover {
+  background-color: rgba(136, 175, 230, 0.1);
+}
+
+.mobile-menu-button i {
+  width: 20px;
+  text-align: center;
+}
+
+[data-theme="dark"] .mobile-menu-button {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .mobile-menu-button:hover {
+  background-color: rgba(136, 175, 230, 0.15);
 }
 
 /* Styles for Pesan button on fasilitas page */
@@ -125,7 +185,6 @@ body {
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(105, 179, 76, 0.35);
 }
-
 .btn-pesan:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(105, 179, 76, 0.45); }
 .btn-pesan i { margin-right: 8px; }
 
@@ -141,14 +200,14 @@ body {
 /* Facility grid and card styles */
 .facility-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 .facility-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(159, 199, 234, 0.75));
-  border: 1px solid rgba(0,0,0,0.06);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem 1.25rem;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  box-shadow: var(--card-shadow);
   transform: translateY(18px);
   opacity: 0;
   animation: cardEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -175,11 +234,6 @@ body {
 /* Hover float */
 .facility-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,0.12); }
 
-/* Dark theme adjustments */
-[data-theme="dark"] .facility-card { background: linear-gradient(180deg, rgba(0,18,32,0.85), rgba(0,18,32,0.65)); border-color: rgba(136,175,230,0.15); box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
-[data-theme="dark"] .facility-card h2 { color: var(--title-color); }
-[data-theme="dark"] .facility-card p { color: var(--hero-desc); }
-
 /* Ripple effect styles */
 .ripple {
     position: absolute;
@@ -200,4 +254,37 @@ body {
 button {
     position: relative;
     overflow: hidden;
+}
+
+/* Navbar animation styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav.scroll-down {
+  transform: translateY(-100%);
+}
+
+nav.scroll-up {
+  transform: translateY(0);
+}
+
+/* Image container and source attribution styles */
+.image-container {
+  position: relative;
+}
+
+.source-attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  z-index: 2;
 }

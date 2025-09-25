@@ -16,7 +16,7 @@
 <script src="../global-elements/global-navbar.js"></script>
     <nav class="navbar">
       <div class="nav-logo">
-        <img src="../logo.png" alt="Logo" data-i18n="logoAlt">
+        <a href="../index.html"><img src="../gambar/logo.png" alt="Logo"></a>
       </div>
 
       <div class="nav-links">
@@ -25,18 +25,6 @@
           <div class="dropdown-content">
             <a href="..\index.html#home" data-i18n="home">Home</a>
             <a href="..\index.html#about" data-i18n="about">About</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button class="dropbtn" data-i18n="wisata">Wisata</button>
-          <div class="dropdown-content">
-            <a href="..\index.html#travel-potential" data-i18n="travelPotential">Travel Potential</a>
-            <a href="..\index.html#fun-facts" data-i18n="funFact">Fun Fact</a>
-            <a href="..\struktur\index.html" data-i18n="structures">Structures</a>
-            <a href="..\fasilitas\index.html" data-i18n="facilities">Facilities</a>
-            <a href="..\index.html#activities" data-i18n="activities">Activities</a>
-            <a href="..\index.html#rules" data-i18n="rules">Rules</a>
           </div>
         </div>
         <a href="..\index.html#contact" class="nav-item" data-i18n="meetUs">Meet Us</a>
@@ -49,23 +37,23 @@
           <span></span>
         </button>
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-          <a href="..\fasilitas\index.html" class="mobile-menu-item">
-            <i class="fas fa-umbrella-beach"></i>
-            <span data-i18n="ourFacilities">Our Facilities</span>
-          </a>
-          <a href="..\adat\index.html" class="mobile-menu-item">
-            <i class="fas fa-landmark"></i>
-            <span data-i18n="budayaAdat">Budaya Adat</span>
-          </a>
-          <a href="..\index.html#home" class="mobile-menu-item">
+                    <div class="mobile-menu-bottom">
+        <button onclick="window.location.href='../index.html#home'">
             <i class="fas fa-home"></i>
             <span data-i18n="home">Home</span>
-          </a>
-          <a href="..\index.html#contact" class="mobile-menu-item">
+          </button>
+          <button onclick="window.location.href='../fasilitas/index.html'">
+            <i class="fas fa-umbrella-beach"></i>
+            <span data-i18n="ourFacilities">Our Facilities</span>
+          </button>
+          <button onclick="window.location.href='../adat/index.html'">
+            <i class="fas fa-landmark"></i>
+            <span data-i18n="budayaAdat">Budaya Adat</span>
+          </button>
+          <button onclick="window.location.href='../index.html#contact'">
             <i class="fas fa-envelope"></i>
             <span data-i18n="meetUs">Meet Us</span>
-          </a>
-          <div class="mobile-menu-bottom">
+          </button>
             <button class="theme-toggle">
               <i class="fas fa-moon"></i>
               <span data-i18n="theme">Theme</span>
@@ -93,19 +81,25 @@
     <section class="facility-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
       <!-- Repeat pattern for each facility -->
       <article class="facility-card">
-        <img src="../gambar/chair.png" alt="Kamar Mandi Umum" data-i18n="facility0ImageAlt">
+        <div class="image-container">
+          <img src="../gambar/chair.png" alt="Kamar Mandi Umum" data-i18n="facility0ImageAlt">
+          <div class="source-attribution">Source by: @everlasting_photoart</div>
+        </div>
         <h2 data-i18n="facility0Name" data-facility-name="0">Kamar Mandi Umum</h2>
         <p data-i18n="facility0Desc" data-facility-desc="0">
           Kamar mandi umum yang bersih dan terawat tersedia di beberapa titik strategis desa untuk kenyamanan pengunjung.
         </p>
-        <p data-i18n="facility0Price" data-facility-price="0">Rp 10.000</p>
+        <p data-i18n="facility0Price" data-facility-price="0">Gratis</p>
         <a href="#" class="btn-pesan" data-i18n="bookNow" data-translate="facilities.bookButton">
           <i class="fab fa-whatsapp"></i> Pesan
         </a>
       </article>
 
       <article class="facility-card">
-        <img src="../gambar/homestay.jpg" alt="Homestay" data-i18n="facility1ImageAlt">
+        <div class="image-container">
+          <img src="../gambar/homestay.jpg" alt="Homestay" data-i18n="facility1ImageAlt">
+          <div class="source-attribution">Source by: @everlasting_photoart</div>
+        </div>
         <h2 data-i18n="facility1Name" data-facility-name="1">Homestay</h2>
         <p data-i18n="facility1Desc" data-facility-desc="1">
           Homestay dengan suasana tradisional dan fasilitas modern untuk memberikan pengalaman menginap yang nyaman dan autentik.
@@ -117,7 +111,10 @@
       </article>
 
       <article class="facility-card">
-        <img src="../gambar/budayahh.jpg" alt="Rumah Adat" data-i18n="facility2ImageAlt">
+        <div class="image-container">
+          <img src="../gambar/budayahh.jpg" alt="Rumah Adat" data-i18n="facility2ImageAlt">
+          <div class="source-attribution">Source by: @everlasting_photoart</div>
+        </div>
         <h2 data-i18n="facility2Name" data-facility-name="2">Rumah Adat</h2>
         <p data-i18n="facility2Desc" data-facility-desc="2">
           Rumah adat yang menjadi simbol budaya dan sejarah desa, terbuka untuk kunjungan dan edukasi budaya.
@@ -129,7 +126,10 @@
       </article>
 
       <article class="facility-card">
-        <img src="../gambar/perahu.jpg" alt="Area Parkir" data-i18n="facility3ImageAlt">
+        <div class="image-container">
+          <img src="../gambar/perahu.jpg" alt="Area Parkir" data-i18n="facility3ImageAlt">
+          <div class="source-attribution">Source by: @everlasting_photoart</div>
+        </div>
         <h2 data-i18n="facility3Name" data-facility-name="3">Area Parkir</h2>
         <p data-i18n="facility3Desc" data-facility-desc="3">
           Area parkir yang luas dan aman untuk kendaraan pengunjung, dengan akses mudah ke berbagai titik wisata.
@@ -141,7 +141,10 @@
       </article>
 
       <article class="facility-card">
-        <img src="../gambar/makan.jpg" alt="Tempat Makan" data-i18n="facility4ImageAlt">
+        <div class="image-container">
+          <img src="../gambar/makan.jpg" alt="Tempat Makan" data-i18n="facility4ImageAlt">
+          <div class="source-attribution">Source by: @everlasting_photoart</div>
+        </div>
         <h2 data-i18n="facility4Name" data-facility-name="4">Tempat Makan</h2>
         <p data-i18n="facility4Desc" data-facility-desc="4">
           Berbagai pilihan tempat makan yang menyajikan kuliner lokal dan internasional untuk memanjakan lidah Anda.
@@ -153,7 +156,10 @@
       </article>
 
       <article class="facility-card">
-        <img src="../gambar/wisata (10).jpg" alt="Area Rekreasi" data-i18n="facility5ImageAlt">
+        <div class="image-container">
+          <img src="../gambar/wisata (10).jpg" alt="Area Rekreasi" data-i18n="facility5ImageAlt">
+          <div class="source-attribution">Source by: @everlasting_photoart</div>
+        </div>
         <h2 data-i18n="facility5Name" data-facility-name="5">Area Rekreasi</h2>
         <p data-i18n="facility5Desc" data-facility-desc="5">
           Area rekreasi yang luas dengan fasilitas olahraga dan permainan tradisional untuk segala usia.

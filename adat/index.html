@@ -17,7 +17,7 @@
   <!-- Navbar -->
     <nav id="navbar" class="navbar">
     <div class="nav-logo">
-      <img src="logo.png" alt="Logo">
+        <a href="../index.html"><img src="../gambar/logo.png" alt="Logo"></a>
     </div>
     <div class="nav-links">
       <div class="dropdown">
@@ -46,23 +46,23 @@
           <span></span>
         </button>
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-          <a href="..\fasilitas\index.html" class="mobile-menu-item">
-            <i class="fas fa-umbrella-beach"></i>
-            <span data-i18n="ourFacilities">Our Facilities</span>
-          </a>
-          <a href="..\adat\index.html" class="mobile-menu-item">
-            <i class="fas fa-landmark"></i>
-            <span data-i18n="budayaAdat">Budaya Adat</span>
-          </a>
-          <a href="..\index.html#home" class="mobile-menu-item">
+                    <div class="mobile-menu-bottom">
+        <button onclick="window.location.href='../index.html#home'">
             <i class="fas fa-home"></i>
             <span data-i18n="home">Home</span>
-          </a>
-          <a href="..\index.html#contact" class="mobile-menu-item">
+          </button>
+          <button onclick="window.location.href='../fasilitas/index.html'">
+            <i class="fas fa-umbrella-beach"></i>
+            <span data-i18n="ourFacilities">Our Facilities</span>
+          </button>
+          <button onclick="window.location.href='../adat/index.html'">
+            <i class="fas fa-landmark"></i>
+            <span data-i18n="budayaAdat">Budaya Adat</span>
+          </button>
+          <button onclick="window.location.href='../index.html#contact'">
             <i class="fas fa-envelope"></i>
             <span data-i18n="meetUs">Meet Us</span>
-          </a>
-          <div class="mobile-menu-bottom">
+          </button>
             <button class="theme-toggle">
               <i class="fas fa-moon"></i>
               <span data-i18n="theme">Theme</span>
@@ -79,6 +79,8 @@
   <!-- Hero Section -->
   <div id="utamaadat" class="hero-section">
     <div class="hero-overlay"></div>
+              <div class="source-attribution">Source by: @everlasting_photoart</div>
+
     <div class="hero-content">
       <h1 class="hero-title" data-i18n="cultureTitle">Budaya Adat Della</h1>
       <p class="hero-desc" data-i18n="cultureDesc">Jelajahi kekayaan budaya dan tradisi masyarakat Della yang telah diwariskan turun-temurun</p>
@@ -99,6 +101,7 @@
         </div>
         <div class="intro-image">
           <img src="../gambar/pakayan budaya.jpg" alt="Budaya Della" class="culture-img">
+                    <div class="source-attribution">Source by: @everlasting_photoart</div>
         </div>
       </div>
     </div>
@@ -292,68 +295,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Cultural Events Section -->
-  <section id="event" class="events-section">
-    <div class="container">
-      <h2 class="section-title" data-i18n="culturalEvents">Acara Budaya</h2>
-      <div class="events-grid">
-
-        <div class="event-card">
-          <div class="event-image">
-            <img src="../gambar/destinasi.jpg" alt="Festival Budaya">
-          </div>
-          <div class="event-content">
-            <h3 data-i18n="culturalFestival">Festival Budaya Della</h3>
-            <p data-i18n="festivalDesc">
-              Festival tahunan yang menampilkan berbagai aspek budaya Della
-              termasuk tarian, musik, dan kuliner tradisional.
-            </p>
-            <div class="event-details">
-              <span class="event-date" data-i18n="festivalDate">Agustus setiap tahun</span>
-              <span class="event-duration" data-i18n="festivalDuration">3 hari</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image">
-            <img src="../gambar/destinasi1.jpg" alt="Upacara Adat">
-          </div>
-          <div class="event-content">
-            <h3 data-i18n="traditionalCeremony">Upacara Adat</h3>
-            <p data-i18n="ceremonyEventDesc">
-              Upacara adat yang dilakukan dalam berbagai kesempatan penting
-              dalam kehidupan masyarakat Della.
-            </p>
-            <div class="event-details">
-              <span class="event-date" data-i18n="ceremonyDate">Sesuai tradisi</span>
-              <span class="event-duration" data-i18n="ceremonyDuration">1-2 hari</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image">
-            <img src="../gambar/destinasi2.jpg" alt="Workshop Budaya">
-          </div>
-          <div class="event-content">
-            <h3 data-i18n="culturalWorkshop">Workshop Budaya</h3>
-            <p data-i18n="workshopDesc">
-              Program edukasi budaya yang mengajak wisatawan belajar
-              tentang tradisi dan keterampilan lokal.
-            </p>
-            <div class="event-details">
-              <span class="event-date" data-i18n="workshopDate">Sepanjang tahun</span>
-              <span class="event-duration" data-i18n="workshopDuration">2-4 jam</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">

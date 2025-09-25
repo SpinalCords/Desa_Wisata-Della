@@ -14,6 +14,7 @@ body {
     --cultural-secondary: #91ADC8;
     --cultural-accent: #647FBC;
     --cultural-bg: #e4f7ff;
+    --text-primary: #222222;
     --cultural-dark: #2D3748;
     --cultural-gradient: linear-gradient(135deg, #647FBC 0%, #91ADC8 50%, #515050 100%);
     --cultural-shadow: 0 8px 32px rgba(53, 178, 255, 0.3);
@@ -269,7 +270,7 @@ body {
 .intro-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #654321;
+    color: var();
     font-family: 'Poppins', sans-serif;
     animation: fadeInUp 1s ease-out 0.3s both;
 }
@@ -282,7 +283,7 @@ body {
     position: relative;
     overflow: hidden;
     animation: slideInFromRight 1s ease-out 0.5s both;
-}
+}   
 
 @keyframes slideInFromRight {
     from { transform: translateX(100px); opacity: 0; }
@@ -306,7 +307,7 @@ body {
 
 .culture-img:hover {
     transform: scale(1.08) rotate(2deg);
-    box-shadow: 0 12px 40px rgba(255, 107, 53, 0.4);
+    box-shadow: 0 12px 40px rgba(53, 67, 255, 0.4);
 }
 
 /* Section Titles */
@@ -469,10 +470,13 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    color: #ffffff;
+    color: black;
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 2;
+}
+[data-theme="dark"] .tradition-card p{
+    color: var(--cultural-bg);
 }
 
 .tradition-details h4 {
@@ -494,7 +498,7 @@ body {
 .tradition-details li {
     padding: 0.5rem 0;
     border-bottom: 1px solid rgba(139, 69, 19, 0.1);
-    color: #654321;
+    color: var(--cultural-bg);
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
     position: relative;
@@ -512,7 +516,7 @@ body {
 /* Cultural Values Section */
 .values-section {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, var(--cultural-primary) 0%, var(--cultural-secondary) 100%);
+    background: var(--cultural-secondary);
     margin: 4rem auto;
     max-width: 1100px;
     width: 90%;
@@ -530,8 +534,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(255, 210, 63, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 20%, rgba(63, 124, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(53, 157, 255, 0.1) 0%, transparent 50%);
     animation: valueGlow 8s ease-in-out infinite alternate;
 }
 
@@ -583,7 +587,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(255, 210, 63, 0.1), transparent);
+    background: conic-gradient(from 0deg, transparent, rgba(63, 92, 255, 0.1), transparent);
     animation: rotate 10s linear infinite;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -595,9 +599,8 @@ body {
 
 .value-card:hover {
     transform: translateY(-8px) scale(1.05);
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 210, 63, 0.5);
-    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+    border-color: rgba(63, 146, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(53, 164, 255, 0.3);
 }
 
 .value-icon {
@@ -619,8 +622,7 @@ body {
 
 .value-card:hover .value-icon {
     transform: scale(1.2) rotate(10deg);
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
-    background: var(--cultural-accent);
+    box-shadow: 0 8px 24px rgba(53, 198, 255, 0.3);
     color: var(--cultural-primary);
 }
 
@@ -647,184 +649,9 @@ body {
     z-index: 2;
 }
 
-/* Cultural Events Section */
-.events-section {
-    padding: 4rem 2rem;
-    background: var(--cultural-bg);
-    margin: 4rem auto;
-    max-width: 1200px;
-    width: 90%;
-    border-radius: 32px;
-    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.1);
-    position: relative;
-    overflow: hidden;
-    animation: slideInFromRight 1s ease-out;
-}
-
-.events-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.02) 0%, transparent 70%);
-    animation: eventPulse 6s ease-in-out infinite;
-}
-
-@keyframes slideInFromRight {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes eventPulse {
-    0%, 100% { transform: scale(1); opacity: 0.02; }
-    50% { transform: scale(1.05); opacity: 0.05; }
-}
-
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.event-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 2px solid rgba(139, 69, 19, 0.1);
-    position: relative;
-    animation: eventCardFloat 5s ease-in-out infinite;
-}
-
-@keyframes eventCardFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-}
-
-.event-card:nth-child(odd) {
-    animation-delay: 0s;
-}
-
-.event-card:nth-child(even) {
-    animation-delay: 1.5s;
-}
-
-.event-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.event-card:hover::before {
-    opacity: 1;
-}
-
-.event-card:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 20px 60px rgba(139, 69, 19, 0.3);
-    border-color: var(--cultural-primary);
-}
-
-.event-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
-.event-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(255, 107, 53, 0.1) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.event-card:hover .event-image::after {
-    opacity: 1;
-}
-
-.event-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.event-card:hover .event-image img {
-    transform: scale(1.15);
-}
-
-.event-content {
-    padding: 1.5rem;
-    position: relative;
-    z-index: 2;
-}
-
-.event-content h3 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.4rem;
-    color: var(--cultural-primary);
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
-}
-
-.event-card:hover .event-content h3 {
-    color: var(--cultural-secondary);
-}
-
-.event-content p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #654321;
-    margin-bottom: 1rem;
-}
-
-.event-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.event-card:hover .event-details {
-    transform: translateY(-2px);
-}
-
-.event-date,
-.event-duration {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    color: var(--cultural-secondary);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.event-card:hover .event-date,
-.event-card:hover .event-duration {
-    color: var(--cultural-primary);
-}
-
 /* Dark mode styles */
 [data-theme="dark"] .hero-section {
-    background: linear-gradient(135deg, #2D1810, #3D2510);
+    background: linear-gradient(135deg, #10202d, #10273d);
 }
 
 [data-theme="dark"] .intro-section {
@@ -838,22 +665,14 @@ body {
 
 [data-theme="dark"] .tradition-card {
     background: #2a2a2a;
-    border-color: rgba(139, 69, 19, 0.3);
+    border-color: rgba(19, 135, 139, 0.3);
     color: #e6e6e6;
 }
 
 [data-theme="dark"] .values-section {
-    background: linear-gradient(135deg, #2D1810, #3D2510);
+    background: linear-gradient(135deg, #10192d, #103d35);
 }
 
-[data-theme="dark"] .events-section {
-    background: #1a1a1a;
-}
-
-[data-theme="dark"] .event-card {
-    background: #2a2a2a;
-    border-color: rgba(139, 69, 19, 0.3);
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -959,4 +778,15 @@ body {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(139,69,19,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(139,69,19,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(139,69,19,0.1)"/></svg>');
     pointer-events: none;
     z-index: 1;
+}
+
+.source-attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  z-index: 2;
 }
