@@ -202,13 +202,13 @@
         <div class="fun-facts-grid">
           <!-- Ketam Kenari -->
           <article class="fun-fact-card reveal" tabindex="0" role="button"
-            data-id="ketamKenari"
-            data-title="Ketam Kenari"
+            data-id="ketamKenari" 
+            data-title-key="ketamKenariTitle"
             data-icon="🦀"
-            data-status="Rentan (lokal)"
-            data-season="Sep–Des (sering terlihat)"
-            data-ethics="Jangan disentuh, jaga jarak, hindari memberi makan"
-            data-desc="Ketam kenari (coconut crab) adalah kepiting darat terbesar di dunia, mampu memanjat pohon kelapa dan memecahkan kelapa dengan capitnya yang sangat kuat.">
+            data-status-key="ketamKenariStatus"
+            data-season-key="ketamKenariSeason"
+            data-ethics-key="ketamKenariEthics"
+            data-desc-key="ketamKenariDesc">
             <div class="fun-fact-header">
               <div class="fun-fact-icon">🦀</div>
               <h3 data-i18n="ketamKenari">Ketam Kenari</h3>
@@ -226,12 +226,12 @@
 
           <article class="fun-fact-card reveal" tabindex="0" role="button"
             data-id="penyuBelimbing"
-            data-title="Penyu Belimbing"
-            data-icon="🐢"
-            data-status="Kritis (IUCN)"
-            data-season="Apr–Mei (bertelur, malam)"
-            data-ethics="Tanpa flash, tidak menyentuh, tenang, ikuti petugas"
-            data-desc="Penyu belimbing adalah spesies penyu terbesar di dunia dan termasuk satwa dilindungi. Musim bertelur biasanya pada April–Mei di malam hari.">
+            data-title-key="penyuTitle"
+            data-icon="🐢" 
+            data-status-key="penyuStatus"
+            data-season-key="penyuSeason"
+            data-ethics-key="penyuEthics"
+            data-desc-key="penyuDesc">
             <div class="fun-fact-header">
               <div class="fun-fact-icon">🐢</div>
               <h3 data-i18n="penyuBelimbing">Penyu Belimbing</h3>
@@ -248,12 +248,13 @@
 
           <!-- Upacara Penyambutan -->
           <article class="fun-fact-card reveal" tabindex="0" role="button"
-            data-title="Upacara Penyambutan"
+            data-id="upacaraPenyambutan"
+            data-title-key="upacaraTitle"
             data-icon="🎎"
-            data-status="Budaya Lokal"
-            data-season="Sesuai Kunjungan"
-            data-ethics="Patuhi arahan tetua adat, berpakaian sopan, minta izin untuk merekam"
-            data-desc="Wisatawan disambut dengan upacara adat Desa Della yang berisi tarian, nyanyian, serta simbol penghormatan bagi tamu.">
+            data-status-key="upacaraStatus"
+            data-season-key="upacaraSeason"
+            data-ethics-key="upacaraEthics"
+            data-desc-key="upacaraDesc">
             <div class="fun-fact-header">
               <div class="fun-fact-icon">🎎</div>
               <h3 data-i18n="upacaraPenyambutan">Upacara Penyambutan</h3>
@@ -270,12 +271,13 @@
 
           <!-- 1001 Ombak -->
           <article class="fun-fact-card reveal" tabindex="0" role="button"
-            data-title="1001 Ombak"
+            data-id="ombak"
+            data-title-key="ombakTitle"
             data-icon="🌊"
-            data-status="Geowisata"
-            data-season="Sepanjang tahun"
-            data-ethics="Waspada kondisi ombak, ikuti arahan penjaga pantai"
-            data-desc="Nama “1001 Ombak” terinspirasi dari karakter ombak yang bervariasi dan dinamis, memberi panorama unik dan menantang untuk surfing.">
+            data-status-key="ombakStatus"
+            data-season-key="ombakSeason"
+            data-ethics-key="ombakEthics"
+            data-desc-key="ombakDesc">
             <div class="fun-fact-header">
               <div class="fun-fact-icon">🌊</div>
               <h3 data-i18n="Ombak">1001 Ombak</h3>
@@ -475,6 +477,40 @@
 
       // Set initial language
       setLang(currentLang);
+    });
+
+    // Add this to your language change handler
+    function updateFunFactCards(lang) {
+      document.querySelectorAll('.fun-fact-card').forEach(card => {
+        const titleKey = card.getAttribute('data-title-key');
+        const statusKey = card.getAttribute('data-status-key');
+        const seasonKey = card.getAttribute('data-season-key');
+        const ethicsKey = card.getAttribute('data-ethics-key');
+        const descKey = card.getAttribute('data-desc-key');
+
+        // Update the data attributes with translated content
+        if (translations[lang][titleKey]) {
+          card.setAttribute('data-title', translations[lang][titleKey]);
+        }
+        if (translations[lang][statusKey]) {
+          card.setAttribute('data-status', translations[lang][statusKey]);
+        }
+        if (translations[lang][seasonKey]) {
+          card.setAttribute('data-season', translations[lang][seasonKey]);
+        }
+        if (translations[lang][ethicsKey]) {
+          card.setAttribute('data-ethics', translations[lang][ethicsKey]);
+        }
+        if (translations[lang][descKey]) {
+          card.setAttribute('data-desc', translations[lang][descKey]);
+        }
+      });
+    }
+
+    // Add this to your existing language change event listener
+    document.addEventListener('languageChanged', function(e) {
+      const lang = e.detail.lang;
+      updateFunFactCards(lang);
     });
     </script>
     <!-- Load translations before main script -->
@@ -699,4 +735,3 @@
   </footer>
   </body>
 </html>
-  
