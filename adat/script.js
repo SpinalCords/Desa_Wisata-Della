@@ -206,4 +206,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         setTimeout(() => particlesContainer.remove(), 10000);
     }, 2000);
+    
+     let lastScroll = 0;
+  const navbar = document.querySelector('nav');
+  
+  // Fungsi untuk mengontrol navbar saat scrolling
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+      navbar.classList.remove('scroll-up');
+      return;
+    }
+    
+    if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+      // Scroll Down
+      navbar.classList.remove('scroll-up');
+      navbar.classList.add('scroll-down');
+    } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
+      // Scroll Up
+      navbar.classList.remove('scroll-down');
+      navbar.classList.add('scroll-up');
+    }
+    lastScroll = currentScroll;
+  });
 });

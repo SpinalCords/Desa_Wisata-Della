@@ -35,19 +35,6 @@ body {
   /* Global improvements */
   body { font-size: 16px; line-height: 1.5; }
 
-  /* Navbar */
-  .nav-links { display: none; }
-  .menu-toggle { display: block; }
-  .nav-logo { padding-left: 1rem; }
-  .nav-buttons { padding-right: 1rem; }
-  .mobile-menu-items a {
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    color: var(--mobile-menu-bg);
-  }
-  .mobile-menu{
-    margin-top: 0.8rem;
-  }
   /* Hero Section */
   .home-hero {
     position: relative;
