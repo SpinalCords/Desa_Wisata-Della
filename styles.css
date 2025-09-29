@@ -2574,4 +2574,17 @@ button {
     z-index: 2;
 }
 
+.image-container {
+    position: relative;
+}
 
+.image-source {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+}
