@@ -1,6 +1,5 @@
 /* Add bottom padding to body or main container to ensure footer visibility */
 body {
-  padding-bottom: 150px; /* Adjust as needed to prevent footer overlap */
     box-sizing: border-box;
         padding-top: 80px;
 }
@@ -578,7 +577,12 @@ nav.scroll-up {
     .nav-links {
         display: none;
     }
-
+    .tradition-details li {
+    color: var(--cultural-primary);
+    }
+    .tradition-details li:hover {
+        color: var(--cultural-secondary);
+    }
     .hero-title {
         font-size: 2rem;
     }

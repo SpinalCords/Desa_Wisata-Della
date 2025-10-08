@@ -83,7 +83,7 @@ body {
 
 @media (max-width: 480px) {
   .about-title { font-size: 1.75rem; }
-  .btn-pesan { padding: 0.5rem 1.25rem; }
+  .btn-pesan { padding: 0.5rem 1.25rem; text-decoration: none; }
   .facility-card img { height: 140px; }
 }
 
@@ -93,6 +93,7 @@ body {
   background: linear-gradient(135deg, #9bd36b, #69b34c);
   border: none;
   padding: 0.65rem 1.75rem;
+   text-decoration: none;
   border-radius: 9999px;
   font-weight: 700;
   cursor: pointer;
@@ -103,7 +104,7 @@ body {
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(105, 179, 76, 0.35);
 }
-.btn-pesan:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(105, 179, 76, 0.45); }
+.btn-pesan:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(105, 179, 76, 0.45);  text-decoration: none;}
 .btn-pesan i { margin-right: 8px; }
 
 /* About title style for fasilitas page */
