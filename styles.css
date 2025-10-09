@@ -2570,3 +2570,342 @@ button {
     font-size: 12px;
     border-radius: 4px;
 }
+
+/* Additional responsive styles for 1920x1080 and larger screens */
+@media (min-width: 1920px) {
+  /* Global adjustments for large screens */
+  body {
+    font-size: 18px;
+  }
+
+  /* Hero Section */
+  .home-hero {
+    width: 95%;
+    max-width: 1920px;
+    margin: 3rem auto;
+    min-height: 500px;
+  }
+
+  .hero-bg {
+    height: 500px;
+  }
+
+  .hero-title .explore-text {
+    font-size: 3.5rem;
+  }
+
+  .hero-title h1 {
+    font-size: 4rem;
+  }
+
+  .hero-desc {
+    font-size: 1.4rem;
+  }
+
+  .hero-btn {
+    font-size: 1.2rem;
+    padding: 1rem 4rem;
+  }
+
+  /* Carousel */
+  .carousel-container {
+    width: 95%;
+    max-width: 1920px;
+    margin: 3rem auto;
+    padding: 15px 0;
+  }
+
+  .carousel-track {
+    height: 300px;
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .carousel-img {
+    min-width: calc(25% - 19px);
+  }
+
+  /* About Section */
+  .about-section {
+    width: 95%;
+    max-width: 1920px;
+    margin: 5rem auto;
+    padding: 4rem 3rem;
+    min-height: 700px;
+  }
+
+  .about-title {
+    font-size: 3rem;
+  }
+
+  .about-img {
+    width: 550px;
+    height: 275px;
+  }
+
+  .about-text {
+    font-size: 2rem;
+    text-align: left;
+    margin-top: 10rem;
+    line-height: 1.8;
+  }
+
+  /* Travel Potential */
+  #travel-potential {
+    padding: 3rem 2rem;
+  }
+
+  .travel-card {
+    width: 95%;
+    max-width: 1800px;
+    padding: 30px;
+  }
+
+  .travel-card .title h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .grid-container {
+    gap: 30px;
+  }
+
+  .grid-item {
+    gap: 30px;
+    padding: 20px 0;
+  }
+
+  .image-container {
+    max-width: 500px;
+  }
+
+  .caption {
+    font-size: 1.6rem;
+    padding: 0 20px;
+  }
+
+  .moving-turtle {
+    font-size: 2.5rem;
+  }
+
+  /* Fun Facts */
+  .fun-facts-section {
+    width: 95%;
+    max-width: 1920px;
+    margin: 5rem auto;
+    padding: 4rem 3rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .fun-facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .fun-fact-card {
+    padding: 2rem;
+  }
+
+  .fun-fact-header {
+    gap: 1rem;
+  }
+
+  .fun-fact-icon {
+    font-size: 3rem;
+  }
+
+  .fun-fact-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .fun-fact-brief {
+    font-size: 1.1rem;
+  }
+
+  .tags span {
+    font-size: 0.9rem;
+  }
+
+  /* Activities */
+  .activities-section {
+    width: 95%;
+    max-width: 1920px;
+    margin: 5rem auto;
+    padding: 4rem 3rem;
+  }
+
+  .activities-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .activity-card {
+    padding: 2rem;
+  }
+
+  .activity-image img {
+    height: 200px;
+  }
+
+  .activity-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .activity-content p {
+    font-size: 1.1rem;
+  }
+
+  /* Rules */
+  .rules-section{
+    height: 800px;
+    width: 95%;
+    margin: 5rem auto;
+  }
+  .rules-card h3{
+    font-size: 1.6rem;
+  }
+  .rules-card li{
+    font-size: 1.4rem;
+  }
+  .rules-title {
+    font-size: 3rem;
+  }
+  .rules-card{
+    width: 90%;
+    margin: 5rem auto;
+  }
+
+  /* Contact */
+  .contact-section {
+    width: 95%;
+    max-width: 1920px;
+    margin: 5rem auto;
+    padding: 4rem 3rem;
+  }
+
+
+  .contact-info{
+    width: 60%;
+  }
+.contact-container{
+  margin-left: 30rem;
+}
+  .contact-title {
+    font-size: 3rem;
+  }
+
+  .contact-item {
+    padding: 20px;
+    font-size: 1.4rem;
+  }
+
+  .form-group input, .form-group textarea {
+    padding: 18px;
+    font-size: 1.1rem;
+  }
+
+  .submit-btn {
+    padding: 18px 40px;
+    font-size: 1.2rem;
+  }
+
+  .whatsapp-btn {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+  }
+
+  /* Location */
+  .location-section {
+    width: 95%;
+    max-width: 1920px;
+    margin: 5rem auto;
+    padding: 4rem 3rem;
+  }
+
+  .location-container {
+    gap: 3rem;
+  }
+
+  .location-details {
+    padding: 3rem;
+  }
+
+  .location-info {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .location-item {
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+
+  .map-container iframe {
+    height: 400px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 3rem 2rem;
+  }
+
+  .footer-container {
+    gap: 3rem;
+  }
+
+  .footer-section {
+    margin-bottom: 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    font-size: 1.1rem;
+  }
+
+  /* Gallery */
+  .gallery {
+    gap: 15px;
+  }
+
+  .gallery-item img {
+    height: 400px;
+  }
+
+  .gallery-item img.active {
+    width: 650px;
+    height: 400px;
+  }
+
+  .gallery-overlay {
+    padding: 18px;
+  }
+
+  .gallery-text {
+    font-size: 1rem;
+  }
+
+  .gallery-location {
+    font-size: 1rem;
+  }
+
+  .gallery-learn-more {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+}

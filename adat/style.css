@@ -693,3 +693,9 @@ nav.scroll-up {
   font-size: 12px;
   z-index: 2;
 }
+
+/* Force footer visibility on adat page */
+.footer-section {
+  opacity: 1 !important;
+  transform: none !important;
+}

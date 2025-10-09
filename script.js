@@ -112,12 +112,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const viewportWidth = window.innerWidth;
 
         sections.forEach(section => {
+            if (section.id === 'rules') return; // Skip setting minHeight for rules section
             // Set minimum height to viewport height
             section.style.minHeight = `${viewportHeight}px`;
             // Set maximum width for larger screens
             section.style.maxWidth = '1920px'; // Standard laptop screen width
             section.style.margin = '0 auto'; // Center content
-            
+
             // Add padding based on viewport size
             const padding = viewportWidth > 1200 ? '4rem' : '2rem';
             section.style.padding = padding;
