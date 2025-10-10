@@ -104,11 +104,11 @@ build/
 *.bak
 *.backup
 
-# Screenshots
-*.png
-*.jpg
-*.jpeg
-*.gif
+# Ignore only screenshots in the /screenshots folder
+screenshots/*.png
+screenshots/*.jpg
+screenshots/*.jpeg
+screenshots/*.gif
 
 # Videos
 *.mp4
