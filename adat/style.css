@@ -577,12 +577,7 @@ nav.scroll-up {
     .nav-links {
         display: none;
     }
-    .tradition-details li {
-    color: var(--cultural-primary);
-    }
-    .tradition-details li:hover {
-        color: var(--cultural-secondary);
-    }
+
     .hero-title {
         font-size: 2rem;
     }
@@ -692,10 +687,4 @@ nav.scroll-up {
   border-radius: 3px;
   font-size: 12px;
   z-index: 2;
-}
-
-/* Force footer visibility on adat page */
-.footer-section {
-  opacity: 1 !important;
-  transform: none !important;
 }
