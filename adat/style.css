@@ -1,6 +1,5 @@
 /* Add bottom padding to body or main container to ensure footer visibility */
 body {
-  padding-bottom: 150px; /* Adjust as needed to prevent footer overlap */
     box-sizing: border-box;
         padding-top: 80px;
 }
