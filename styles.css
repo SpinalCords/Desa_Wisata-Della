@@ -116,6 +116,7 @@ body {
     padding: 20px;
     min-height: auto;
     width: 100%;
+    margin-left: 0.8rem;
     max-width: 280px;
   }
   .rules-title { font-size: 2.2rem; margin-bottom: 2rem; }
@@ -1593,6 +1594,7 @@ button {
   border-radius: 10px;
   text-align: center;
   width: 80%;
+  margin: 4rem auto;
 }
 
 .rules-title {
